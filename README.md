@@ -49,12 +49,10 @@ In order to facilitate the contribution by anyone in a project, all commit messa
 
 We also use [conventional commit messages](https://www.conventionalcommits.org/en/v1.0.0/), that is, the commit message must be in the form of a sentence, with the first word being an actions, and the rest of the sentence an describe text.
 
-```bash
+```js
 // Positive example
-git commit -m "feat: allow provided config object to extend other configs
-"
+git commit -m "feat: allow provided config object to extend configs"
 git commit -m "docs: correct spelling of CHANGELOG"
-
 git commit -m "feat(lang): add portuguese language"
 
 
