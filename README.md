@@ -38,6 +38,7 @@ As this is a live document, some rules may not have been applied in old projects
   <br/>
 
   3.1. _[CSS Code Syntax](#css-syntax)_ <br/>
+  3.2. _[CSS Declaration Order](#css-order)_ <br/>
   
 </details>
 
@@ -176,6 +177,40 @@ Use lowercase and avoid specifying units is zero-values.
 .selector-1 {
   color: #AAAAAA;
   margin: 0px;
+}
+```
+
+<a name="css-order"></a>
+
+### 3.2. CSS Declaration Order
+
+The declarations should be added in alphabetical order.
+
+**✅ Good:**
+```css
+.selector {
+  background: #fff;
+  border: #333 solid 1px;
+  color: #333;
+  display: flex;
+  height: 200px;
+  margin: 5px;
+  padding: 5px;
+  width: 200px;
+}
+```
+
+**❌ Bad:**
+```css
+.selector {
+  padding: 5px;
+  height: 200px;
+  background: #fff;
+  margin: 5px;
+  width: 200px;
+  color: #333;
+  border: #333 solid 1px;
+  display: flex;
 }
 ```
 
