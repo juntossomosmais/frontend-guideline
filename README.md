@@ -51,6 +51,15 @@ As this is a live document, some rules may not have been applied in old projects
 
 Use soft tabs with two spaces. You need to configure your editor for this.
 
+**✅ Good:**
+```js
+const obj = {
+  prop: "value",
+  prop2: "value2",
+  prop3: "value3",
+}
+```
+
 **❌ Bad:**
 ```js 
 const obj = {
@@ -60,14 +69,6 @@ const obj = {
 }
 ```
 
-**✅ Good:**
-```js
-const obj = {
-  prop: "value",
-  prop2: "value2",
-  prop3: "value3",
-}
-```
 
 **[⬆ back to summary](#summary)**
 
@@ -79,15 +80,14 @@ const obj = {
 
 Use meaningful, pronounceable, and in **English** variable names.
 
+**✅ Good:**
+```js
+const currentDate = moment().format("DD/MM/YYYY")
+```
+
 **❌ Bad:**
 ```js 
 const xpto = moment().format("DD/MM/YYYY")
-```
-
-**✅ Good:**
-
-```js
-const currentDate = moment().format("DD/MM/YYYY")
 ```
 
 **[⬆ back to summary](#summary)**
@@ -103,17 +103,16 @@ In order to facilitate the contribution of anyone in a project, all commit messa
 
 We also use [conventional commit messages](https://www.conventionalcommits.org/en/v1.0.0/), that is, the commit message must be in the form of a sentence, with the first word being an action, and the rest of the sentence a describing text.
 
-
-**❌ Bad:**
-```powershell
-git commit -m "Add placeholder on input"
-```
-
 **✅ Good:**
 ```powershell
 git commit -m "feat: allow provided config object to extend configs"
 git commit -m "docs: correct spelling of CHANGELOG"
 git commit -m "feat(lang): add the Portuguese language"
+```
+
+**❌ Bad:**
+```powershell
+git commit -m "Add placeholder on input"
 ```
 
 **[⬆ back to summary](#summary)**
