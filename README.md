@@ -19,15 +19,15 @@ As this is a live document, some rules may not have been applied in old projects
 ## 📖 Summary
 
 1. [General Code Patterns](#general-patterns)
-1.1 [Code Syntax](#code-syntax)
+  1.1. [Code Syntax](#code-syntax)
 2. [Git](#git)
-2.1. [Commit Messages](#commit-messages)
+  2.1. [Commit Messages](#commit-messages)
 3. [CSS](#css)
-3.1. [CSS Code Syntax](#css-syntax)
-3.2. [CSS Declaration Order](#css-order)
+  3.1. [CSS Code Syntax](#css-syntax)
+  3.2. [CSS Declaration Order](#css-order)
 4. [Javascript](#javascript)
-4.1. [Javascript Code Syntax](#javascript-syntax)
-    - 4.1.1 [Variables](#variables)
+  4.1. [Javascript Code Syntax](#javascript-syntax)
+    4.1.1. [Variables](#variables)
 
 ___
    
@@ -215,7 +215,7 @@ The declarations should be added in alphabetical order.
 
 <a name="variables"></a>
 
-#### 4.1.1 Variables
+#### 4.1.1. Variables
 
 Use meaningful, pronounceable, and in **English** variable names.
 
