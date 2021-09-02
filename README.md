@@ -16,36 +16,19 @@ As this is a live document, some rules may not have been applied in old projects
 
 ## 📖 Summary
 
-<details>
-  <summary>General Code Patterns</summary>
-  <br/>
+1. [General Code Patterns](#general-code-patterns)
+2. [Git](#git)
+3. [CSS](#css)
 
-  1.1. _[Code Syntax](#code-syntax)_ <br/>
-  1.2. _[Variables](#variables)_
-  
-</details>
-
-<details>
-  <summary>Git</summary>
-  <br/>
-
-  2.1. _[Commit Messages](#commit-messages)_ <br/>
-  
-</details>
-
-<details>
-  <summary>CSS</summary>
-  <br/>
-
-  3.1. _[CSS Code Syntax](#css-syntax)_ <br/>
-  3.2. _[CSS Declaration Order](#css-order)_ <br/>
-  
-</details>
-
+___
+   
 <a name="general-patterns"></a>
 
 ## 1. General Code Patterns
 
+1.1. [Code Syntax](#code-syntax) <br>
+1.2. [Variables](#variables) <br>
+  
 <a name="code-syntax"></a>
 
 ### 1.1. Code Syntax
@@ -89,7 +72,12 @@ const xpto = moment().format("DD/MM/YYYY")
 **[⬆ back to summary](#summary)**
 
 ---
+
+<a name="git"></a>
+
 ## 2. Git
+
+2.1. [Commit Messages](#commit-messages) <br>
 
 <a name="commit-messages"></a>
 
@@ -114,9 +102,14 @@ git commit -m "Add placeholder on input"
 **[⬆ back to summary](#summary)**
 
 ---
+
+<a name="css"></a>
  
 ## 3. CSS
 
+3.1. [CSS Code Syntax](#css-syntax) <br>
+3.2. [CSS Declaration Order](#css-order) <br>
+  
 <a name="css-syntax"></a>
 
 ### 3.1. CSS Syntax
