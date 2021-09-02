@@ -68,12 +68,7 @@ const obj = {
     prop3: "value3",
 }
 ```
-
-
-**[⬆ back to summary](#summary)**
-
----
-
+ 
 <a name="variables"></a>
 
 ### 1.2. Variables
