@@ -74,13 +74,13 @@ Use meaningful, pronounceable, and in **English** variable names.
 
 **❌ Bad:**
 ```js 
-const xpto = moment().format("DD/MM/YYYY");
+const xpto = moment().format("DD/MM/YYYY")
 ```
 
 **✅ Good:**
 
 ```js
-const currentDate = moment().format("DD/MM/YYYY");
+const currentDate = moment().format("DD/MM/YYYY")
 ```
 
 **[⬆ back to summary](#summary)**
