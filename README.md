@@ -14,7 +14,7 @@ As this is a live document, some rules may not have been applied in old projects
 
 <a name="summary"></a>
 
-## Summary
+## 📖 Summary
 
 <details>
   <summary>General Code Patterns</summary>
