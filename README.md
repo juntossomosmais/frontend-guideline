@@ -33,6 +33,14 @@ As this is a live document, some rules may not have been applied in old projects
   
 </details>
 
+<details>
+  <summary>CSS</summary>
+  <br/>
+
+  3.1. _[CSS Code Syntax](#css-syntax)_ <br/>
+  
+</details>
+
 <a name="general-patterns"></a>
 
 ## 1. General Code Patterns
@@ -53,7 +61,6 @@ const obj = {
 ```
 
 **✅ Good:**
-
 ```js
 const obj = {
   prop: "value",
@@ -84,7 +91,6 @@ const currentDate = moment().format("DD/MM/YYYY")
 ```
 
 **[⬆ back to summary](#summary)**
-<a name="github"></a>
 
 ---
 ## 2. Git
@@ -104,11 +110,79 @@ git commit -m "Add placeholder on input"
 ```
 
 **✅ Good:**
-
 ```powershell
 git commit -m "feat: allow provided config object to extend configs"
 git commit -m "docs: correct spelling of CHANGELOG"
 git commit -m "feat(lang): add the Portuguese language"
+```
+
+**[⬆ back to summary](#summary)**
+
+---
+ 
+## 3. CSS
+
+<a name="css-syntax"></a>
+
+### 3.1. CSS Syntax
+
+Keep one declaration per line.
+
+**✅ Good:**
+```css 
+.selector-1,
+.selector-2,
+.selector-3 {
+  ...
+}
+```
+
+**❌ Bad:**
+```css
+.selector-1, .selector-2, .selector-3 {
+  ...
+}
+```
+
+Separate each ruleset by a blank line.
+
+**✅ Good:**
+```css 
+.selector-1 {
+  ...
+}
+
+.selector-2 {
+  ...
+}
+```
+
+**❌ Bad:**
+```css
+.selector-1 {
+  ...
+}
+.selector-2 {
+  ...
+}
+```
+
+Use lowercase and avoid specifying units is zero-values.
+
+**✅ Good:**
+```css
+.selector-1 {
+  color: #aaaaaa;
+  margin: 0;
+}
+```
+
+**❌ Bad:**
+```css
+.selector-1 {
+  color: #AAAAAA;
+  margin: 0px;
+}
 ```
 
 **[⬆ back to summary](#summary)**
