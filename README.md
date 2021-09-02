@@ -26,7 +26,7 @@ As this is a live document, some rules may not have been applied in old projects
 </details>
 
 <details>
-  <summary>GitHub</summary>
+  <summary>Git</summary>
   <br/>
 
   2.1. _[Commit Messages](#commit-messages)_ <br/>
@@ -87,7 +87,7 @@ const currentDate = moment().format("DD/MM/YYYY")
 <a name="github"></a>
 
 ---
-## 2. GitHub
+## 2. Git
 
 <a name="commit-messages"></a>
 
