@@ -2,7 +2,7 @@
 
 # Front-end - Guidelines
 
-[Guideline Webpage](https://juntossomosmais.github.io/frontend-guideline/)
+<a href="https://juntossomosmais.github.io/frontend-guideline/" target="_blank">Guideline Webpage</a>
 
 [![GitHub contributors](https://img.shields.io/github/contributors/juntossomosmais/frontend-guideline.svg)](https://github.com/juntossomosmais/frontend-guideline/graphs/contributors)
 
