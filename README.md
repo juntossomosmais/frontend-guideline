@@ -422,7 +422,7 @@ Creating const to describe validations.
 ```js
 const hasFullUserName = user.firstName && user.lastname
 
-if(hasFullUserName) {
+if (hasFullUserName) {
   //do awesome something
 }
 ```
@@ -430,7 +430,7 @@ if(hasFullUserName) {
 **❌ Bad:**
 ```js 
 
-if(user.firstName && user.lastname) {
+if (user.firstName && user.lastname) {
   //do something
 }
 ```
