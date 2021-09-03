@@ -390,7 +390,7 @@ keep the media queries as close to their relevant rule sets whenever possible.
 
 - 4.1. [Javascript Code Syntax](#javascript-syntax)
   - 4.1.1. [Variables](#variables) <br>
-
+  - 4.1.2. [Descriptive validations (if)](#descriptive-validations) <br>
 
 <a name="javascript-syntax"></a>
 
@@ -410,6 +410,29 @@ const currentDate = new Date().toLocaleDateString('pt-BR')
 **❌ Bad:**
 ```js 
 const xpto = new Date().toLocaleDateString('pt-BR')
+```
+
+<a name="descriptive-validations"></a>
+
+#### 4.1.2. Descriptive validations (if)
+
+Creating const to describe validations.
+
+**✅ Good:**
+```js
+const hasFullUserName = user.firstName && user.lastname
+
+if (hasFullUserName) {
+  //do awesome something
+}
+```
+
+**❌ Bad:**
+```js 
+
+if (user.firstName && user.lastname) {
+  //do something
+}
 ```
 
 **[⬆ back to summary](#summary)**
