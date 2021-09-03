@@ -425,7 +425,6 @@ const hasFullUserName = user.firstName && user.lastname
 if(hasFullUserName) {
   //do awesome something
 }
-
 ```
 
 **❌ Bad:**
