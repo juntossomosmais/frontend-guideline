@@ -22,6 +22,7 @@ As this is a live document, some rules may not have been applied in old projects
 2. [Git](#git)
 3. [CSS](#css)
 4. [Javascript](#javascript)
+5. [Storybook](#storybook)
 
 ___
    
@@ -437,5 +438,43 @@ if (user.firstName && user.lastname) {
 
 **[⬆ back to summary](#summary)**
 
+
+---
+
+<a name="storybook"></a>
+
+## 5. Storybook
+- 5.1. [Story path](#storybook-file-path)
+- 5.2. [Story file](#storybook-file-name)
+
+
+<a name="storybook-file-name"></a>
+
+#### 5.1 Story path
+
+The story file should be at the same path of your component.
+**✅ Good:**
+- Button/Button.stories.mdx
+- Dialog/index.stories.mdx
+
+**❌ Bad:**
+- Button/Story/index.stories.mdx
+- Stories/Button.stories.mdx
+
+<a name="storybook-file-name"></a>
+
+#### 5.2 Story file
+
+Create a file with the same name of your component, or index, and with the suffix `.stories.mdx`.
+
+**✅ Good:**
+- Button.stories.mdx
+- Dialog/index.stories.mdx
+
+**❌ Bad:**
+- Input.mdx
+- Dialog/index.mdx
+
+**[⬆ back to summary](#summary)**
 
 ---
