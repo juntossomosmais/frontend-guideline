@@ -485,6 +485,22 @@ const template = "foo"
 
 <a name="variables"></a>
 
+For strict equality checks `===` should be used in favor of `==`.
+
+**✅ Good:**
+```js 
+if (foo === 'foo') {
+  statement
+}
+```
+
+**❌ Bad:**
+```js 
+if (foo == 'foo') {
+  statement
+}
+```
+
 #### 4.2. Variables
 
 Use meaningful, pronounceable, and in **English** variable names.
