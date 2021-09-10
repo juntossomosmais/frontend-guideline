@@ -198,7 +198,7 @@ We don't guest the scope of HTML components inside page, so when we start a new 
 
 ```html
 <div class="component">
-  <h4 class="title">Title</h1>
+  <h4 class="title">Title</h4>
   <p>Paragraph</p>
 </div>
 ```
