@@ -66,21 +66,21 @@ const obj = {
 
 ```js
 const obj = {
-    prop: "value",
-    prop2: "value2",
-    prop3: "value3",
+  prop: "value",
+  prop2: "value2",
+  prop3: "value3",
 }
 ```
 
 ```css
 .foo {
-    color: red;
+  color: red;
 }
 ```
 
 ```html
 <div>
-    <p>Hello World</p>
+  <p>Hello World</p>
 </div>
 ```
 
@@ -89,10 +89,10 @@ const obj = {
 ## 2. Architecture
 
 The proper architecture for projects, and how to create and name files and folders.
-  
+
 - 2.1 [File Name](#architecture-files)
 - 2.2 [Folder Architecture](#architecture-folder)
- 
+
 <a name="architecture-files"></a>
 
 ### 2.1 File Name
@@ -114,8 +114,6 @@ The proper architecture for projects, and how to create and name files and folde
 - `UserProfile/style.scss`
 - `UserProfileStyles.js`
 - `UserProfile/UserProfile.mdx`
-
-**[⬆ back to summary](#summary)**
 
 <a name="architecture-folder"></a>
 
@@ -158,6 +156,8 @@ For example:
 ┣ ┣ ┃ ┃ ┣ 📜 UserProfile.stories.mdx \
 ```
 
+**[⬆ back to summary](#summary)**
+
 ---
 
 <a name="git"></a>
@@ -191,6 +191,7 @@ git commit -m "Add placeholder on input"
 **[⬆ back to summary](#summary)**
 
 ---
+
 <a name="html"></a>
 
 ## 4. HTML
@@ -252,6 +253,7 @@ Keep one declaration per line.
 ```
 
 **❌ Bad:**
+
 ```scss
 .selector-1, .selector-2, .selector-3 {
   ...
