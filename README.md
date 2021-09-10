@@ -22,6 +22,7 @@ As this is a live document, some rules may not have been applied in old projects
 2. [Git](#git)
 3. [CSS](#css)
 4. [Javascript](#javascript)
+5. [Storybook](#storybook)
 
 ___
    
@@ -30,6 +31,9 @@ ___
 ## 1. General Code Patterns
 
 - 1.1. [Code Syntax](#code-syntax) <br>
+- 1.2. [Architecture](#architecture) <br>
+  - 1.2.1 [Folder Structure](#architecture-folder) <br>
+  - 1.2.2 [File Name](#architecture-files) <br>
   
 <a name="code-syntax"></a>
 
@@ -54,6 +58,59 @@ const obj = {
     prop3: "value3",
 }
 ```
+
+<a name="architecture"></a>
+
+### 1.2. Architecture
+
+The proper architecture for projects, and how to create and name files and folders.
+
+
+
+<a name="architecture-folder"></a>
+
+#### 1.2.1 Folder Structure
+
+**✅ Good:**
+
+┃ ┣ 📂 component \
+┃ ┃ ┣ 📂 UserProfile \
+┃ ┃ ┣ 📜  UserProfile.scss \
+┃ ┃ ┣ 📜  UserProfile.stories.mdx \
+┃ ┃ ┣ 📂 components \
+┃ ┃ ┣ ┣ 📂 PersonalInfo \
+┃ ┃ ┣ ┣ 📂 UserPicture 
+
+
+**❌ Bad:**
+
+┃ ┣ 📂 component \
+┃ ┃ ┣ 📂 UserProfile \
+┃ ┃ ┣ 📂 PersonalInfo \
+┃ ┃ ┣ 📂 UserPicture 
+
+
+<a name="architecture-files"></a>
+
+#### 1.2.2 File Name
+
+**✅ Good:**
+- UserProfile/UserProfile.vue
+- UserProfile/index.js
+- UserProfile/index.ts
+- UserProfile/styles.js
+- UserProfile/UserProfile.scss
+- UserProfile/UserProfile.stories.mdx
+
+
+**❌ Bad:**
+- UserProfile/component.vue
+- src/UserProfile.js
+- UserProfile/component.ts
+- UserProfile/style.scss
+- UserProfileStyles.js
+- UserProfile/UserProfile.mdx
+
  
 **[⬆ back to summary](#summary)**
 
@@ -437,5 +494,28 @@ if (user.firstName && user.lastname) {
 
 **[⬆ back to summary](#summary)**
 
+
+---
+
+<a name="storybook"></a>
+
+## 5. Storybook
+- 5.1. [Story file](#storybook-file-name)
+
+<a name="storybook-file-name"></a>
+
+#### 5.1 Story file
+
+Create a file with the same name of your component, or index, and with the suffix `.stories.mdx`.
+
+**✅ Good:**
+- Button.stories.mdx
+- Dialog/index.stories.mdx
+
+**❌ Bad:**
+- Input.mdx
+- Dialog/index.mdx
+
+**[⬆ back to summary](#summary)**
 
 ---
