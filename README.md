@@ -20,12 +20,13 @@ As this is a live document, some rules may not have been applied in old projects
 
 1. [General Code Patterns](#general-patterns)
 2. [Git](#git)
-3. [CSS](#css)
-4. [JavaScript](#javascript)
-5. [Storybook](#storybook)
+3. [HTML](#html)
+4. [CSS](#css)
+5. [JavaScript](#javascript)
+6. [Storybook](#storybook)
 
-___
-   
+---
+
 <a name="general-patterns"></a>
 
 ## 1. General Code Patterns
@@ -34,7 +35,7 @@ ___
 - 1.2. [Architecture](#architecture) <br>
   - 1.2.1 [Folder Structure](#architecture-folder) <br>
   - 1.2.2 [File Name](#architecture-files) <br>
-  
+
 <a name="code-syntax"></a>
 
 ### 1.1. Code Syntax
@@ -42,6 +43,7 @@ ___
 Use soft tabs with two spaces. You need to configure your editor for this.
 
 **✅ Good:**
+
 ```js
 const obj = {
   prop: "value",
@@ -57,13 +59,14 @@ const obj = {
 ```
 
 ```html
-<div> 
+<div>
   <p>Hello World</p>
 </div>
 ```
 
 **❌ Bad:**
-```js 
+
+```js
 const obj = {
     prop: "value",
     prop2: "value2",
@@ -78,7 +81,7 @@ const obj = {
 ```
 
 ```html
-<div> 
+<div>
     <p>Hello World</p>
 </div>
 ```
@@ -89,8 +92,6 @@ const obj = {
 
 The proper architecture for projects, and how to create and name files and folders.
 
-
-
 <a name="architecture-folder"></a>
 
 #### 1.2.1 Folder Structure
@@ -99,26 +100,25 @@ The proper architecture for projects, and how to create and name files and folde
 
 ┃ ┣ 📂 component \
 ┃ ┃ ┣ 📂 UserProfile \
-┃ ┃ ┣ 📜  UserProfile.scss \
-┃ ┃ ┣ 📜  UserProfile.stories.mdx \
+┃ ┃ ┣ 📜 UserProfile.scss \
+┃ ┃ ┣ 📜 UserProfile.stories.mdx \
 ┃ ┃ ┣ 📂 components \
 ┃ ┃ ┣ ┣ 📂 PersonalInfo \
-┃ ┃ ┣ ┣ 📂 UserPicture 
-
+┃ ┃ ┣ ┣ 📂 UserPicture
 
 **❌ Bad:**
 
 ┃ ┣ 📂 component \
 ┃ ┃ ┣ 📂 UserProfile \
 ┃ ┃ ┣ 📂 PersonalInfo \
-┃ ┃ ┣ 📂 UserPicture 
-
+┃ ┃ ┣ 📂 UserPicture
 
 <a name="architecture-files"></a>
 
 #### 1.2.2 File Name
 
 **✅ Good:**
+
 - UserProfile/UserProfile.vue
 - UserProfile/index.js
 - UserProfile/index.ts
@@ -126,8 +126,8 @@ The proper architecture for projects, and how to create and name files and folde
 - UserProfile/UserProfile.scss
 - UserProfile/UserProfile.stories.mdx
 
-
 **❌ Bad:**
+
 - UserProfile/component.vue
 - src/UserProfile.js
 - UserProfile/component.ts
@@ -135,7 +135,6 @@ The proper architecture for projects, and how to create and name files and folde
 - UserProfileStyles.js
 - UserProfile/UserProfile.mdx
 
- 
 **[⬆ back to summary](#summary)**
 
 ---
@@ -155,6 +154,7 @@ In order to facilitate the contribution of anyone in a project, all commit messa
 We also use [conventional commit messages](https://www.conventionalcommits.org/en/v1.0.0/), that is, the commit message must be in the form of a sentence, with the first word being an action, and the rest of the sentence a describing text.
 
 **✅ Good:**
+
 ```powershell
 git commit -m "feat: allow provided config object to extend configs"
 git commit -m "docs: correct spelling of CHANGELOG"
@@ -162,6 +162,7 @@ git commit -m "feat(lang): add the Portuguese language"
 ```
 
 **❌ Bad:**
+
 ```powershell
 git commit -m "Add placeholder on input"
 ```
@@ -169,27 +170,60 @@ git commit -m "Add placeholder on input"
 **[⬆ back to summary](#summary)**
 
 ---
+<a name="html"></a>
 
-<a name="css"></a>
- 
-## 3. CSS
+## 3. HTML
+
+<a name="html"></a>
+
+We main reference for HTML good patterns is [W3C](https://www.w3.org/TR/html/) and [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element), behind these docs we could learn a lot with semantic and another good practices.
+
+
+- 3.1. [HTML Component Scope](#html-component-scope)
+
+<a name="html-component-scope"></a>
+
+We don't guest the scope of HTML components inside page, so when we start a new component, we should use a semantic tag, like `section` or `article` for example, to be able to starting to use the heading tags by context.
+
+**✅ Good:**
+
+```html
+<section class="component">
+  <h1 class="title">Title</h1>
+  <p>Paragraph</p>
+</section>
+```
+
+**❌ Bad:**
+
+```html
+<div class="component">
+  <h4 class="title">Title</h1>
+  <p>Paragraph</p>
+</div>
+```
+
+### 4.1. CSS Syntax
+
+## 4. CSS
 
 The tips above could be used in any CSS framework or preprocessor, like SCSS, Styled Components and etc
 
-- 3.1. [CSS Code Syntax](#css-syntax) 
-- 3.2. [CSS Declaration Order](#css-order) 
-- 3.3. [CSS Class Names](#css-class-name)
-- 3.4. [CSS Good Practices](#css-good-practices)
-- 3.5. [CSS Media Queries](#css-media-queries) 
-  
+- 4.1. [CSS Code Syntax](#css-syntax)
+- 4.2. [CSS Declaration Order](#css-order)
+- 4.3. [CSS Class Names](#css-class-name)
+- 4.4. [CSS Good Practices](#css-good-practices)
+- 4.5. [CSS Media Queries](#css-media-queries)
+
 <a name="css-syntax"></a>
 
-### 3.1. CSS Syntax
+### 4.1. CSS Syntax
 
 Keep one declaration per line.
 
 **✅ Good:**
-```scss 
+
+```scss
 .selector-1,
 .selector-2,
 .selector-3 {
@@ -207,7 +241,8 @@ Keep one declaration per line.
 Separate each ruleset by a blank line.
 
 **✅ Good:**
-```scss 
+
+```scss
 .selector-1 {
   ...
 }
@@ -218,6 +253,7 @@ Separate each ruleset by a blank line.
 ```
 
 **❌ Bad:**
+
 ```scss
 .selector-1 {
   ...
@@ -230,6 +266,7 @@ Separate each ruleset by a blank line.
 Use lowercase and avoid specifying units is zero-values.
 
 **✅ Good:**
+
 ```scss
 .selector-1 {
   color: #aaaaaa;
@@ -238,20 +275,22 @@ Use lowercase and avoid specifying units is zero-values.
 ```
 
 **❌ Bad:**
+
 ```scss
 .selector-1 {
-  color: #AAAAAA;
+  color: #aaaaaa;
   margin: 0px;
 }
 ```
 
 <a name="css-order"></a>
 
-### 3.2. CSS Declaration Order
+### 4.2. CSS Declaration Order
 
 The declarations should be added in alphabetical order.
 
 **✅ Good:**
+
 ```scss
 .selector {
   background: #fff;
@@ -266,6 +305,7 @@ The declarations should be added in alphabetical order.
 ```
 
 **❌ Bad:**
+
 ```scss
 .selector {
   padding: 5px;
@@ -281,16 +321,18 @@ The declarations should be added in alphabetical order.
 
 <a name="css-class-name"></a>
 
-### 3.3. CSS Class Names
+### 4.3. CSS Class Names
 
 Keep class lowercase and use dashes to separate the classname.
 
 **✅ Good:**
+
 ```scss
 .page-header { ... }
 ```
 
 **❌ Bad:**
+
 ```scss
 .pageHeader { ... }
 .page_header { ... }
@@ -301,8 +343,9 @@ Is a good idea follows a [BEM naming convention](http://getbem.com/introduction/
 The main pattern is use single dash to element name, double underline to element block and double dash to style modification.
 
 **✅ Good:**
+
 ```scss
-/* Good */ 
+/* Good */
 .page-header__title { ... }
 .page-header--active { ... }
 
@@ -310,7 +353,8 @@ The main pattern is use single dash to element name, double underline to element
 ```
 
 **❌ Bad:**
-```scss 
+
+```scss
 .page-header-title { ... }
 .page-header-active { ... }
 
@@ -321,6 +365,7 @@ The main pattern is use single dash to element name, double underline to element
 Dashes and underline serve as natural breaks in related class. Prefix class based on the closest parent or base class.
 
 **✅ Good:**
+
 ```scss
 .nav { ... }
 .nav__item { ... }
@@ -328,6 +373,7 @@ Dashes and underline serve as natural breaks in related class. Prefix class base
 ```
 
 **❌ Bad:**
+
 ```scss
 .item-nav { ... }
 .link-nav { ... }
@@ -336,6 +382,7 @@ Dashes and underline serve as natural breaks in related class. Prefix class base
 Avoid giving too short names for class and always choose meaningful names that provide the class function.
 
 **✅ Good:**
+
 ```scss
 /* Good */
 .button { ... }
@@ -344,6 +391,7 @@ Avoid giving too short names for class and always choose meaningful names that p
 ```
 
 **❌ Bad:**
+
 ```scss
 .s { ... }
 .btn { ... }
@@ -353,11 +401,12 @@ Avoid giving too short names for class and always choose meaningful names that p
 
 <a name="css-good-practices"></a>
 
-### 3.4. CSS Good Practices
+### 4.4. CSS Good Practices
 
 Avoid use values like colors, spacing and etc directly in the elements, use variables instead, and it can be CSS variables or some preprocessor variables, always check the context.
 
 **✅ Good:**
+
 ```scss
 .button {
   color: var(--color-primary);
@@ -366,6 +415,7 @@ Avoid use values like colors, spacing and etc directly in the elements, use vari
 ```
 
 **❌ Bad:**
+
 ```scss
 .button {
   color: #333;
@@ -376,12 +426,14 @@ Avoid use values like colors, spacing and etc directly in the elements, use vari
 Never use IDs to style elements, always use classes instead.
 
 **✅ Good:**
-```scss 
+
+```scss
 .header { ... }
 .section { ... }
 ```
 
 **❌ Bad:**
+
 ```scss
 #header { ... }
 #section { ... }
@@ -390,6 +442,7 @@ Never use IDs to style elements, always use classes instead.
 Do not style directly the elements, it will create a lot of conflicts, always use classes instead.
 
 **✅ Good:**
+
 ```scss
 .form-control { ... }
 .header { ... }
@@ -397,6 +450,7 @@ Do not style directly the elements, it will create a lot of conflicts, always us
 ```
 
 **❌ Bad:**
+
 ```scss
 input[type="text"] { ... }
 header
@@ -406,7 +460,8 @@ section
 Avoid nesting elements, because it decrease performance and increase the specificity of the CSS, always use classes instead.
 
 **✅ Good:**
-```scss 
+
+```scss
 .navbar { ... }
 .nav { ... }
 .nav__item { ... }
@@ -414,6 +469,7 @@ Avoid nesting elements, because it decrease performance and increase the specifi
 ```
 
 **❌ Bad:**
+
 ```scss
 .navbar ul { ... }
 .navbar ul li { ... }
@@ -422,86 +478,91 @@ Avoid nesting elements, because it decrease performance and increase the specifi
 
 <a name="css-media-queries"></a>
 
-### 3.5 CSS Media Queries
+### 4.5 CSS Media Queries
 
-Start the development with generic rules and add media queries inside scope using mobile first. Also is important 
+Start the development with generic rules and add media queries inside scope using mobile first. Also is important
 keep the media queries as close to their relevant rule sets whenever possible.
 
 **✅ Good:**
-```scss 
+
+```scss
 .navbar {
   margin-bottom: var(--space);
 
-  @media (min-width: 480px) { 
-    padding: 10px; 
+  @media (min-width: 480px) {
+    padding: 10px;
   }
 
-
-  @media (min-width: 768px) { 
+  @media (min-width: 768px) {
     position: absolute;
     top: 0;
-    left: 0; 
+    left: 0;
   }
 
-  @media (min-width: 992px) { 
-    position: fixed; 
+  @media (min-width: 992px) {
+    position: fixed;
   }
 }
-``` 
+```
 
 **❌ Bad:**
-```scss 
+
+```scss
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
 
-  @media (max-width: 767px) { 
+  @media (max-width: 767px) {
     position: static;
-    padding: var(--space-sm); 
+    padding: var(--space-sm);
   }
 }
 ```
- 
+
 **[⬆ back to summary](#summary)**
 
 <a name="javascript"></a>
 
-## 4. JavaScript
+## 5. JavaScript
 
-- 4.1. [Javascript Code Syntax](#javascript-syntax)
-- 4.2. [Variables](#variables) <br>
-- 4.3. [Descriptive validations (if)](#descriptive-validations) <br>
+- 5.1. [Javascript Code Syntax](#javascript-syntax)
+- 5.2. [Variables](#variables) <br>
+- 5.3. [Descriptive validations (if)](#descriptive-validations) <br>
 
 <a name="javascript-syntax"></a>
 
-### 4.1. JavaScript Code Syntax
+### 5.1. JavaScript Code Syntax
 
 Never use semicolons.
 
 **✅ Good:**
-```js 
-const foo = 'bar'
-const baz = 'qux'
+
+```js
+const foo = "bar"
+const baz = "qux"
 const func = () => {}
 ```
 
 **❌ Bad:**
+
 ```js
-const foo = 'bar';
-const baz = 'qux';
-const func = () => {};
+const foo = "bar"
+const baz = "qux"
+const func = () => {}
 ```
 
 Always use single quotes or template literals
 
 **✅ Good:**
-```js 
-const string = 'foo'
+
+```js
+const string = "foo"
 const template = `foo`
 ```
 
 **❌ Bad:**
+
 ```js
 const string = "foo"
 const template = "foo"
@@ -512,40 +573,45 @@ const template = "foo"
 For strict equality checks `===` should be used in favor of `==`.
 
 **✅ Good:**
-```js 
-if (foo === 'foo') {
+
+```js
+if (foo === "foo") {
   statement
 }
 ```
 
 **❌ Bad:**
-```js 
-if (foo == 'foo') {
+
+```js
+if (foo == "foo") {
   statement
 }
 ```
 
-#### 4.2. Variables
+#### 5.2. Variables
 
 Use meaningful, pronounceable, and in **English** variable names.
 
 **✅ Good:**
+
 ```js
-const currentDate = new Date().toLocaleDateString('pt-BR')
+const currentDate = new Date().toLocaleDateString("pt-BR")
 ```
 
 **❌ Bad:**
-```js 
-const xpto = new Date().toLocaleDateString('pt-BR')
+
+```js
+const xpto = new Date().toLocaleDateString("pt-BR")
 ```
 
 <a name="descriptive-validations"></a>
 
-#### 4.3. Descriptive validations (if)
+#### 5.3. Descriptive validations (if)
 
 Creating const to describe validations.
 
 **✅ Good:**
+
 ```js
 const hasFullUserName = user.firstName && user.lastname
 
@@ -555,8 +621,8 @@ if (hasFullUserName) {
 ```
 
 **❌ Bad:**
-```js 
 
+```js
 if (user.firstName && user.lastname) {
   //do something
 }
@@ -564,26 +630,27 @@ if (user.firstName && user.lastname) {
 
 **[⬆ back to summary](#summary)**
 
-
 ---
 
 <a name="storybook"></a>
 
-## 5. Storybook
+## 6. Storybook
 
 - 5.1. [Story file](#storybook-file-name)
 
 <a name="storybook-file-name"></a>
 
-#### 5.1 Story file
+#### 6.1 Story file
 
 Create a file with the same name of your component, or index, and with the suffix `.stories.mdx`.
 
 **✅ Good:**
+
 - Button.stories.mdx
 - Dialog/index.stories.mdx
 
 **❌ Bad:**
+
 - Input.mdx
 - Dialog/index.mdx
 
