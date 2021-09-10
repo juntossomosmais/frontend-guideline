@@ -19,11 +19,12 @@ As this is a live document, some rules may not have been applied in old projects
 ## 📖 Summary
 
 1. [General Code Patterns](#general-patterns)
-2. [Git](#git)
-3. [HTML](#html)
-4. [CSS](#css)
-5. [JavaScript](#javascript)
-6. [Storybook](#storybook)
+2. [Architecture](#architecture)
+3. [Git](#git)
+4. [HTML](#html)
+5. [CSS](#css)
+6. [JavaScript](#javascript)
+7. [Storybook](#storybook)
 
 ---
 
@@ -32,9 +33,6 @@ As this is a live document, some rules may not have been applied in old projects
 ## 1. General Code Patterns
 
 - 1.1. [Code Syntax](#code-syntax) <br>
-- 1.2. [Architecture](#architecture) <br>
-  - 1.2.1 [Folder Structure](#architecture-folder) <br>
-  - 1.2.2 [File Name](#architecture-files) <br>
 
 <a name="code-syntax"></a>
 
@@ -88,13 +86,16 @@ const obj = {
 
 <a name="architecture"></a>
 
-### 1.2. Architecture
+### 2. Architecture
 
 The proper architecture for projects, and how to create and name files and folders.
+ 
+- 2.2 [Folder Structure](#architecture-folder)
+- 2.2 [File Name](#architecture-files)
 
 <a name="architecture-folder"></a>
 
-#### 1.2.1 Folder Structure
+#### 2.2 Folder Structure
 
 **✅ Good:**
 
@@ -115,25 +116,25 @@ The proper architecture for projects, and how to create and name files and folde
 
 <a name="architecture-files"></a>
 
-#### 1.2.2 File Name
+#### 2.2 File Name
 
 **✅ Good:**
 
-- UserProfile/UserProfile.vue
-- UserProfile/index.js
-- UserProfile/index.ts
-- UserProfile/styles.js
-- UserProfile/UserProfile.scss
-- UserProfile/UserProfile.stories.mdx
+- `UserProfile/UserProfile.vue`
+- `UserProfile/index.js`
+- `UserProfile/index.ts`
+- `UserProfile/styles.js`
+- `UserProfile/UserProfile.scss`
+- `UserProfile/UserProfile.stories.mdx`
 
 **❌ Bad:**
 
-- UserProfile/component.vue
-- src/UserProfile.js
-- UserProfile/component.ts
-- UserProfile/style.scss
-- UserProfileStyles.js
-- UserProfile/UserProfile.mdx
+- `UserProfile/component.vue`
+- `src/UserProfile.js`
+- `UserProfile/component.ts`
+- `UserProfile/style.scss`
+- `UserProfileStyles.js`
+- `UserProfile/UserProfile.mdx`
 
 **[⬆ back to summary](#summary)**
 
@@ -141,13 +142,13 @@ The proper architecture for projects, and how to create and name files and folde
 
 <a name="git"></a>
 
-## 2. Git
+## 3. Git
 
-- 2.1. [Commit Messages](#commit-messages) <br>
+- 3.1. [Commit Messages](#commit-messages) <br>
 
 <a name="commit-messages"></a>
 
-### 2.1. Commit Messages
+### 3.1. Commit Messages
 
 In order to facilitate the contribution of anyone in a project, all commit messages must be in **English**.
 
@@ -172,14 +173,13 @@ git commit -m "Add placeholder on input"
 ---
 <a name="html"></a>
 
-## 3. HTML
+## 4. HTML
 
 <a name="html"></a>
 
 We main reference for HTML good patterns is [W3C](https://www.w3.org/TR/html/) and [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element), behind these docs we could learn a lot with semantic and another good practices.
 
-
-- 3.1. [HTML Component Scope](#html-component-scope)
+- 4.1. [HTML Component Scope](#html-component-scope)
 
 <a name="html-component-scope"></a>
 
@@ -203,9 +203,9 @@ We don't guest the scope of HTML components inside page, so when we start a new 
 </div>
 ```
 
-### 4.1. CSS Syntax
+### 5.1. CSS Syntax
 
-## 4. CSS
+## 5. CSS
 
 The tips above could be used in any CSS framework or preprocessor, like SCSS, Styled Components and etc
 
@@ -217,7 +217,7 @@ The tips above could be used in any CSS framework or preprocessor, like SCSS, St
 
 <a name="css-syntax"></a>
 
-### 4.1. CSS Syntax
+### 5.1. CSS Syntax
 
 Keep one declaration per line.
 
@@ -285,7 +285,7 @@ Use lowercase and avoid specifying units is zero-values.
 
 <a name="css-order"></a>
 
-### 4.2. CSS Declaration Order
+### 5.2. CSS Declaration Order
 
 The declarations should be added in alphabetical order.
 
@@ -321,7 +321,7 @@ The declarations should be added in alphabetical order.
 
 <a name="css-class-name"></a>
 
-### 4.3. CSS Class Names
+### 5.3. CSS Class Names
 
 Keep class lowercase and use dashes to separate the classname.
 
@@ -401,7 +401,7 @@ Avoid giving too short names for class and always choose meaningful names that p
 
 <a name="css-good-practices"></a>
 
-### 4.4. CSS Good Practices
+### 5.4. CSS Good Practices
 
 Avoid use values like colors, spacing and etc directly in the elements, use variables instead, and it can be CSS variables or some preprocessor variables, always check the context.
 
@@ -478,7 +478,7 @@ Avoid nesting elements, because it decrease performance and increase the specifi
 
 <a name="css-media-queries"></a>
 
-### 4.5 CSS Media Queries
+### 5.5 CSS Media Queries
 
 Start the development with generic rules and add media queries inside scope using mobile first. Also is important
 keep the media queries as close to their relevant rule sets whenever possible.
@@ -524,7 +524,7 @@ keep the media queries as close to their relevant rule sets whenever possible.
 
 <a name="javascript"></a>
 
-## 5. JavaScript
+## 6. JavaScript
 
 - 5.1. [Javascript Code Syntax](#javascript-syntax)
 - 5.2. [Variables](#variables) <br>
@@ -532,7 +532,7 @@ keep the media queries as close to their relevant rule sets whenever possible.
 
 <a name="javascript-syntax"></a>
 
-### 5.1. JavaScript Code Syntax
+### 6.1. JavaScript Code Syntax
 
 Never use semicolons.
 
@@ -588,7 +588,7 @@ if (foo == "foo") {
 }
 ```
 
-#### 5.2. Variables
+#### 6.2. Variables
 
 Use meaningful, pronounceable, and in **English** variable names.
 
@@ -606,7 +606,7 @@ const xpto = new Date().toLocaleDateString("pt-BR")
 
 <a name="descriptive-validations"></a>
 
-#### 5.3. Descriptive validations (if)
+#### 6.3. Descriptive validations (if)
 
 Creating const to describe validations.
 
@@ -634,13 +634,13 @@ if (user.firstName && user.lastname) {
 
 <a name="storybook"></a>
 
-## 6. Storybook
+## 7. Storybook
 
 - 5.1. [Story file](#storybook-file-name)
 
 <a name="storybook-file-name"></a>
 
-#### 6.1 Story file
+#### 7.1 Story file
 
 Create a file with the same name of your component, or index, and with the suffix `.stories.mdx`.
 
