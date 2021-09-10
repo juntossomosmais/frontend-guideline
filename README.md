@@ -50,6 +50,18 @@ const obj = {
 }
 ```
 
+```css
+.foo {
+  color: red;
+}
+```
+
+```html
+<div> 
+  <p>Hello World</p>
+</div>
+```
+
 **❌ Bad:**
 ```js 
 const obj = {
@@ -57,6 +69,18 @@ const obj = {
     prop2: "value2",
     prop3: "value3",
 }
+```
+
+```css
+.foo {
+    color: red;
+}
+```
+
+```html
+<div> 
+    <p>Hello World</p>
+</div>
 ```
 
 <a name="architecture"></a>
