@@ -21,7 +21,7 @@ As this is a live document, some rules may not have been applied in old projects
 1. [General Code Patterns](#general-patterns)
 2. [Git](#git)
 3. [CSS](#css)
-4. [Javascript](#javascript)
+4. [JavaScript](#javascript)
 5. [Storybook](#storybook)
 
 ___
@@ -443,7 +443,7 @@ keep the media queries as close to their relevant rule sets whenever possible.
 
 <a name="javascript"></a>
 
-## 4. Javascript
+## 4. JavaScript
 
 - 4.1. [Javascript Code Syntax](#javascript-syntax)
 - 4.2. [Variables](#variables) <br>
@@ -451,7 +451,7 @@ keep the media queries as close to their relevant rule sets whenever possible.
 
 <a name="javascript-syntax"></a>
 
-### 4.1. Javascript Code Syntax
+### 4.1. JavaScript Code Syntax
 
 Never use semicolons.
 
@@ -546,6 +546,7 @@ if (user.firstName && user.lastname) {
 <a name="storybook"></a>
 
 ## 5. Storybook
+
 - 5.1. [Story file](#storybook-file-name)
 
 <a name="storybook-file-name"></a>
