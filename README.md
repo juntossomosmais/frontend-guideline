@@ -98,6 +98,7 @@ The proper architecture for projects, and how to create and name files and folde
 - UserProfile/UserProfile.vue
 - UserProfile/index.js
 - UserProfile/index.ts
+- UserProfile/styles.js
 - UserProfile/UserProfile.scss
 - UserProfile/UserProfile.stories.mdx
 
@@ -107,6 +108,7 @@ The proper architecture for projects, and how to create and name files and folde
 - src/UserProfile.js
 - UserProfile/component.ts
 - UserProfile/style.scss
+- UserProfileStyles.js
 - UserProfile/UserProfile.mdx
 
  
