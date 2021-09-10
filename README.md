@@ -66,21 +66,21 @@ const obj = {
 
 ```js
 const obj = {
-  prop: "value",
-  prop2: "value2",
-  prop3: "value3",
+    prop: "value",
+    prop2: "value2",
+    prop3: "value3",
 }
 ```
 
 ```css
 .foo {
-  color: red;
+    color: red;
 }
 ```
 
 ```html
 <div>
-  <p>Hello World</p>
+    <p>Hello World</p>
 </div>
 ```
 
