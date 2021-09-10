@@ -86,37 +86,16 @@ const obj = {
 
 <a name="architecture"></a>
 
-### 2. Architecture
+## 2. Architecture
 
 The proper architecture for projects, and how to create and name files and folders.
+  
+- 2.1 [File Name](#architecture-files)
+- 2.2 [Folder Architecture](#architecture-folder)
  
-- 2.2 [Folder Structure](#architecture-folder)
-- 2.2 [File Name](#architecture-files)
-
-<a name="architecture-folder"></a>
-
-#### 2.2 Folder Structure
-
-**✅ Good:**
-
-┃ ┣ 📂 component \
-┃ ┃ ┣ 📂 UserProfile \
-┃ ┃ ┣ 📜 UserProfile.scss \
-┃ ┃ ┣ 📜 UserProfile.stories.mdx \
-┃ ┃ ┣ 📂 components \
-┃ ┃ ┣ ┣ 📂 PersonalInfo \
-┃ ┃ ┣ ┣ 📂 UserPicture
-
-**❌ Bad:**
-
-┃ ┣ 📂 component \
-┃ ┃ ┣ 📂 UserProfile \
-┃ ┃ ┣ 📂 PersonalInfo \
-┃ ┃ ┣ 📂 UserPicture
-
 <a name="architecture-files"></a>
 
-#### 2.2 File Name
+### 2.1 File Name
 
 **✅ Good:**
 
@@ -137,6 +116,47 @@ The proper architecture for projects, and how to create and name files and folde
 - `UserProfile/UserProfile.mdx`
 
 **[⬆ back to summary](#summary)**
+
+<a name="architecture-folder"></a>
+
+### 2.2 Folder Architecture
+
+#### Global Components/Helpers
+
+Global Components should only be components used in more than one place.
+
+For example:
+
+```sh
+┣ 📂 src/components \
+┣ ┣ 📂 component \
+┣ ┃ ┣ 📜 index.js
+┣ ┃ ┣ 📜 styles.js
+┣ ┃ ┣ 📜 index.spec.js
+┣ ┃ ┣ 📜 index.stories.mdx
+
+```
+
+#### Scoped Components/Helpers
+
+We need to add inside `pages/**/components`, for example, all components that is need used just a context or scope, like a components that be used just a some place or specific page.
+
+If we need to used the component again in another context or page it need to be moved to `src/components`.
+
+For example:
+
+```sh
+┣ 📂 pages \
+┣ ┣ 📂 Home \
+┣ ┃ ┣ 📜 Home.js \
+┣ ┃ ┣ 📜 Home.style.js \
+┣ ┃ ┣ 📜 Home.spec.js \
+┣ ┃ ┣ 📂 components \
+┣ ┃ ┃ ┣ 📂 UserProfile \
+┣ ┣ ┃ ┃ ┣ 📜 UserProfile.style.js \
+┣ ┣ ┃ ┃ ┣ 📜 UserProfile.spec.js \
+┣ ┣ ┃ ┃ ┣ 📜 UserProfile.stories.mdx \
+```
 
 ---
 
