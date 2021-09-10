@@ -446,16 +446,46 @@ keep the media queries as close to their relevant rule sets whenever possible.
 ## 4. Javascript
 
 - 4.1. [Javascript Code Syntax](#javascript-syntax)
-  - 4.1.1. [Variables](#variables) <br>
-  - 4.1.2. [Descriptive validations (if)](#descriptive-validations) <br>
+- 4.2. [Variables](#variables) <br>
+- 4.3. [Descriptive validations (if)](#descriptive-validations) <br>
 
 <a name="javascript-syntax"></a>
 
 ### 4.1. Javascript Code Syntax
 
+Never use semicolons.
+
+**✅ Good:**
+```js 
+const foo = 'bar'
+const baz = 'qux'
+const func = () => {}
+```
+
+**❌ Bad:**
+```js
+const foo = 'bar';
+const baz = 'qux';
+const func = () => {};
+```
+
+Always use single quotes or template literals
+
+**✅ Good:**
+```js 
+const string = 'foo'
+const template = `foo`
+```
+
+**❌ Bad:**
+```js
+const string = "foo"
+const template = "foo"
+```
+
 <a name="variables"></a>
 
-#### 4.1.1. Variables
+#### 4.2. Variables
 
 Use meaningful, pronounceable, and in **English** variable names.
 
@@ -471,7 +501,7 @@ const xpto = new Date().toLocaleDateString('pt-BR')
 
 <a name="descriptive-validations"></a>
 
-#### 4.1.2. Descriptive validations (if)
+#### 4.3. Descriptive validations (if)
 
 Creating const to describe validations.
 
