@@ -759,9 +759,58 @@ return (
 )
 ```
 
+### 7.4. Readable components
+
+Avoid creating very large components.
+If possible divided into sub-components, improving the understanding and reading of the code.
+
+**✅ Good:**
+
+```js
+const Screen = () => (
+  <Container>
+    <Header>
+      <Title />
+      <Button background="black">Filtro</Button>
+    </Header>
+
+    <Main>
+      <List>
+        {data.map((item) => (
+          <Card key={item.id} name={item.name} />
+        ))}
+      </List>
+    </Main>
+  </Container>
+)
+```
+
+**❌ Bad:**
+
+```js
+const Screen = () => (
+  <Box padding={1}>
+    <Box alignItems="center">
+      <Text>Titulo</Text>
+      <Button background="black">Filtro</Button>
+    </Box>
+    <Box marginTop={5}>
+      <Box>
+        {data.map((item) => (
+          <Box key={item.id}>
+            <Text color="red">{item.name}</Text>
+          </Box>
+        ))}
+      </Box>
+    </Box>
+  </Box>
+)
+```
+
 **[⬆ back to summary](#summary)**
 
 ---
+
 <a name="vue"></a>
 
 ## 8. Vue
