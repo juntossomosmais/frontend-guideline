@@ -25,7 +25,8 @@ As this is a live document, some rules may not have been applied in old projects
 5. [CSS](#css)
 6. [JavaScript](#javascript)
 7. [React](#react)
-8. [Storybook](#storybook)
+8. [Vue](#vue)
+9. [Storybook](#storybook)
 
 ---
 
@@ -761,16 +762,69 @@ return (
 **[⬆ back to summary](#summary)**
 
 ---
+<a name="vue"></a>
+
+## 8. Vue
+
+#### 8.1. Keys in lists
+
+The best way to pick a key is to use a string that uniquely identifies a list item among its siblings.
+
+It is not recommended to use indexes for keys if the order of items can change. This can negatively affect performance and can cause problems with the component's state.
+
+**✅ Good:**
+
+```html
+<template v-for="item in items">
+   <Component :key="item.id" v-bind="{...item}">
+</template>
+```
+
+**❌ Bad:**
+
+```html
+<template v-for="(item, index) in items">
+   <Component :key="index" v-bind="{...item}">
+</template>
+```
+
+### 8.2 Use Computed for real time updates
+
+If you need listen changes at data use computeds instead of methods
+
+**✅ Good:**
+
+```js
+computed: {
+  fullName(){
+    return `${this.name} ${this.lastName}`
+  }
+}
+```
+
+**❌ Bad:**
+
+```js
+methods: {
+  fullName() {
+    this.fullName = `${this.name} ${this.lastName}`
+  }
+}
+```
+
+**[⬆ back to summary](#summary)**
+
+---
 
 <a name="storybook"></a>
 
-## 8. Storybook
+## 9. Storybook
 
-- 8.1. [Story file](#storybook-file-name)
+- 9.1. [Story file](#storybook-file-name)
 
 <a name="storybook-file-name"></a>
 
-#### 8.1 Story file
+#### 9.1 Story file
 
 Create a file with the same name of your component, or index, and with the suffix `.stories.mdx`.
 
