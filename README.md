@@ -24,7 +24,8 @@ As this is a live document, some rules may not have been applied in old projects
 4. [HTML](#html)
 5. [CSS](#css)
 6. [JavaScript](#javascript)
-7. [Storybook](#storybook)
+7. [React](#react)
+8. [Storybook](#storybook)
 
 ---
 
@@ -66,21 +67,21 @@ const obj = {
 
 ```js
 const obj = {
-    prop: "value",
-    prop2: "value2",
-    prop3: "value3",
+  prop: "value",
+  prop2: "value2",
+  prop3: "value3",
 }
 ```
 
 ```css
 .foo {
-    color: red;
+  color: red;
 }
 ```
 
 ```html
 <div>
-    <p>Hello World</p>
+  <p>Hello World</p>
 </div>
 ```
 
@@ -654,15 +655,122 @@ if (user.firstName && user.lastname) {
 
 ---
 
+<a name="react"></a>
+
+## 7. React
+
+#### 7.1. Keys in lists
+
+The best way to pick a key is to use a string that uniquely identifies a list item among its siblings.
+
+It is not recommended to use indexes for keys if the order of items can change. This can negatively affect performance and can cause problems with the component's state.
+
+**✅ Good:**
+
+```js
+array.map((item, index) => <Component key={item.id} {...item}>)
+```
+
+**❌ Bad:**
+
+```js
+array.map((item, index) => <Component key={index} {...item}>)
+```
+
+### 7.2 useState functional updates
+
+If the new state is calculated using the previous state, you can pass a function to setState. Thus avoiding competition between states and preventing possible bugs.
+
+**✅ Good:**
+
+```js
+const [number, setNumber] = useState(1)
+
+return (
+  <div>
+    <h1>{number}</h1>
+    <button onClick={() => setNumber((prevNumber) => prevNumber + 1)}>
+      Increase
+    </button>
+    <button onClick={() => setNumber((prevNumber) => prevNumber - 1)}>
+      Decrease
+    </button>
+  </div>
+)
+```
+
+**❌ Bad:**
+
+```js
+const [number, setNumber] = useState(1)
+
+return (
+  <div>
+    <h1>{number}</h1>
+    <button onClick={() => setNumber(number + 1)}>Increase</button>
+    <button onClick={() => setNumber(number - 1}>Decrease</button>
+  </div>
+)
+```
+
+### 7.3. useEffect dependencies array
+
+Use the useEffect dependency array to trigger side effects, and make your code cleaner.
+
+**✅ Good:**
+
+```js
+const [page, setPage] = useState(1)
+
+useEffect(() => {
+  requestListUser()
+  // calls useEffect when page state changes
+}, [page])
+
+return (
+  <div>
+    <button onClick={() => setPage((prevState) => prevState + 1)}>
+      Next Page
+    </button>
+  </div>
+)
+```
+
+**❌ Bad:**
+
+```js
+const [page, setPage] = useState(1)
+
+useEffect(() => {
+  requestListUser()
+}, [])
+
+const requestListUser = () => {
+  setPage((prevState) => prevState + 1)
+  // ...
+  // any code to return user list
+}
+
+return (
+  <div>
+    <button onClick={() => requestListUser()}>Next Page</button>
+  </div>
+)
+```
+
+**[⬆ back to summary](#summary)**
+
+---
+
 <a name="storybook"></a>
 
-## 7. Storybook
+## 8. Storybook
 
-- 5.1. [Story file](#storybook-file-name)
+- 8.1. [Story file](#storybook-file-name)
 
 <a name="storybook-file-name"></a>
 
-#### 7.1 Story file
+#### 8.1 Story file
 
 Create a file with the same name of your component, or index, and with the suffix `.stories.mdx`.
 
