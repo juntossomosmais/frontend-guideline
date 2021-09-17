@@ -1,6 +1,6 @@
 ![juntos-somos-devs](https://user-images.githubusercontent.com/3603793/131751022-fda4146c-9ada-4ad0-82fc-d8f0a73acd3f.png)
 
-# Front-end - Guidelines
+# Front-end - Guideline
 
 <a href="https://juntossomosmais.github.io/frontend-guideline/" target="_blank">Guideline Webpage</a>
 
