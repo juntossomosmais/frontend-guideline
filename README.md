@@ -610,7 +610,7 @@ if (foo == "foo") {
 }
 ```
 
-#### 6.2 Variables
+### 6.2 Variables
 
 Use meaningful, pronounceable, and in **English** variable names.
 
@@ -628,7 +628,7 @@ const xpto = new Date().toLocaleDateString("pt-BR")
 
 <a name="descriptive-validations"></a>
 
-#### 6.3 Descriptive validations (if)
+### 6.3 Descriptive validations (if)
 
 Creating const to describe validations.
 
@@ -665,7 +665,7 @@ if (user.firstName && user.lastname) {
 
 <a name="keys-in-lists-react"></a>
 
-#### 7.1 Keys in lists
+### 7.1 Keys in lists
 
 The best way to pick a key is to use a string that uniquely identifies a list item among its siblings.
 
@@ -831,7 +831,7 @@ const Screen = () => (
 
 <a name="keys-in-lists-vue"></a>
 
-#### 8.1 Keys in lists
+### 8.1 Keys in lists
 
 The best way to pick a key is to use a string that uniquely identifies a list item among its siblings.
 
@@ -891,7 +891,7 @@ methods: {
 
 <a name="storybook-file-name"></a>
 
-#### 9.1 Story file
+### 9.1 Story file
 
 Create a file with the same name of your component, or index, and with the suffix `.stories.mdx`.
 
