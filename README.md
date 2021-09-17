@@ -34,11 +34,11 @@ As this is a live document, some rules may not have been applied in old projects
 
 ## 1. General Code Patterns
 
-- 1.1. [Code Syntax](#code-syntax) <br>
+- 1.1 [Code Syntax](#code-syntax) <br>
 
 <a name="code-syntax"></a>
 
-### 1.1. Code Syntax
+### 1.1 Code Syntax
 
 Use soft tabs with two spaces. You need to configure your editor for this.
 
@@ -166,11 +166,11 @@ For example:
 
 ## 3. Git
 
-- 3.1. [Commit Messages](#commit-messages) <br>
+- 3.1 [Commit Messages](#commit-messages) <br>
 
 <a name="commit-messages"></a>
 
-### 3.1. Commit Messages
+### 3.1 Commit Messages
 
 In order to facilitate the contribution of anyone in a project, all commit messages must be in **English**.
 
@@ -202,7 +202,7 @@ git commit -m "Add placeholder on input"
 
 We main reference for HTML good patterns is [W3C](https://www.w3.org/TR/html/) and [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element), behind these docs we could learn a lot with semantic and another good practices.
 
-- 4.1. [HTML Component Scope](#html-component-scope)
+- 4.1 [HTML Component Scope](#html-component-scope)
 
 <a name="html-component-scope"></a>
 
@@ -226,21 +226,19 @@ We don't guest the scope of HTML components inside page, so when we start a new 
 </div>
 ```
 
-### 5.1. CSS Syntax
-
 ## 5. CSS
 
 The tips above could be used in any CSS framework or preprocessor, like SCSS, Styled Components and etc
 
-- 4.1. [CSS Code Syntax](#css-syntax)
-- 4.2. [CSS Declaration Order](#css-order)
-- 4.3. [CSS Class Names](#css-class-name)
-- 4.4. [CSS Good Practices](#css-good-practices)
-- 4.5. [CSS Media Queries](#css-media-queries)
+- 5.1 [CSS Code Syntax](#css-syntax)
+- 5.2 [CSS Declaration Order](#css-order)
+- 5.3 [CSS Class Names](#css-class-name)
+- 5.4 [CSS Good Practices](#css-good-practices)
+- 5.5 [CSS Media Queries](#css-media-queries)
 
 <a name="css-syntax"></a>
 
-### 5.1. CSS Syntax
+### 5.1 CSS Syntax
 
 Keep one declaration per line.
 
@@ -309,7 +307,7 @@ Use lowercase and avoid specifying units is zero-values.
 
 <a name="css-order"></a>
 
-### 5.2. CSS Declaration Order
+### 5.2 CSS Declaration Order
 
 The declarations should be added in alphabetical order.
 
@@ -345,7 +343,7 @@ The declarations should be added in alphabetical order.
 
 <a name="css-class-name"></a>
 
-### 5.3. CSS Class Names
+### 5.3 CSS Class Names
 
 Keep class lowercase and use dashes to separate the classname.
 
@@ -425,7 +423,7 @@ Avoid giving too short names for class and always choose meaningful names that p
 
 <a name="css-good-practices"></a>
 
-### 5.4. CSS Good Practices
+### 5.4 CSS Good Practices
 
 Avoid use values like colors, spacing and etc directly in the elements, use variables instead, and it can be CSS variables or some preprocessor variables, always check the context.
 
@@ -550,13 +548,13 @@ keep the media queries as close to their relevant rule sets whenever possible.
 
 ## 6. JavaScript
 
-- 5.1. [Javascript Code Syntax](#javascript-syntax)
-- 5.2. [Variables](#variables) <br>
-- 5.3. [Descriptive validations (if)](#descriptive-validations) <br>
+- 6.1 [Javascript Code Syntax](#javascript-syntax)
+- 6.2 [Variables](#variables) <br>
+- 6.3 [Descriptive validations (if)](#descriptive-validations) <br>
 
 <a name="javascript-syntax"></a>
 
-### 6.1. JavaScript Code Syntax
+### 6.1 JavaScript Code Syntax
 
 Never use semicolons.
 
@@ -612,7 +610,7 @@ if (foo == "foo") {
 }
 ```
 
-#### 6.2. Variables
+#### 6.2 Variables
 
 Use meaningful, pronounceable, and in **English** variable names.
 
@@ -630,7 +628,7 @@ const xpto = new Date().toLocaleDateString("pt-BR")
 
 <a name="descriptive-validations"></a>
 
-#### 6.3. Descriptive validations (if)
+#### 6.3 Descriptive validations (if)
 
 Creating const to describe validations.
 
@@ -660,7 +658,14 @@ if (user.firstName && user.lastname) {
 
 ## 7. React
 
-#### 7.1. Keys in lists
+- 7.1 [Keys in lists](#keys-in-lists-react)
+- 7.2 [useState functional updates](#usestate-functional-updates) <br>
+- 7.3 [useEffect dependencies array](#useeffect-dependencies-array) <br>
+- 7.4 [Readable components](#readable-components) <br>
+
+<a name="keys-in-lists-react"></a>
+
+#### 7.1 Keys in lists
 
 The best way to pick a key is to use a string that uniquely identifies a list item among its siblings.
 
@@ -677,6 +682,8 @@ array.map((item, index) => <Component key={item.id} {...item}>)
 ```js
 array.map((item, index) => <Component key={index} {...item}>)
 ```
+
+<a name="usestate-functional-updates"></a>
 
 ### 7.2 useState functional updates
 
@@ -714,7 +721,9 @@ return (
 )
 ```
 
-### 7.3. useEffect dependencies array
+<a name="useeffect-dependencies-array"></a>
+
+### 7.3 useEffect dependencies array
 
 Use the useEffect dependency array to trigger side effects, and make your code cleaner.
 
@@ -759,7 +768,9 @@ return (
 )
 ```
 
-### 7.4. Readable components
+<a name="readable-components"></a>
+
+### 7.4 Readable components
 
 Avoid creating very large components.
 If possible divided into sub-components, improving the understanding and reading of the code.
@@ -771,7 +782,7 @@ const Screen = () => (
   <Container>
     <Header>
       <Title />
-      <Button background="black">Filtro</Button>
+      <Button background="black">Filter</Button>
     </Header>
 
     <Main>
@@ -792,7 +803,7 @@ const Screen = () => (
   <Box padding={1}>
     <Box alignItems="center">
       <Text>Titulo</Text>
-      <Button background="black">Filtro</Button>
+      <Button background="black">Filter</Button>
     </Box>
     <Box marginTop={5}>
       <Box>
@@ -815,7 +826,12 @@ const Screen = () => (
 
 ## 8. Vue
 
-#### 8.1. Keys in lists
+- 8.1 [Keys in lists](#keys-in-lists-vue)
+- 8.2 [Use Computed for real time updates](#use-computed-for-real-time-updates) <br>
+
+<a name="keys-in-lists-vue"></a>
+
+#### 8.1 Keys in lists
 
 The best way to pick a key is to use a string that uniquely identifies a list item among its siblings.
 
@@ -836,6 +852,8 @@ It is not recommended to use indexes for keys if the order of items can change. 
    <Component :key="index" v-bind="{...item}">
 </template>
 ```
+
+<a name="use-computed-for-real-time-updates"></a>
 
 ### 8.2 Use Computed for real time updates
 
@@ -869,7 +887,7 @@ methods: {
 
 ## 9. Storybook
 
-- 9.1. [Story file](#storybook-file-name)
+- 9.1 [Story file](#storybook-file-name)
 
 <a name="storybook-file-name"></a>
 
