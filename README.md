@@ -569,9 +569,9 @@ const func = () => {}
 **❌ Bad:**
 
 ```js
-const foo = "bar"
-const baz = "qux"
-const func = () => {}
+const foo = "bar";
+const baz = "qux";
+const func = () => {};
 ```
 
 Always use single quotes or template literals
