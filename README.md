@@ -590,7 +590,7 @@ Always use single quotes or template literals
 **✅ Good:**
 
 ```js
-const string = "foo"
+const string = 'foo'
 const template = `foo`
 ```
 
