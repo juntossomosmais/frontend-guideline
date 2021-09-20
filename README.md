@@ -4,6 +4,7 @@
 
 <a href="https://juntossomosmais.github.io/frontend-guideline/" target="_blank">Guideline Webpage</a>
 
+[![GitHub contributors](https://img.shields.io/badge/ghpages-online-brightgreen.svg)](https://juntossomosmais.github.io/frontend-guideline/)
 [![GitHub contributors](https://img.shields.io/github/contributors/juntossomosmais/frontend-guideline.svg)](https://github.com/juntossomosmais/frontend-guideline/graphs/contributors)
 
 > "Every line of code should appear to be written by a single person, no matter the number of contributors." - Chinese Proverb.
