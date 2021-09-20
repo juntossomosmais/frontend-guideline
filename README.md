@@ -585,7 +585,7 @@ const baz = "qux";
 const func = () => {};
 ```
 
-Always use single quotes or template literals
+Always use double quotes or template literals
 
 **✅ Good:**
 
