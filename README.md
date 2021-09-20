@@ -226,6 +226,8 @@ We don't guest the scope of HTML components inside page, so when we start a new 
 </div>
 ```
 
+<a name="css"></a>
+
 ## 5. CSS
 
 The tips above could be used in any CSS framework or preprocessor, like SCSS, Styled Components and etc
