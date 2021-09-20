@@ -15,6 +15,14 @@ The idea of this repository is not to be a complete guideline, the target is jus
 
 As this is a live document, some rules may not have been applied in old projects and changes can occur at any time.
 
+## We are hiring! 🔥 
+
+If you are looking opportunities as Front-end Developer we are hiring!
+
+You can [check all our job opportunities](https://juntossomosmais.gupy.io/) and apply if you like it 😁
+
+This is our [Front-end Challenge](https://github.com/juntossomosmais/frontend-challenge)
+
 <a name="summary"></a>
 
 ## 📖 Summary
