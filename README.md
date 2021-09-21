@@ -839,6 +839,8 @@ const Screen = () => (
 
 - 8.1 [Keys in lists](#keys-in-lists-vue)
 - 8.2 [Use Computed for real time updates](#use-computed-for-real-time-updates) <br>
+- 8.3 [Multi-word component names](#multi-word-component-names) <br>
+- 8.4 [Prop definitions](#prop-definition) <br>
 
 <a name="keys-in-lists-vue"></a>
 
@@ -887,6 +889,59 @@ methods: {
   fullName() {
     this.fullName = `${this.name} ${this.lastName}`
   }
+}
+```
+
+<a name="multi-word-component-names"></a>
+
+### 8.3 Multi-word component names
+
+Component names should always be multi-word, except for root App components, and built-in components provided by Vue.
+
+This prevents conflicts with existing and future HTML elements, since all HTML elements are a single word.
+
+**✅ Good:**
+
+```js
+export default {
+  name: 'TodoItem',
+  // ...
+}
+```
+
+**❌ Bad:**
+
+```js
+export default {
+  name: 'Todo',
+  // ...
+}
+```
+
+<a name="prop-definition"></a>
+
+### 8.4 Prop definitions
+
+In committed code, prop definitions should always be as detailed as possible, specifying at least type(s).
+
+**✅ Good:**
+
+```js
+export default {
+  status: {
+    type: String,
+    required: true
+  }
+  // ...
+}
+```
+
+**❌ Bad:**
+
+```js
+export default {
+  props: ['status']
+  // ...
 }
 ```
 
