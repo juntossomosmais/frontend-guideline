@@ -892,6 +892,32 @@ methods: {
 }
 ```
 
+<a name="multi-word-component-names"></a>
+
+### 8.3 Multi-word component names
+
+Component names should always be multi-word, except for root App components, and built-in components provided by Vue.
+
+This prevents conflicts with existing and future HTML elements, since all HTML elements are a single word.
+
+**✅ Good:**
+
+```js
+export default {
+  name: 'TodoItem',
+  // ...
+}
+```
+
+**❌ Bad:**
+
+```js
+export default {
+  name: 'Todo',
+  // ...
+}
+```
+
 <a name="prop-definition"></a>
 
 ### 8.4 Prop definitions
@@ -915,32 +941,6 @@ export default {
 ```js
 export default {
   props: ['status']
-  // ...
-}
-```
-
-<a name="multi-word-component-names"></a>
-
-### 8.3 Multi-word component names
-
-Component names should always be multi-word, except for root App components, and built-in components provided by Vue.
-
-This prevents conflicts with existing and future HTML elements, since all HTML elements are a single word.
-
-**✅ Good:**
-
-```js
-export default {
-  name: 'TodoItem',
-  // ...
-}
-```
-
-**❌ Bad:**
-
-```js
-export default {
-  name: 'Todo',
   // ...
 }
 ```
