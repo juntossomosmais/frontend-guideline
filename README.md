@@ -841,6 +841,7 @@ const Screen = () => (
 - 8.2 [Use Computed for real time updates](#use-computed-for-real-time-updates) <br>
 - 8.3 [Multi-word component names](#multi-word-component-names) <br>
 - 8.4 [Prop definitions](#prop-definition) <br>
+- 8.5 [Vue property decorator](#vue-property-decorator) <br>
 
 <a name="keys-in-lists-vue"></a>
 
