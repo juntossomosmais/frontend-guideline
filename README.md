@@ -841,6 +841,7 @@ const Screen = () => (
 - 8.2 [Use Computed for real time updates](#use-computed-for-real-time-updates) <br>
 - 8.3 [Multi-word component names](#multi-word-component-names) <br>
 - 8.4 [Prop definitions](#prop-definition) <br>
+- 8.5 [Vue property decorator](#vue-property-decorator) <br>
 
 <a name="keys-in-lists-vue"></a>
 
@@ -943,6 +944,37 @@ export default {
   props: ['status']
   // ...
 }
+```
+
+<a name="vue-property-decorator"></a>
+
+### 8.5 Vue property decorator
+
+Vue prop decorator should not be used, use Vue.extend instead
+
+**✅ Good:**
+
+```js
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
+  name: 'MyComponent',
+})
+</script>
+```
+
+**❌ Bad:**
+
+```js
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator'
+
+@Component({})
+export default class MyComponent extends Vue {
+  name: 'MyComponent'
+}
+</script>
 ```
 
 **[⬆ back to summary](#summary)**
