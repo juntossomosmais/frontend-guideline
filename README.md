@@ -562,6 +562,7 @@ keep the media queries as close to their relevant rule sets whenever possible.
 - 6.1 [Javascript Code Syntax](#javascript-syntax)
 - 6.2 [Variables](#variables) <br>
 - 6.3 [Descriptive validations (if)](#descriptive-validations) <br>
+- 6.4 [Avoid multiple ff's](#avoid-multiple-ifs) <br>
 
 <a name="javascript-syntax"></a>
 
@@ -658,6 +659,48 @@ if (hasFullUserName) {
 ```js
 if (user.firstName && user.lastname) {
   //do something
+}
+```
+
+### 6.4 Avoid multiple if's
+
+Use an execution map instead a multiple if validations.
+
+**✅ Good:**
+
+```js
+const messagingChannels = {
+  whatspp: (message) => {
+    // send message to whatspp
+  },
+  email: (message) => {
+    // send message to email
+  }
+}
+
+const sendMessage = (message, channel) => {
+  const send = messagingChannels[channel];
+  return send && send(message);
+}
+```
+
+**❌ Bad:**
+
+```js
+const sendWhatsapp = (message) => {
+  // send message to whatsapp
+}
+
+const sendEmail = (message) => {
+  // send message to email
+}
+
+const sendMessage = (message, channel) => {
+  if (channel === 'whatsapp') {
+    sendWhatspp(message)
+  } else if (channel === 'email') {
+    sendEmail(message)
+  }
 }
 ```
 
