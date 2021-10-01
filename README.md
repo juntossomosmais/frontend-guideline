@@ -562,7 +562,7 @@ keep the media queries as close to their relevant rule sets whenever possible.
 - 6.1 [Javascript Code Syntax](#javascript-syntax)
 - 6.2 [Variables](#variables) <br>
 - 6.3 [Descriptive validations (if)](#descriptive-validations) <br>
-- 6.4 [Avoid multiple ff's](#avoid-multiple-ifs) <br>
+- 6.4 [Avoid multiple if's](#avoid-multiple-ifs) <br>
 
 <a name="javascript-syntax"></a>
 
