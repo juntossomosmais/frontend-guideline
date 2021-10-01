@@ -697,7 +697,7 @@ const sendEmail = (message) => {
 
 const sendMessage = (message, channel) => {
   if (channel === 'whatsapp') {
-    sendWhatspp(message)
+    sendWhatsapp(message)
   } else if (channel === 'email') {
     sendEmail(message)
   }
