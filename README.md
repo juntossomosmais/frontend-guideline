@@ -670,8 +670,8 @@ Use an execution map instead a multiple if validations.
 
 ```js
 const messagingChannels = {
-  whatspp: (message) => {
-    // send message to whatspp
+  whatsapp: (message) => {
+    // send message to whatsapp
   },
   email: (message) => {
     // send message to email
