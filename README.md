@@ -662,6 +662,8 @@ if (user.firstName && user.lastname) {
 }
 ```
 
+<a name="avoid-multiple-ifs"></a>
+
 ### 6.4 Avoid multiple if's
 
 Use an execution map instead a multiple if validations.
