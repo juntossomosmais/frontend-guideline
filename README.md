@@ -36,6 +36,7 @@ This is our [Front-end Challenge](https://github.com/juntossomosmais/frontend-ch
 7. [React](#react)
 8. [Vue](#vue)
 9. [Storybook](#storybook)
+10. [Testing](#testing)
 
 ---
 
@@ -1047,6 +1048,36 @@ Create a file with the same name of your component, or index, and with the suffi
 
 - Input.mdx
 - Dialog/index.mdx
+
+**[⬆ back to summary](#summary)**
+
+---
+
+## 10. Testing
+
+- 10.1 [Write tests with "it"](#tests-with-it)
+
+<a name="tests-with-it"></a>
+
+### 10.1 Write tests with "it"
+
+Write tests with the alias "it" instead "test" method.
+
+**✅ Good:**
+
+```js
+describe('yourModule', () => {
+  it('should do this thing', () => {});
+});
+```
+
+**❌ Bad:**
+
+```js
+describe('yourModule', () => {
+  test('if it does this thing', () => {});
+});
+```
 
 **[⬆ back to summary](#summary)**
 
