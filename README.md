@@ -36,6 +36,7 @@ This is our [Front-end Challenge](https://github.com/juntossomosmais/frontend-ch
 7. [React](#react)
 8. [Vue](#vue)
 9. [Storybook](#storybook)
+10. [Testing](#testing)
 
 ---
 
