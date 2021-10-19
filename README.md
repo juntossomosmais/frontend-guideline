@@ -1053,6 +1053,8 @@ Create a file with the same name of your component, or index, and with the suffi
 
 ---
 
+<a name="testing"></a>
+
 ## 10. Testing
 
 - 10.1 [Write tests with "it"](#tests-with-it)
