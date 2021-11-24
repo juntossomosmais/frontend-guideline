@@ -1058,6 +1058,8 @@ Create a file with the same name of your component, or index, and with the suffi
 ## 10. Testing
 
 - 10.1 [Write tests with "it"](#tests-with-it)
+- 10.2 [Using test-id](#test-id)
+- 10.3 [Selecing component](#select-component)
 
 <a name="tests-with-it"></a>
 
@@ -1080,6 +1082,48 @@ describe('yourModule', () => {
   test('if it does this thing', () => {});
 });
 ```
+
+
+<a name="test-id"></a>
+
+### 10.2 Using test-id
+To get components during tests we use `test-id` custom html attributes with unique id and our own convention deeply inpired by the css's BEM.
+To define the `test-id` to a component use the follow structure: `[page-name||component-name]__[element-type]--[type]`
+
+**✅ Good:**
+ * forgot-password__input--email
+ * header__select--cnpjList 
+ * login__button--forgot-password
+
+**❌ Bad:**
+ * forgot-email-input
+ * header__cnpjList 
+ * button--forgot-password
+
+
+
+<a name="select-component"></a>
+### 10.3 Selecing component
+To select a component in order to test a behavior of to trigger any event we must use ou `test-id` attribute to select it.
+
+**✅ Good:**
+```js
+describe('yourModule', () => {
+  it('should do trigger click event', () => {
+    const button = wrapper.find('[data-testid="login__button--forgot-password"]')
+  });
+});
+```
+
+**❌ Bad:**
+```js
+describe('yourModule', () => {
+  it('should do trigger click event', () => {
+    const button = wrapper.find('button.btn-primary')
+  });
+});
+```
+
 
 **[⬆ back to summary](#summary)**
 
