@@ -15,7 +15,7 @@ The idea of this repository is not to be a complete guideline, the target is jus
 
 As this is a live document, some rules may not have been applied in old projects and changes can occur at any time.
 
-## We are hiring! 🔥 
+## We are hiring! 🔥
 
 If you are looking opportunities as Front-end Developer we are hiring!
 
@@ -888,6 +888,7 @@ const Screen = () => (
 - 8.3 [Multi-word component names](#multi-word-component-names) <br>
 - 8.4 [Prop definitions](#prop-definition) <br>
 - 8.5 [Vue property decorator](#vue-property-decorator) <br>
+- 8.6 [VUEX](#86-vuex) <br>
 
 <a name="keys-in-lists-vue"></a>
 
@@ -1023,6 +1024,53 @@ export default class MyComponent extends Vue {
 </script>
 ```
 
+### 8.6 Vuex
+
+Basically, vuex is like a "middleware" it is responsible for being the intermediary between the API and the Components.
+
+`API => Vuex => Components`
+
+![Modelo](./assets/image/modelos.png)
+
+#### VUEX attributes
+
+- state:{} - controls the state;
+- mutations:{} - change the state;
+- actions:{} - actions within a given context;
+- modules:{} - single divisions that contain `states, mutations and actions` watch out for certain modules
+
+#### Logical order of vuex
+
+![Modulo](./assets/image/logic_order.png)
+
+An **ACTION** must call a **MUTATION** to change a **STATE**;
+
+- **mutations** are synchronous functions, that is, when the system is triggered, it has to wait for the mutation to finish.
+
+- **action** are asynchronous, `async` functions that can be executed and don't need to wait for them to finish.
+
+It is not mandatory to use action together with mutation. Action is used when you need a promise, usually when you make a request to the API or any task that requires the use of a promise.
+
+VUE 2: $store -> access to vuex.
+VUE 3: store -> access to vuex.
+
+anything that changes in vuex will be `'replicated'` in components.
+
+to call an **action** use `store.dispatch`
+to call a **mutation** use `store.commit`
+
+An action receives as a parameter a `context` and a `payload`.
+
+A mutation takes a `state` and a `payload` as a parameter.
+
+If there is a repetition in the flow of using an action for a mutation, it must be analyzed whether the use of the action is necessary, and the mutation cannot be used directly.
+
+#### Strict Mode
+
+When stric mode is true inside the store, it won't allow changing states without passing mutations.
+
+The computed is natively where the getters and setters will be
+
 **[⬆ back to summary](#summary)**
 
 ---
@@ -1083,30 +1131,33 @@ describe('yourModule', () => {
 });
 ```
 
-
 <a name="test-id"></a>
 
 ### 10.2 Using test-id
+
 To get components during tests we use `test-id` custom html attributes with unique id and our own convention deeply inpired by the css's BEM.
 To define the `test-id` to a component use the follow structure: `[page-name||component-name]__[element-type]--[type]`
 
 **✅ Good:**
- * forgot-password__input--email
- * header__select--cnpjList 
- * login__button--forgot-password
+
+- forgot-password__input--email
+- header__select--cnpjList
+- login__button--forgot-password
 
 **❌ Bad:**
- * forgot-email-input
- * header__cnpjList 
- * button--forgot-password
 
-
+- forgot-email-input
+- header__cnpjList
+- button--forgot-password
 
 <a name="select-component"></a>
+
 ### 10.3 Selecing component
+
 To select a component in order to test a behavior of to trigger any event we must use ou `test-id` attribute to select it.
 
 **✅ Good:**
+
 ```js
 describe('yourModule', () => {
   it('should do trigger click event', () => {
@@ -1116,6 +1167,7 @@ describe('yourModule', () => {
 ```
 
 **❌ Bad:**
+
 ```js
 describe('yourModule', () => {
   it('should do trigger click event', () => {
@@ -1123,7 +1175,6 @@ describe('yourModule', () => {
   });
 });
 ```
-
 
 **[⬆ back to summary](#summary)**
 
