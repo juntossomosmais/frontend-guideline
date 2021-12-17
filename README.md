@@ -45,6 +45,7 @@ This is our [Front-end Challenge](https://github.com/juntossomosmais/frontend-ch
 ## 1. General Code Patterns
 
 - 1.1 [Code Syntax](#code-syntax) <br>
+- 1.2 [refactoring](#refactoring) <br>
 
 <a name="code-syntax"></a>
 
@@ -95,6 +96,8 @@ const obj = {
     <p>Hello World</p>
 </div>
 ```
+
+<a name="refactoring"></a>
 
 ### 1.2 Refactoring
 
