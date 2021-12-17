@@ -15,7 +15,7 @@ The idea of this repository is not to be a complete guideline, the target is jus
 
 As this is a live document, some rules may not have been applied in old projects and changes can occur at any time.
 
-## We are hiring! 🔥 
+## We are hiring! 🔥
 
 If you are looking opportunities as Front-end Developer we are hiring!
 
@@ -23,30 +23,24 @@ You can [check all our job opportunities](https://juntossomosmais.gupy.io/) and 
 
 This is our [Front-end Challenge](https://github.com/juntossomosmais/frontend-challenge)
 
-<a name="summary"></a>
-
 ## 📖 Summary
 
-1. [General Code Patterns](#general-patterns)
-2. [Architecture](#architecture)
-3. [Git](#git)
-4. [HTML](#html)
-5. [CSS](#css)
-6. [JavaScript](#javascript)
-7. [React](#react)
-8. [Vue](#vue)
-9. [Storybook](#storybook)
-10. [Testing](#testing)
+1. [General Code Patterns](#1-general-code-patterns)
+2. [Architecture](#2-architecture)
+3. [Git](#3-git)
+4. [HTML](#4-html)
+5. [CSS](#5-css)
+6. [JavaScript](#6-javascript)
+7. [React](#7-react)
+8. [Vue](#8-vue)
+9. [Storybook](#9-storybook)
+10. [Testing](#10-testing)
 
 ---
 
-<a name="general-patterns"></a>
-
 ## 1. General Code Patterns
 
-- 1.1 [Code Syntax](#code-syntax) <br>
-
-<a name="code-syntax"></a>
+- 1.1 [Code Syntax](#11-code-syntax)
 
 ### 1.1 Code Syntax
 
@@ -96,16 +90,12 @@ const obj = {
 </div>
 ```
 
-<a name="architecture"></a>
-
 ## 2. Architecture
 
 The proper architecture for projects, and how to create and name files and folders.
 
-- 2.1 [File Name](#architecture-files)
-- 2.2 [Folder Architecture](#architecture-folder)
-
-<a name="architecture-files"></a>
+- 2.1 [File Name](#21-file-name)
+- 2.2 [Folder Architecture](#22-folder-architecture)
 
 ### 2.1 File Name
 
@@ -168,7 +158,7 @@ For example:
 ┣ ┣ ┃ ┃ ┣ 📜 UserProfile.stories.mdx \
 ```
 
-**[⬆ back to summary](#summary)**
+**[⬆ back to summary](#-summary)**
 
 ---
 
@@ -176,9 +166,7 @@ For example:
 
 ## 3. Git
 
-- 3.1 [Commit Messages](#commit-messages) <br>
-
-<a name="commit-messages"></a>
+- 3.1 [Commit Messages](#31-commit-messages)
 
 ### 3.1 Commit Messages
 
@@ -200,21 +188,17 @@ git commit -m "feat(lang): add the Portuguese language"
 git commit -m "Add placeholder on input"
 ```
 
-**[⬆ back to summary](#summary)**
+**[⬆ back to summary](#-summary)**
 
 ---
 
-<a name="html"></a>
-
 ## 4. HTML
-
-<a name="html"></a>
 
 We main reference for HTML good patterns is [W3C](https://www.w3.org/TR/html/) and [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element), behind these docs we could learn a lot with semantic and another good practices.
 
-- 4.1 [HTML Component Scope](#html-component-scope)
+- 4.1 [HTML Component Scope](#41-html-component-scope)
 
-<a name="html-component-scope"></a>
+### 4.1 HTML Component Scope
 
 We don't guest the scope of HTML components inside page, so when we start a new component, we should use a semantic tag, like `section` or `article` for example, to be able to starting to use the heading tags by context.
 
@@ -236,19 +220,15 @@ We don't guest the scope of HTML components inside page, so when we start a new 
 </div>
 ```
 
-<a name="css"></a>
-
 ## 5. CSS
 
 The tips above could be used in any CSS framework or preprocessor, like SCSS, Styled Components and etc
 
-- 5.1 [CSS Code Syntax](#css-syntax)
-- 5.2 [CSS Declaration Order](#css-order)
-- 5.3 [CSS Class Names](#css-class-name)
-- 5.4 [CSS Good Practices](#css-good-practices)
-- 5.5 [CSS Media Queries](#css-media-queries)
-
-<a name="css-syntax"></a>
+- 5.1 [CSS Code Syntax](#51-css-syntax)
+- 5.2 [CSS Declaration Order](#52-css-declaration-order)
+- 5.3 [CSS Class Names](#53-css-class-names)
+- 5.4 [CSS Good Practices](#54-css-good-practices)
+- 5.5 [CSS Media Queries](#55-css-media-queries)
 
 ### 5.1 CSS Syntax
 
@@ -317,8 +297,6 @@ Use lowercase and avoid specifying units is zero-values.
 }
 ```
 
-<a name="css-order"></a>
-
 ### 5.2 CSS Declaration Order
 
 The declarations should be added in alphabetical order.
@@ -352,8 +330,6 @@ The declarations should be added in alphabetical order.
   display: flex;
 }
 ```
-
-<a name="css-class-name"></a>
 
 ### 5.3 CSS Class Names
 
@@ -433,8 +409,6 @@ Avoid giving too short names for class and always choose meaningful names that p
 .block { ... }
 ```
 
-<a name="css-good-practices"></a>
-
 ### 5.4 CSS Good Practices
 
 Avoid use values like colors, spacing and etc directly in the elements, use variables instead, and it can be CSS variables or some preprocessor variables, always check the context.
@@ -510,8 +484,6 @@ Avoid nesting elements, because it decrease performance and increase the specifi
 .navbar ul li a { ... }
 ```
 
-<a name="css-media-queries"></a>
-
 ### 5.5 CSS Media Queries
 
 Start the development with generic rules and add media queries inside scope using mobile first. Also is important
@@ -554,16 +526,14 @@ keep the media queries as close to their relevant rule sets whenever possible.
 }
 ```
 
-**[⬆ back to summary](#summary)**
-
-<a name="javascript"></a>
+**[⬆ back to summary](#-summary)**
 
 ## 6. JavaScript
 
-- 6.1 [Javascript Code Syntax](#javascript-syntax)
-- 6.2 [Variables](#variables) <br>
-- 6.3 [Descriptive validations (if)](#descriptive-validations) <br>
-- 6.4 [Avoid multiple if's](#avoid-multiple-ifs) <br>
+- 6.1 [Javascript Code Syntax](#61-javascript-syntax)
+- 6.2 [Variables](#62-variables)
+- 6.3 [Descriptive validations (if)](#63-descriptive-validations-if)
+- 6.4 [Avoid multiple if's](#64-avoid-multiple-ifs)
 
 <a name="javascript-syntax"></a>
 
@@ -707,20 +677,16 @@ const sendMessage = (message, channel) => {
 }
 ```
 
-**[⬆ back to summary](#summary)**
+**[⬆ back to summary](#-summary)**
 
 ---
 
-<a name="react"></a>
-
 ## 7. React
 
-- 7.1 [Keys in lists](#keys-in-lists-react)
-- 7.2 [useState functional updates](#usestate-functional-updates) <br>
-- 7.3 [useEffect dependencies array](#useeffect-dependencies-array) <br>
-- 7.4 [Readable components](#readable-components) <br>
-
-<a name="keys-in-lists-react"></a>
+- 7.1 [Keys in lists](#71-keys-in-lists)
+- 7.2 [useState functional updates](#72-usestate-functional-updates)
+- 7.3 [useEffect dependencies array](#73-useeffect-dependencies-array)
+- 7.4 [Readable components](#74-readable-components)
 
 ### 7.1 Keys in lists
 
@@ -739,8 +705,6 @@ array.map((item, index) => <Component key={item.id} {...item}>)
 ```js
 array.map((item, index) => <Component key={index} {...item}>)
 ```
-
-<a name="usestate-functional-updates"></a>
 
 ### 7.2 useState functional updates
 
@@ -777,8 +741,6 @@ return (
   </div>
 )
 ```
-
-<a name="useeffect-dependencies-array"></a>
 
 ### 7.3 useEffect dependencies array
 
@@ -824,8 +786,6 @@ return (
   </div>
 )
 ```
-
-<a name="readable-components"></a>
 
 ### 7.4 Readable components
 
@@ -875,21 +835,17 @@ const Screen = () => (
 )
 ```
 
-**[⬆ back to summary](#summary)**
+**[⬆ back to summary](#-summary)**
 
 ---
 
-<a name="vue"></a>
-
 ## 8. Vue
 
-- 8.1 [Keys in lists](#keys-in-lists-vue)
-- 8.2 [Use Computed for real time updates](#use-computed-for-real-time-updates) <br>
-- 8.3 [Multi-word component names](#multi-word-component-names) <br>
-- 8.4 [Prop definitions](#prop-definition) <br>
-- 8.5 [Vue property decorator](#vue-property-decorator) <br>
-
-<a name="keys-in-lists-vue"></a>
+- 8.1 [Keys in lists](#81-keys-in-lists)
+- 8.2 [Use Computed for real time updates](#82-use-computed-for-real-time-updates)
+- 8.3 [Multi-word component names](#83-multi-word-component-names)
+- 8.4 [Prop definitions](#84-prop-definitions)
+- 8.5 [Vue property decorator](#85-vue-property-decorator)
 
 ### 8.1 Keys in lists
 
@@ -912,8 +868,6 @@ It is not recommended to use indexes for keys if the order of items can change. 
    <Component :key="index" v-bind="{...item}">
 </template>
 ```
-
-<a name="use-computed-for-real-time-updates"></a>
 
 ### 8.2 Use Computed for real time updates
 
@@ -939,8 +893,6 @@ methods: {
 }
 ```
 
-<a name="multi-word-component-names"></a>
-
 ### 8.3 Multi-word component names
 
 Component names should always be multi-word, except for root App components, and built-in components provided by Vue.
@@ -964,8 +916,6 @@ export default {
   // ...
 }
 ```
-
-<a name="prop-definition"></a>
 
 ### 8.4 Prop definitions
 
@@ -991,8 +941,6 @@ export default {
   // ...
 }
 ```
-
-<a name="vue-property-decorator"></a>
 
 ### 8.5 Vue property decorator
 
@@ -1023,17 +971,13 @@ export default class MyComponent extends Vue {
 </script>
 ```
 
-**[⬆ back to summary](#summary)**
+**[⬆ back to summary](#-summary)**
 
 ---
 
-<a name="storybook"></a>
-
 ## 9. Storybook
 
-- 9.1 [Story file](#storybook-file-name)
-
-<a name="storybook-file-name"></a>
+- 9.1 [Story file](#91-storybook-file-name)
 
 ### 9.1 Story file
 
@@ -1049,19 +993,15 @@ Create a file with the same name of your component, or index, and with the suffi
 - Input.mdx
 - Dialog/index.mdx
 
-**[⬆ back to summary](#summary)**
+**[⬆ back to summary](#-summary)**
 
 ---
 
-<a name="testing"></a>
-
 ## 10. Testing
 
-- 10.1 [Write tests with "it"](#tests-with-it)
-- 10.2 [Using test-id](#test-id)
-- 10.3 [Selecing component](#select-component)
-
-<a name="tests-with-it"></a>
+- 10.1 [Write tests with "it"](#101-write-tests-with-it)
+- 10.2 [Using test-id](#102-using-test-id)
+- 10.3 [Selecing component](#103-selecing-component)
 
 ### 10.1 Write tests with "it"
 
@@ -1083,30 +1023,29 @@ describe('yourModule', () => {
 });
 ```
 
-
-<a name="test-id"></a>
-
 ### 10.2 Using test-id
+
 To get components during tests we use `test-id` custom html attributes with unique id and our own convention deeply inpired by the css's BEM.
 To define the `test-id` to a component use the follow structure: `[page-name||component-name]__[element-type]--[type]`
 
 **✅ Good:**
- * forgot-password__input--email
- * header__select--cnpjList 
- * login__button--forgot-password
+
+- forgot-password__input--email
+- header__select--cnpjList
+- login__button--forgot-password
 
 **❌ Bad:**
- * forgot-email-input
- * header__cnpjList 
- * button--forgot-password
 
+- forgot-email-input
+- header__cnpjList
+- button--forgot-password
 
-
-<a name="select-component"></a>
 ### 10.3 Selecing component
+
 To select a component in order to test a behavior of to trigger any event we must use ou `test-id` attribute to select it.
 
 **✅ Good:**
+
 ```js
 describe('yourModule', () => {
   it('should do trigger click event', () => {
@@ -1116,6 +1055,7 @@ describe('yourModule', () => {
 ```
 
 **❌ Bad:**
+
 ```js
 describe('yourModule', () => {
   it('should do trigger click event', () => {
@@ -1124,7 +1064,6 @@ describe('yourModule', () => {
 });
 ```
 
-
-**[⬆ back to summary](#summary)**
+**[⬆ back to summary](#-summary)**
 
 ---
