@@ -45,6 +45,7 @@ This is our [Front-end Challenge](https://github.com/juntossomosmais/frontend-ch
 ## 1. General Code Patterns
 
 - 1.1 [Code Syntax](#code-syntax) <br>
+- 1.2 [refactoring](#refactoring) <br>
 
 <a name="code-syntax"></a>
 
@@ -95,6 +96,20 @@ const obj = {
     <p>Hello World</p>
 </div>
 ```
+
+<a name="refactoring"></a>
+
+### 1.2 Refactoring
+
+Refactoring makes part of JSMLover's way of being, doing it every day and task by task. We have good practices and conditions to do that, though.
+
+```js
+if(!isWholeCodeCoveraged) return
+```
+- We can only refactor codes that have tests (and that tests!), which means 100% coverage! This way, we can improve or code safely. 
+
+- Keep the current tests and make them pass! 
+Once the current code is tested and can be refactored. We must make sure that the new changes will not break the current tests. 
 
 <a name="architecture"></a>
 
