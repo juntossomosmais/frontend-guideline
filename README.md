@@ -557,16 +557,16 @@ Never use semicolons.
 **✅ Good:**
 
 ```js
-const foo = "bar"
-const baz = "qux"
+const foo = 'bar'
+const baz = 'qux'
 const func = () => {}
 ```
 
 **❌ Bad:**
 
 ```js
-const foo = "bar";
-const baz = "qux";
+const foo = 'bar';
+const baz = 'qux';
 const func = () => {};
 ```
 
@@ -593,7 +593,7 @@ For strict equality checks `===` should be used in favor of `==`.
 **✅ Good:**
 
 ```js
-if (foo === "foo") {
+if (foo === 'foo') {
   statement
 }
 ```
@@ -601,7 +601,7 @@ if (foo === "foo") {
 **❌ Bad:**
 
 ```js
-if (foo == "foo") {
+if (foo == 'foo') {
   statement
 }
 ```
@@ -613,13 +613,13 @@ Use meaningful, pronounceable, and in **English** variable names.
 **✅ Good:**
 
 ```js
-const currentDate = new Date().toLocaleDateString("pt-BR")
+const currentDate = new Date().toLocaleDateString('pt-BR')
 ```
 
 **❌ Bad:**
 
 ```js
-const xpto = new Date().toLocaleDateString("pt-BR")
+const xpto = new Date().toLocaleDateString('pt-BR')
 ```
 
 <a name="descriptive-validations"></a>
