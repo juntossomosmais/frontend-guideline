@@ -1053,7 +1053,7 @@ To define the `test-id` to a component use the follow structure: `[page-name||co
 - header__cnpjList
 - button--forgot-password
 
-### 10.3 Selecing component
+### 10.3 Selecting component
 
 To select a component in order to test a behavior of to trigger any event we must use ou `test-id` attribute to select it.
 
