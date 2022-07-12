@@ -547,6 +547,7 @@ keep the media queries as close to their relevant rule sets whenever possible.
 - 6.2 [Variables](#62-variables)
 - 6.3 [Descriptive validations (if)](#63-descriptive-validations-if)
 - 6.4 [Avoid multiple if's](#64-avoid-multiple-ifs)
+- 6.5 [Code Comments](#65-code-comments)
 
 <a name="javascript-syntax"></a>
 
@@ -689,6 +690,28 @@ const sendMessage = (message, channel) => {
   }
 }
 ```
+
+### 6.5 Code Comments
+
+Avoid writing comments to explain the code.
+
+**✅ Good:**
+
+```js
+  const calculateProductsPrice = () => {
+    // do something
+  }
+```
+
+**❌ Bad:**
+
+```js
+  // This coolFunction calculates the prices of the products
+  const coolFunction = () => {
+    // do something
+  }
+```
+
 
 **[⬆ back to summary](#-summary)**
 
