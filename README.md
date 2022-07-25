@@ -848,6 +848,25 @@ const Screen = () => (
 )
 ```
 
+### 7.5 Styled Component Naming Convention
+
+Use PascalCase as a convention in styled-components
+
+**✅ Good:**
+
+```js
+export const CustomText = styled.p`
+  color: 'red'
+`
+```
+
+**❌ Bad:**
+
+```js
+export const customText = styled.p`
+  color: 'red'
+`
+
 **[⬆ back to summary](#-summary)**
 
 ---
