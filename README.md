@@ -693,11 +693,16 @@ const sendMessage = (message, channel) => {
 
 ### 6.5 Code Comments
 
-Avoid writing comments to explain the code.
+Avoid writing comments to explain the code. Use comments to answer “Why?” instead “How?”. Some cases you could write a code comment: warnings, complex expressions, or unusual decision clarification.
 
 **✅ Good:**
 
 ```js
+  const TIME_IN_SECONDS = 60 * 40 // 40 minutes
+
+  // xxxx@xxxx.xxx
+  const regex = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i
+
   const calculateProductsPrice = () => {
     // do something
   }
