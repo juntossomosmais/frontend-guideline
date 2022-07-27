@@ -1083,3 +1083,8 @@ describe('yourModule', () => {
 ---
 
 ## 11. Typescript
+
+### 11.1 Do not use `any` type
+
+Avoid using `any` type. It is better to use the type that is more specific.
+
