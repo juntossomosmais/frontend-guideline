@@ -1096,3 +1096,6 @@ For convention, use PascalCase for type names.
 
 Do not export types/functions unless you need to use it across multiple components.
 
+### 11.4 Types within a file
+
+Within a file, type definitions should come first.
