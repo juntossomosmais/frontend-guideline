@@ -1092,3 +1092,7 @@ Avoid using `any` type. It is better to use the type that is more specific.
 
 For convention, use PascalCase for type names.
 
+### 11.3 Exporting types
+
+Do not export types/functions unless you need to use it across multiple components.
+
