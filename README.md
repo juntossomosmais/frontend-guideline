@@ -1097,6 +1097,24 @@ Avoid using `any` type. It is better to use the type that is more specific.
 
 For convention, use PascalCase for type names.
 
+**✅ Good:**
+
+```ts
+type MyBeautifulType = {
+  name: string
+  age: number
+}
+```
+
+**❌ Bad:**
+
+```ts
+type myBeautifulType = {
+  name: string
+  age: number
+}
+```
+
 ### 11.3 Exporting types
 
 Do not export types/functions unless you need to use it across multiple components.
@@ -1104,3 +1122,33 @@ Do not export types/functions unless you need to use it across multiple componen
 ### 11.4 Types within a file
 
 Within a file, type definitions should come first.
+
+**✅ Good:**
+
+```ts
+// imports...
+
+type MyBeautifulType = {
+  name: string
+  age: number
+}
+
+// rest of the file...
+
+```
+
+**❌ Bad:**
+
+```ts
+// imports...
+
+// part of the file...
+
+type MyBeautifulType = {
+  name: string
+  age: number
+}
+
+// rest of the file...
+
+```
