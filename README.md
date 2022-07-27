@@ -1084,7 +1084,7 @@ describe('yourModule', () => {
 
 ## 11. Typescript
 
-- 11.1 [Write tests with "it"](#111-do-not-use-any-type)
+- 11.1 [Do not use any type](#111-do-not-use-any-type)
 - 11.2 [Naming convention](#112-naming-convention)
 - 11.3 [Exporting types](#113-exporting-types)
 - 11.4 [Types within a file](#114-types-within-a-file)
