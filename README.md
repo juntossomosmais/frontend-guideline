@@ -35,6 +35,7 @@ This is our [Front-end Challenge](https://github.com/juntossomosmais/frontend-ch
 8. [Vue](#8-vue)
 9. [Storybook](#9-storybook)
 10. [Testing](#10-testing)
+11. [Typescript](#11-typescript)
 
 ---
 
@@ -1080,3 +1081,5 @@ describe('yourModule', () => {
 **[⬆ back to summary](#-summary)**
 
 ---
+
+## 11. Typescript
