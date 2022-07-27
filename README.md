@@ -701,6 +701,7 @@ const sendMessage = (message, channel) => {
 - 7.3 [useEffect dependencies array](#73-useeffect-dependencies-array)
 - 7.4 [Readable components](#74-readable-components)
 - 7.5 [Styled Component Naming Convention](#75-styled-component-naming-convention)
+- 7.6 [Using Styled Component in React Components](#76-using-styled-component-in-react-components)
 
 ### 7.1 Keys in lists
 
@@ -867,6 +868,35 @@ export const CustomText = styled.p`
 export const customText = styled.p`
   color: 'red'
 `
+```
+
+### 7.6 Using Styled Component in React Components
+
+Import Styled Component as `S`
+
+**✅ Good:**
+
+```tsx
+import * as S from './styles'
+
+const MyComponent = () => (
+  <S.CustomText>
+    text example
+  </S.CustomText>
+)
+```
+
+**❌ Bad:**
+
+```tsx
+import * as Style from './styles'
+
+const MyComponent = () => (
+  <Style.CustomText>
+    text example
+  </Style.CustomText>
+)
+```
 
 **[⬆ back to summary](#-summary)**
 
