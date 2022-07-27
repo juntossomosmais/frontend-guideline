@@ -700,6 +700,7 @@ const sendMessage = (message, channel) => {
 - 7.2 [useState functional updates](#72-usestate-functional-updates)
 - 7.3 [useEffect dependencies array](#73-useeffect-dependencies-array)
 - 7.4 [Readable components](#74-readable-components)
+- 7.5 [Styled Component Naming Convention](#75-styled-component-naming-convention)
 
 ### 7.1 Keys in lists
 
