@@ -1088,3 +1088,7 @@ describe('yourModule', () => {
 
 Avoid using `any` type. It is better to use the type that is more specific.
 
+### 11.2 Naming convention
+
+For convention, use PascalCase for type names.
+
