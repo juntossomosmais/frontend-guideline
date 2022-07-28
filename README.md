@@ -547,6 +547,7 @@ keep the media queries as close to their relevant rule sets whenever possible.
 - 6.2 [Variables](#62-variables)
 - 6.3 [Descriptive validations (if)](#63-descriptive-validations-if)
 - 6.4 [Avoid multiple if's](#64-avoid-multiple-ifs)
+- 6.5 [Code Comments](#65-code-comments)
 
 <a name="javascript-syntax"></a>
 
@@ -689,6 +690,33 @@ const sendMessage = (message, channel) => {
   }
 }
 ```
+
+### 6.5 Code Comments
+
+Avoid writing comments to explain the code. Use comments to answer “Why?” instead “How?”. Some cases you could write a code comment: warnings, complex expressions, or unusual decision clarification.
+
+**✅ Good:**
+
+```js
+  const TIME_IN_SECONDS = 60 * 40 // 40 minutes
+
+  // xxxx@xxxx.xxx
+  const regex = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i
+
+  const calculateProductsPrice = () => {
+    // do something
+  }
+```
+
+**❌ Bad:**
+
+```js
+  // This coolFunction calculates the prices of the products
+  const coolFunction = () => {
+    // do something
+  }
+```
+
 
 **[⬆ back to summary](#-summary)**
 
