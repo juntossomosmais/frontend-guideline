@@ -896,6 +896,15 @@ const MyComponent = () => (
     text example
   </Style.CustomText>
 )
+
+
+import { CustomText } from './styles'
+
+const MyComponent = () => (
+  <CustomText>
+    text example
+  </CustomText>
+)
 ```
 
 **[⬆ back to summary](#-summary)**
