@@ -52,9 +52,9 @@ Use soft tabs with two spaces. You need to configure your editor for this.
 
 ```js
 const obj = {
-  prop: 'value',
-  prop2: 'value2',
-  prop3: 'value3',
+  prop: "value",
+  prop2: "value2",
+  prop3: "value3",
 }
 ```
 
@@ -74,21 +74,21 @@ const obj = {
 
 ```js
 const obj = {
-  prop: 'value',
-  prop2: 'value2',
-  prop3: 'value3',
+    prop: "value",
+    prop2: "value2",
+    prop3: "value3",
 }
 ```
 
 ```css
 .foo {
-  color: red;
+    color: red;
 }
 ```
 
 ```html
 <div>
-  <p>Hello World</p>
+    <p>Hello World</p>
 </div>
 ```
 
@@ -97,13 +97,12 @@ const obj = {
 Refactoring makes part of JSMLover's way of being, doing it every day and task by task. We have good practices and conditions to do that, though.
 
 ```js
-if (!isWholeCodeCoveraged) return
+if(!isWholeCodeCoveraged) return
 ```
+- We can only refactor codes that have tests (and that tests!), which means 100% coverage! This way, we can improve or code safely. 
 
-- We can only refactor codes that have tests (and that tests!), which means 100% coverage! This way, we can improve or code safely.
-
-- Keep the current tests and make them pass!
-  Once the current code is tested and can be refactored. We must make sure that the new changes will not break the current tests.
+- Keep the current tests and make them pass! 
+Once the current code is tested and can be refactored. We must make sure that the new changes will not break the current tests. 
 
 ## 2. Architecture
 
@@ -567,9 +566,9 @@ const func = () => {}
 **❌ Bad:**
 
 ```js
-const foo = 'bar'
-const baz = 'qux'
-const func = () => {}
+const foo = 'bar';
+const baz = 'qux';
+const func = () => {};
 ```
 
 Always use single quotes or template literals
@@ -584,8 +583,8 @@ const template = `foo`
 **❌ Bad:**
 
 ```js
-const string = 'foo'
-const template = 'foo'
+const string = "foo"
+const template = "foo"
 ```
 
 <a name="variables"></a>
@@ -663,12 +662,12 @@ const messagingChannels = {
   },
   email: (message) => {
     // send message to email
-  },
+  }
 }
 
 const sendMessage = (message, channel) => {
-  const send = messagingChannels[channel]
-  return send && send(message)
+  const send = messagingChannels[channel];
+  return send && send(message);
 }
 ```
 
@@ -814,7 +813,7 @@ const Screen = () => (
   <Container>
     <Header>
       <Title />
-      <Button background='black'>Filter</Button>
+      <Button background="black">Filter</Button>
     </Header>
 
     <Main>
@@ -833,15 +832,15 @@ const Screen = () => (
 ```js
 const Screen = () => (
   <Box padding={1}>
-    <Box alignItems='center'>
+    <Box alignItems="center">
       <Text>Titulo</Text>
-      <Button background='black'>Filter</Button>
+      <Button background="black">Filter</Button>
     </Box>
     <Box marginTop={5}>
       <Box>
         {data.map((item) => (
           <Box key={item.id}>
-            <Text color='red'>{item.name}</Text>
+            <Text color="red">{item.name}</Text>
           </Box>
         ))}
       </Box>
@@ -942,8 +941,8 @@ In committed code, prop definitions should always be as detailed as possible, sp
 export default {
   status: {
     type: String,
-    required: true,
-  },
+    required: true
+  }
   // ...
 }
 ```
@@ -952,7 +951,7 @@ export default {
 
 ```js
 export default {
-  props: ['status'],
+  props: ['status']
   // ...
 }
 ```
@@ -1026,16 +1025,16 @@ Write tests with the alias "it" instead "test" method.
 
 ```js
 describe('yourModule', () => {
-  it('should do this thing', () => {})
-})
+  it('should do this thing', () => {});
+});
 ```
 
 **❌ Bad:**
 
 ```js
 describe('yourModule', () => {
-  test('if it does this thing', () => {})
-})
+  test('if it does this thing', () => {});
+});
 ```
 
 ### 10.2 Using test-id
@@ -1045,14 +1044,14 @@ To define the `test-id` to a component use the follow structure: `[page-name||co
 
 **✅ Good:**
 
-- forgot-password\_\_input--email
-- header\_\_select--cnpjList
-- login\_\_button--forgot-password
+- forgot-password__input--email
+- header__select--cnpjList
+- login__button--forgot-password
 
 **❌ Bad:**
 
 - forgot-email-input
-- header\_\_cnpjList
+- header__cnpjList
 - button--forgot-password
 
 ### 10.3 Selecting component
@@ -1064,11 +1063,9 @@ To select a component in order to test a behavior of to trigger any event we mus
 ```js
 describe('yourModule', () => {
   it('should do trigger click event', () => {
-    const button = wrapper.find(
-      '[data-testid="login__button--forgot-password"]'
-    )
-  })
-})
+    const button = wrapper.find('[data-testid="login__button--forgot-password"]')
+  });
+});
 ```
 
 **❌ Bad:**
@@ -1077,8 +1074,8 @@ describe('yourModule', () => {
 describe('yourModule', () => {
   it('should do trigger click event', () => {
     const button = wrapper.find('button.btn-primary')
-  })
-})
+  });
+});
 ```
 
 **[⬆ back to summary](#-summary)**
