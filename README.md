@@ -728,6 +728,8 @@ Avoid writing comments to explain the code. Use comments to answer “Why?” in
 - 7.2 [useState functional updates](#72-usestate-functional-updates)
 - 7.3 [useEffect dependencies array](#73-useeffect-dependencies-array)
 - 7.4 [Readable components](#74-readable-components)
+- 7.5 [Styled Component Naming Convention](#75-styled-component-naming-convention)
+- 7.6 [Using Styled Component in React Components](#76-using-styled-component-in-react-components)
 
 ### 7.1 Keys in lists
 
@@ -873,6 +875,63 @@ const Screen = () => (
       </Box>
     </Box>
   </Box>
+)
+```
+
+### 7.5 Styled Component Naming Convention
+
+Use PascalCase as a convention in styled-components
+
+**✅ Good:**
+
+```js
+export const CustomText = styled.p`
+  color: 'red'
+`
+```
+
+**❌ Bad:**
+
+```js
+export const customText = styled.p`
+  color: 'red'
+`
+```
+
+### 7.6 Using Styled Component in React Components
+
+Import Styled Component as `S`
+
+**✅ Good:**
+
+```tsx
+import * as S from './styles'
+
+const MyComponent = () => (
+  <S.CustomText>
+    text example
+  </S.CustomText>
+)
+```
+
+**❌ Bad:**
+
+```tsx
+import * as Style from './styles'
+
+const MyComponent = () => (
+  <Style.CustomText>
+    text example
+  </Style.CustomText>
+)
+
+
+import { CustomText } from './styles'
+
+const MyComponent = () => (
+  <CustomText>
+    text example
+  </CustomText>
 )
 ```
 
