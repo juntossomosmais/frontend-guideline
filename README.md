@@ -35,6 +35,7 @@ This is our [Front-end Challenge](https://github.com/juntossomosmais/frontend-ch
 8. [Vue](#8-vue)
 9. [Storybook](#9-storybook)
 10. [Testing](#10-testing)
+11. [Typescript](#11-typescript)
 
 ---
 
@@ -1167,3 +1168,88 @@ describe('yourModule', () => {
 **[⬆ back to summary](#-summary)**
 
 ---
+
+## 11. Typescript
+
+- 11.1 [Do not use any type](#111-do-not-use-any-type)
+- 11.2 [Naming convention](#112-naming-convention)
+- 11.3 [Exporting types](#113-exporting-types)
+- 11.4 [Types within a file](#114-types-within-a-file)
+
+### 11.1 Do not use any type
+
+Avoid using `any` type. It's best to use the type that is more specific whenever possible. Prefer to use `unknown` when necessary.
+
+**✅ Good:**
+
+```ts
+function foo(x: unknown) {}
+
+function foo(): unknown {}
+```
+
+**❌ Bad:**
+
+```ts
+function foo(x: any) {}
+
+function foo(): any {}
+```
+
+### 11.2 Naming convention
+
+For convention, use PascalCase for type names.
+
+**✅ Good:**
+
+```ts
+type MyBeautifulType = {
+  name: string
+  age: number
+}
+```
+
+**❌ Bad:**
+
+```ts
+type myBeautifulType = {
+  name: string
+  age: number
+}
+```
+
+### 11.3 Exporting types
+
+Do not export types/functions unless you need to use it across multiple components.
+
+### 11.4 Types within a file
+
+Within a file, type definitions should come first.
+
+**✅ Good:**
+
+```ts
+// imports...
+
+type MyBeautifulType = {
+  name: string
+  age: number
+}
+
+// rest of the file...
+```
+
+**❌ Bad:**
+
+```ts
+// imports...
+
+// part of the file...
+
+type MyBeautifulType = {
+  name: string
+  age: number
+}
+
+// rest of the file...
+```
