@@ -1096,6 +1096,22 @@ describe('yourModule', () => {
 
 Avoid using `any` type. It's best to use the type that is more specific whenever possible. Prefer to use `unknown` when necessary.
 
+**✅ Good:**
+
+```ts
+function foo(x: unknown) {}
+
+function foo(): unknown {}
+```
+
+**❌ Bad:**
+
+```ts
+function foo(x: any) {}
+
+function foo(): any {}
+```
+
 ### 11.2 Naming convention
 
 For convention, use PascalCase for type names.
