@@ -176,8 +176,6 @@ For example:
 
 We need to add inside `pages/**/{utils, helpers, context, hooks, etc...}` and use `camelCase` as **Naming Convention**.
 
-If we need to used this files again in another context or page it need to be moved to `src/{utils, helpers, context, hooks}`.
-
 For example:
 
 ```sh
@@ -190,6 +188,8 @@ For example:
 ┣ ┃ ┣ 📂 hooks \
 ┣ ┣ ┣ ┣ 📜 useSomeHook.js
 ```
+
+If we need use these this files again in another context or page it need to be moved to `src/{utils, helpers, context, hooks}`.
 
 **[⬆ back to summary](#-summary)**
 
@@ -958,7 +958,7 @@ const MyComponent = () => (
 
 ### 7.7 Avoid compare directly strings
 
-When know all possible values we can use enum to achieve better readability, control.
+When know all possible values we can use enum to achieve better readability and control.
 
 **✅ Good:**
 
