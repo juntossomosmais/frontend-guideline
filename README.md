@@ -189,7 +189,7 @@ For example:
 ┣ ┣ ┣ ┣ 📜 useSomeHook.js
 ```
 
-If we need use these this files again in another context or page it need to be moved to `src/{utils, helpers, context, hooks}`.
+If we need use these files again in another context or page it need to be moved to `src/{utils, helpers, context, hooks}`.
 
 ```sh
 ┣ 📂 src
