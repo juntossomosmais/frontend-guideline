@@ -191,6 +191,16 @@ For example:
 
 If we need use these this files again in another context or page it need to be moved to `src/{utils, helpers, context, hooks}`.
 
+```sh
+┣ 📂 src
+┣ ┣ 📂 utils \
+┣ ┃ ┣ 📜 someUtils.js
+┣ ┣ 📂 helpers \
+┣ ┃ ┣ 📜 someHelper.js
+┣ ┣ 📂 hooks \
+┣ ┃ ┣ 📜 useSomeHook.js
+```
+
 **[⬆ back to summary](#-summary)**
 
 ---
