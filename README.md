@@ -151,7 +151,7 @@ For example:
 
 ```
 
-#### Scoped Components/Helpers
+#### Scoped Components
 
 We need to add inside `pages/**/components`, for example, all components that is need used just a context or scope, like a components that be used just a some place or specific page.
 
@@ -170,6 +170,25 @@ For example:
 ┣ ┣ ┃ ┃ ┣ 📜 UserProfile.style.js \
 ┣ ┣ ┃ ┃ ┣ 📜 UserProfile.spec.js \
 ┣ ┣ ┃ ┃ ┣ 📜 UserProfile.stories.mdx \
+```
+
+#### Scoped Files 
+
+We need to add inside `pages/**/{utils, helpers, context, hooks, etc...}` and use `camelCase` as **Naming Convention**.
+
+If we need to used this files again in another context or page it need to be moved to `src/{utils, helpers, context, hooks}`.
+
+For example:
+
+```sh
+┣ 📂 pages \
+┣ ┣ 📂 Home \
+┣ ┃ ┣ 📂 utils \
+┣ ┃ ┣ ┣ 📜 someUtils.js
+┣ ┃ ┣ 📂 helpers \
+┣ ┣ ┣ ┣ 📜 someHelper.js
+┣ ┃ ┣ 📂 hooks \
+┣ ┣ ┣ ┣ 📜 useSomeHook.js
 ```
 
 **[⬆ back to summary](#-summary)**
@@ -731,6 +750,7 @@ Avoid writing comments to explain the code. Use comments to answer “Why?” in
 - 7.4 [Readable components](#74-readable-components)
 - 7.5 [Styled Component Naming Convention](#75-styled-component-naming-convention)
 - 7.6 [Using Styled Component in React Components](#76-using-styled-component-in-react-components)
+- 7.7 [Enums](#77-avoid-compare-directly-strings)
 
 ### 7.1 Keys in lists
 
@@ -934,6 +954,43 @@ const MyComponent = () => (
     text example
   </CustomText>
 )
+```
+
+### 7.7 Avoid compare directly strings
+
+When know all possible values we can use enum to achieve better readability, control.
+
+**✅ Good:**
+
+```tsx
+const FEEDBACK = {
+  CORRECT: 'correct',
+  INCORRECT: 'incorrect',
+}
+
+const MyComponent = (type) => {
+  const text = type === FEEDBACK.CORRECT ? '😎' : '😢'
+  
+  return (
+    <Emoji>
+      {text}
+    </Emoji>
+  )
+}
+```
+
+**❌ Bad:**
+
+```tsx
+const MyComponent = (type) => {
+  const text = type === 'correct' ? '😎' : '😢'
+
+  return (
+    <Emoji>
+      {text}
+    </Emoji>
+  )
+}
 ```
 
 **[⬆ back to summary](#-summary)**
