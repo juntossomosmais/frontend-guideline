@@ -42,7 +42,7 @@ This is our [Front-end Challenge](https://github.com/juntossomosmais/frontend-ch
 ## 1. General Code Patterns
 
 - 1.1 [Code Syntax](#11-code-syntax)
-- 1.2 [refactoring](#12-refactoring)
+- 1.2 [Refactoring](#12-refactoring)
 
 ### 1.1 Code Syntax
 
