@@ -113,23 +113,31 @@ The proper architecture for projects, and how to create and name files and folde
 
 ### 2.1 File Name
 
+#### Components
+
+Components file name should use **Pascal Case** pattern 
+
 **✅ Good:**
 
 - `UserProfile/UserProfile.vue`
-- `UserProfile/index.js`
-- `UserProfile/index.ts`
-- `UserProfile/styles.js`
-- `UserProfile/UserProfile.scss`
-- `UserProfile/UserProfile.stories.mdx`
+- `UserProfile/UserProfile.tsx`
 
 **❌ Bad:**
 
-- `UserProfile/component.vue`
-- `src/UserProfile.js`
-- `UserProfile/component.ts`
-- `UserProfile/style.scss`
-- `UserProfileStyles.js`
-- `UserProfile/UserProfile.mdx`
+- `UserProfile/UserProfile.vue`
+- `UserProfile/UserProfile.tsx`
+
+#### Helpers/Utils
+
+Helpers file name should use **Kebab Case** pattern
+
+**✅ Good:**
+
+- `helper/phone-formatter.ts`
+
+**❌ Bad:**
+
+- `helper/PhoneFormatter.ts`
 
 <a name="architecture-folder"></a>
 
