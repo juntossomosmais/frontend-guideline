@@ -42,7 +42,7 @@ This is our [Front-end Challenge](https://github.com/juntossomosmais/frontend-ch
 ## 1. General Code Patterns
 
 - 1.1 [Code Syntax](#11-code-syntax)
-- 1.2 [refactoring](#12-refactoring)
+- 1.2 [Refactoring](#12-refactoring)
 
 ### 1.1 Code Syntax
 
@@ -573,7 +573,7 @@ keep the media queries as close to their relevant rule sets whenever possible.
 
 ## 6. JavaScript
 
-- 6.1 [Javascript Code Syntax](#61-javascript-syntax)
+- 6.1 [Javascript Code Syntax](#61-javascript-code-syntax)
 - 6.2 [Variables](#62-variables)
 - 6.3 [Descriptive validations (if)](#63-descriptive-validations-if)
 - 6.4 [Avoid multiple if's](#64-avoid-multiple-ifs)
@@ -1145,7 +1145,7 @@ export default class MyComponent extends Vue {
 
 ## 9. Storybook
 
-- 9.1 [Story file](#91-storybook-file-name)
+- 9.1 [Story file](#91-story-file)
 
 ### 9.1 Story file
 
@@ -1169,7 +1169,7 @@ Create a file with the same name of your component, or index, and with the suffi
 
 - 10.1 [Write tests with "it"](#101-write-tests-with-it)
 - 10.2 [Using test-id](#102-using-test-id)
-- 10.3 [Selecing component](#103-selecing-component)
+- 10.3 [Selecing component](#103-selecting-component)
 
 ### 10.1 Write tests with "it"
 
