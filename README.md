@@ -578,7 +578,7 @@ keep the media queries as close to their relevant rule sets whenever possible.
 - 6.3 [Descriptive validations (if)](#63-descriptive-validations-if)
 - 6.4 [Avoid multiple if's](#64-avoid-multiple-ifs)
 - 6.5 [Code Comments](#65-code-comments)
-- 6.6 [Avoid errors while destructuring](#66-errors-destructuring)
+- 6.6 [Avoid errors while destructuring](#66-avoid-errors-while-destructuring)
 
 <a name="javascript-syntax"></a>
 
