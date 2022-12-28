@@ -747,6 +747,35 @@ Avoid writing comments to explain the code. Use comments to answer “Why?” in
   }
 ```
 
+### 6.6 Avoid errors while destructuring
+
+Its a common mistake destructuring while the object is null or undefined, the destructuring will throw an error.
+
+**✅ Good:**
+
+```js
+  const { age } = { ...null } // undefined
+  const { age } = null || {} // undefined
+
+  // other values won't throw an error
+  const { emptyString } = '';
+  const { nan } = NaN;
+  const { emptyObject } = {};
+
+  function foo(bar = {}) {
+    const { age } = bar;
+  }
+  
+  foo() // undefined
+  
+```
+
+**❌ Bad:**
+
+```js
+  const { age } = null // will throw an typeError
+  const { age } = undefined // will throw an typeError
+```
 
 **[⬆ back to summary](#-summary)**
 
