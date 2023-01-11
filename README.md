@@ -1242,6 +1242,7 @@ describe('yourModule', () => {
 - 11.2 [Naming convention](#112-naming-convention)
 - 11.3 [Exporting types](#113-exporting-types)
 - 11.4 [Types within a file](#114-types-within-a-file)
+- 11.5 [Increase legible](#115-increase-legible)
 
 ### 11.1 Do not use any type
 
@@ -1319,4 +1320,38 @@ type MyBeautifulType = {
 }
 
 // rest of the file...
+```
+
+### 11.5 Increase legible
+
+Create a type for increase legible
+
+**✅ Good:**
+
+```ts
+type PersonType = {
+  name: string
+  age: number
+  birthDate: string
+};
+
+const Person = ({ name, age, birthDate }: PersonType) => {
+  // ...
+};
+```
+
+**❌ Bad:**
+
+```ts
+const Person = ({
+  name,
+  age,
+  birthDate,
+}: {
+  name: string,
+  age: number,
+  birthDate: string,
+}) => {
+  // ...
+};
 ```
