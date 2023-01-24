@@ -578,6 +578,7 @@ keep the media queries as close to their relevant rule sets whenever possible.
 - 6.3 [Descriptive validations (if)](#63-descriptive-validations-if)
 - 6.4 [Avoid multiple if's](#64-avoid-multiple-ifs)
 - 6.5 [Code Comments](#65-code-comments)
+- 6.6 [Avoid errors while destructuring](#66-avoid-errors-while-destructuring)
 
 <a name="javascript-syntax"></a>
 
@@ -747,6 +748,36 @@ Avoid writing comments to explain the code. Use comments to answer “Why?” in
   }
 ```
 
+<a name="errors-destructuring"></a>
+### 6.6 Avoid errors while destructuring
+
+Its a common mistake destructuring while the object is null or undefined, the destructuring will throw an error.
+
+**✅ Good:**
+
+```js
+  const { age } = { ...null } // undefined
+  const { age } = null || {} // undefined
+
+  // other values won't throw an error
+  const { emptyString } = '';
+  const { nan } = NaN;
+  const { emptyObject } = {};
+
+  function foo(bar = {}) {
+    const { age } = bar;
+  }
+  
+  foo() // undefined
+  
+```
+
+**❌ Bad:**
+
+```js
+  const { age } = null // will throw an typeError
+  const { age } = undefined // will throw an typeError
+```
 
 **[⬆ back to summary](#-summary)**
 
