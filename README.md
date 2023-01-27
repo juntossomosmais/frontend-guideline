@@ -56,7 +56,7 @@ const obj = {
   prop: "value",
   prop2: "value2",
   prop3: "value3",
-};
+}
 ```
 
 ```css
@@ -75,21 +75,21 @@ const obj = {
 
 ```js
 const obj = {
-  prop: "value",
-  prop2: "value2",
-  prop3: "value3",
-};
+    prop: "value",
+    prop2: "value2",
+    prop3: "value3",
+}
 ```
 
 ```css
 .foo {
-  color: red;
+    color: red;
 }
 ```
 
 ```html
 <div>
-  <p>Hello World</p>
+    <p>Hello World</p>
 </div>
 ```
 
@@ -98,13 +98,12 @@ const obj = {
 Refactoring makes part of JSMLover's way of being, doing it every day and task by task. We have good practices and conditions to do that, though.
 
 ```js
-if (!isWholeCodeCoveraged) return;
+if(!isWholeCodeCoveraged) return
 ```
+- We can only refactor codes that have tests (and that tests!), which means 100% coverage! This way, we can improve or code safely. 
 
-- We can only refactor codes that have tests (and that tests!), which means 100% coverage! This way, we can improve or code safely.
-
-- Keep the current tests and make them pass!
-  Once the current code is tested and can be refactored. We must make sure that the new changes will not break the current tests.
+- Keep the current tests and make them pass! 
+Once the current code is tested and can be refactored. We must make sure that the new changes will not break the current tests. 
 
 ### 1.3 Imoprts
 
@@ -180,7 +179,7 @@ For example:
 ┣ ┣ ┃ ┃ ┣ 📜 UserProfile.stories.mdx \
 ```
 
-#### Scoped Files
+#### Scoped Files 
 
 We need to add inside `pages/**/{utils, helpers, context, hooks, etc...}` and use `camelCase` as **Naming Convention**.
 
@@ -597,16 +596,16 @@ Never use semicolons.
 **✅ Good:**
 
 ```js
-const foo = "bar";
-const baz = "qux";
-const func = () => {};
+const foo = 'bar'
+const baz = 'qux'
+const func = () => {}
 ```
 
 **❌ Bad:**
 
 ```js
-const foo = "bar";
-const baz = "qux";
+const foo = 'bar';
+const baz = 'qux';
 const func = () => {};
 ```
 
@@ -615,15 +614,15 @@ Always use single quotes or template literals
 **✅ Good:**
 
 ```js
-const string = "foo";
-const template = `foo`;
+const string = 'foo'
+const template = `foo`
 ```
 
 **❌ Bad:**
 
 ```js
-const string = "foo";
-const template = "foo";
+const string = "foo"
+const template = "foo"
 ```
 
 <a name="variables"></a>
@@ -633,16 +632,16 @@ For strict equality checks `===` should be used in favor of `==`.
 **✅ Good:**
 
 ```js
-if (foo === "foo") {
-  statement;
+if (foo === 'foo') {
+  statement
 }
 ```
 
 **❌ Bad:**
 
 ```js
-if (foo == "foo") {
-  statement;
+if (foo == 'foo') {
+  statement
 }
 ```
 
@@ -653,13 +652,13 @@ Use meaningful, pronounceable, and in **English** variable names.
 **✅ Good:**
 
 ```js
-const currentDate = new Date().toLocaleDateString("pt-BR");
+const currentDate = new Date().toLocaleDateString('pt-BR')
 ```
 
 **❌ Bad:**
 
 ```js
-const xpto = new Date().toLocaleDateString("pt-BR");
+const xpto = new Date().toLocaleDateString('pt-BR')
 ```
 
 <a name="descriptive-validations"></a>
@@ -671,7 +670,7 @@ Creating const to describe validations.
 **✅ Good:**
 
 ```js
-const hasFullUserName = user.firstName && user.lastname;
+const hasFullUserName = user.firstName && user.lastname
 
 if (hasFullUserName) {
   //do awesome something
@@ -701,13 +700,13 @@ const messagingChannels = {
   },
   email: (message) => {
     // send message to email
-  },
-};
+  }
+}
 
 const sendMessage = (message, channel) => {
   const send = messagingChannels[channel];
   return send && send(message);
-};
+}
 ```
 
 **❌ Bad:**
@@ -715,19 +714,19 @@ const sendMessage = (message, channel) => {
 ```js
 const sendWhatsapp = (message) => {
   // send message to whatsapp
-};
+}
 
 const sendEmail = (message) => {
   // send message to email
-};
+}
 
 const sendMessage = (message, channel) => {
-  if (channel === "whatsapp") {
-    sendWhatsapp(message);
-  } else if (channel === "email") {
-    sendEmail(message);
+  if (channel === 'whatsapp') {
+    sendWhatsapp(message)
+  } else if (channel === 'email') {
+    sendEmail(message)
   }
-};
+}
 ```
 
 ### 6.5 Code Comments
@@ -737,27 +736,26 @@ Avoid writing comments to explain the code. Use comments to answer “Why?” in
 **✅ Good:**
 
 ```js
-const TIME_IN_SECONDS = 60 * 40; // 40 minutes
+  const TIME_IN_SECONDS = 60 * 40 // 40 minutes
 
-// xxxx@xxxx.xxx
-const regex = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i;
+  // xxxx@xxxx.xxx
+  const regex = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i
 
-const calculateProductsPrice = () => {
-  // do something
-};
+  const calculateProductsPrice = () => {
+    // do something
+  }
 ```
 
 **❌ Bad:**
 
 ```js
-// This coolFunction calculates the prices of the products
-const coolFunction = () => {
-  // do something
-};
+  // This coolFunction calculates the prices of the products
+  const coolFunction = () => {
+    // do something
+  }
 ```
 
 <a name="errors-destructuring"></a>
-
 ### 6.6 Avoid errors while destructuring
 
 Its a common mistake destructuring while the object is null or undefined, the destructuring will throw an error.
@@ -765,26 +763,27 @@ Its a common mistake destructuring while the object is null or undefined, the de
 **✅ Good:**
 
 ```js
-const { age } = { ...null }; // undefined
-const { age } = null || {}; // undefined
+  const { age } = { ...null } // undefined
+  const { age } = null || {} // undefined
 
-// other values won't throw an error
-const { emptyString } = "";
-const { nan } = NaN;
-const { emptyObject } = {};
+  // other values won't throw an error
+  const { emptyString } = '';
+  const { nan } = NaN;
+  const { emptyObject } = {};
 
-function foo(bar = {}) {
-  const { age } = bar;
-}
-
-foo(); // undefined
+  function foo(bar = {}) {
+    const { age } = bar;
+  }
+  
+  foo() // undefined
+  
 ```
 
 **❌ Bad:**
 
 ```js
-const { age } = null; // will throw an typeError
-const { age } = undefined; // will throw an typeError
+  const { age } = null // will throw an typeError
+  const { age } = undefined // will throw an typeError
 ```
 
 **[⬆ back to summary](#-summary)**
@@ -826,7 +825,7 @@ If the new state is calculated using the previous state, you can pass a function
 **✅ Good:**
 
 ```js
-const [number, setNumber] = useState(1);
+const [number, setNumber] = useState(1)
 
 return (
   <div>
@@ -838,7 +837,7 @@ return (
       Decrease
     </button>
   </div>
-);
+)
 ```
 
 **❌ Bad:**
@@ -862,12 +861,12 @@ Use the useEffect dependency array to trigger side effects, and make your code c
 **✅ Good:**
 
 ```js
-const [page, setPage] = useState(1);
+const [page, setPage] = useState(1)
 
 useEffect(() => {
-  requestListUser();
+  requestListUser()
   // calls useEffect when page state changes
-}, [page]);
+}, [page])
 
 return (
   <div>
@@ -875,29 +874,29 @@ return (
       Next Page
     </button>
   </div>
-);
+)
 ```
 
 **❌ Bad:**
 
 ```js
-const [page, setPage] = useState(1);
+const [page, setPage] = useState(1)
 
 useEffect(() => {
-  requestListUser();
-}, []);
+  requestListUser()
+}, [])
 
 const requestListUser = () => {
-  setPage((prevState) => prevState + 1);
+  setPage((prevState) => prevState + 1)
   // ...
   // any code to return user list
-};
+}
 
 return (
   <div>
     <button onClick={() => requestListUser()}>Next Page</button>
   </div>
-);
+)
 ```
 
 ### 7.4 Readable components
@@ -923,7 +922,7 @@ const Screen = () => (
       </List>
     </Main>
   </Container>
-);
+)
 ```
 
 **❌ Bad:**
@@ -945,7 +944,7 @@ const Screen = () => (
       </Box>
     </Box>
   </Box>
-);
+)
 ```
 
 ### 7.5 Styled Component Naming Convention
@@ -956,16 +955,16 @@ Use PascalCase as a convention in styled-components
 
 ```js
 export const CustomText = styled.p`
-  color: "red";
-`;
+  color: 'red'
+`
 ```
 
 **❌ Bad:**
 
 ```js
 export const customText = styled.p`
-  color: "red";
-`;
+  color: 'red'
+`
 ```
 
 ### 7.6 Using Styled Component in React Components
@@ -975,21 +974,34 @@ Import Styled Component as `S`
 **✅ Good:**
 
 ```tsx
-import * as S from "./styles";
+import * as S from './styles'
 
-const MyComponent = () => <S.CustomText>text example</S.CustomText>;
+const MyComponent = () => (
+  <S.CustomText>
+    text example
+  </S.CustomText>
+)
 ```
 
 **❌ Bad:**
 
 ```tsx
-import * as Style from "./styles";
+import * as Style from './styles'
 
-const MyComponent = () => <Style.CustomText>text example</Style.CustomText>;
+const MyComponent = () => (
+  <Style.CustomText>
+    text example
+  </Style.CustomText>
+)
 
-import { CustomText } from "./styles";
 
-const MyComponent = () => <CustomText>text example</CustomText>;
+import { CustomText } from './styles'
+
+const MyComponent = () => (
+  <CustomText>
+    text example
+  </CustomText>
+)
 ```
 
 ### 7.7 Avoid compare directly strings
@@ -1000,25 +1012,33 @@ When know all possible values we can use enum to achieve better readability and 
 
 ```tsx
 const FEEDBACK = {
-  CORRECT: "correct",
-  INCORRECT: "incorrect",
-};
+  CORRECT: 'correct',
+  INCORRECT: 'incorrect',
+}
 
 const MyComponent = (type) => {
-  const text = type === FEEDBACK.CORRECT ? "😎" : "😢";
-
-  return <Emoji>{text}</Emoji>;
-};
+  const text = type === FEEDBACK.CORRECT ? '😎' : '😢'
+  
+  return (
+    <Emoji>
+      {text}
+    </Emoji>
+  )
+}
 ```
 
 **❌ Bad:**
 
 ```tsx
 const MyComponent = (type) => {
-  const text = type === "correct" ? "😎" : "😢";
+  const text = type === 'correct' ? '😎' : '😢'
 
-  return <Emoji>{text}</Emoji>;
-};
+  return (
+    <Emoji>
+      {text}
+    </Emoji>
+  )
+}
 ```
 
 **[⬆ back to summary](#-summary)**
@@ -1089,18 +1109,18 @@ This prevents conflicts with existing and future HTML elements, since all HTML e
 
 ```js
 export default {
-  name: "TodoItem",
+  name: 'TodoItem',
   // ...
-};
+}
 ```
 
 **❌ Bad:**
 
 ```js
 export default {
-  name: "Todo",
+  name: 'Todo',
   // ...
-};
+}
 ```
 
 ### 8.4 Prop definitions
@@ -1113,19 +1133,19 @@ In committed code, prop definitions should always be as detailed as possible, sp
 export default {
   status: {
     type: String,
-    required: true,
-  },
+    required: true
+  }
   // ...
-};
+}
 ```
 
 **❌ Bad:**
 
 ```js
 export default {
-  props: ["status"],
+  props: ['status']
   // ...
-};
+}
 ```
 
 ### 8.5 Vue property decorator
@@ -1196,16 +1216,16 @@ Write tests with the alias "it" instead "test" method.
 **✅ Good:**
 
 ```js
-describe("yourModule", () => {
-  it("should do this thing", () => {});
+describe('yourModule', () => {
+  it('should do this thing', () => {});
 });
 ```
 
 **❌ Bad:**
 
 ```js
-describe("yourModule", () => {
-  test("if it does this thing", () => {});
+describe('yourModule', () => {
+  test('if it does this thing', () => {});
 });
 ```
 
@@ -1216,14 +1236,14 @@ To define the `test-id` to a component use the follow structure: `[page-name||co
 
 **✅ Good:**
 
-- forgot-password\_\_input--email
-- header\_\_select--cnpjList
-- login\_\_button--forgot-password
+- forgot-password__input--email
+- header__select--cnpjList
+- login__button--forgot-password
 
 **❌ Bad:**
 
 - forgot-email-input
-- header\_\_cnpjList
+- header__cnpjList
 - button--forgot-password
 
 ### 10.3 Selecting component
@@ -1233,11 +1253,9 @@ To select a component in order to test a behavior of to trigger any event we mus
 **✅ Good:**
 
 ```js
-describe("yourModule", () => {
-  it("should do trigger click event", () => {
-    const button = wrapper.find(
-      '[data-testid="login__button--forgot-password"]'
-    );
+describe('yourModule', () => {
+  it('should do trigger click event', () => {
+    const button = wrapper.find('[data-testid="login__button--forgot-password"]')
   });
 });
 ```
@@ -1245,9 +1263,9 @@ describe("yourModule", () => {
 **❌ Bad:**
 
 ```js
-describe("yourModule", () => {
-  it("should do trigger click event", () => {
-    const button = wrapper.find("button.btn-primary");
+describe('yourModule', () => {
+  it('should do trigger click event', () => {
+    const button = wrapper.find('button.btn-primary')
   });
 });
 ```
@@ -1292,18 +1310,18 @@ For convention, use PascalCase for type names.
 
 ```ts
 type MyBeautifulType = {
-  name: string;
-  age: number;
-};
+  name: string
+  age: number
+}
 ```
 
 **❌ Bad:**
 
 ```ts
 type myBeautifulType = {
-  name: string;
-  age: number;
-};
+  name: string
+  age: number
+}
 ```
 
 ### 11.3 Exporting types
@@ -1320,9 +1338,9 @@ Within a file, type definitions should come first.
 // imports...
 
 type MyBeautifulType = {
-  name: string;
-  age: number;
-};
+  name: string
+  age: number
+}
 
 // rest of the file...
 ```
@@ -1335,9 +1353,9 @@ type MyBeautifulType = {
 // part of the file...
 
 type MyBeautifulType = {
-  name: string;
-  age: number;
-};
+  name: string
+  age: number
+}
 
 // rest of the file...
 ```
@@ -1350,9 +1368,9 @@ Create a type for increase legible
 
 ```ts
 type PersonType = {
-  name: string;
-  age: number;
-  birthDate: string;
+  name: string
+  age: number
+  birthDate: string
 };
 
 const Person = ({ name, age, birthDate }: PersonType) => {
@@ -1368,9 +1386,9 @@ const Person = ({
   age,
   birthDate,
 }: {
-  name: string;
-  age: number;
-  birthDate: string;
+  name: string,
+  age: number,
+  birthDate: string,
 }) => {
   // ...
 };
