@@ -105,7 +105,7 @@ if(!isWholeCodeCoveraged) return
 - Keep the current tests and make them pass! 
 Once the current code is tested and can be refactored. We must make sure that the new changes will not break the current tests. 
 
-### 1.3 Imoprts
+### 1.3 Imports
 
 If the data to be imported belongs to `another module/scope`, use an **absolute path**.
 
