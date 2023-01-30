@@ -111,6 +111,21 @@ If the data to be imported belongs to **another module/scope**, use an **absolut
 
 If the data to be imported belongs to the **same module/scope**, use **relative path**.
 
+For example:
+
+```sh
+┣ 📂 src/components \
+┣ ┣ 📂 component \
+┣ ┃ ┣ 📂 __tests__
+┣ ┃ ┣ ┣ 📜 index.spec.js
+┣ ┃ ┣ 📜 index.js
+┣ ┃ ┣ 📜 styles.js
+┣ ┃ ┣ 📜 index.stories.mdx
+
+```
+
+
+
 ## 2. Architecture
 
 The proper architecture for projects, and how to create and name files and folders.
