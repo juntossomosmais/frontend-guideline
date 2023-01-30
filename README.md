@@ -109,7 +109,7 @@ Once the current code is tested and can be refactored. We must make sure that th
 
 If the data to be imported belongs to `another module/scope`, use an **absolute path**.
 
-If the data to be imported belongs to the `same module/scope`, use **relative path**.
+If the data to be imported belongs to the **same module/scope**, use **relative path**.
 
 ## 2. Architecture
 
