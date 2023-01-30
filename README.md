@@ -107,7 +107,7 @@ Once the current code is tested and can be refactored. We must make sure that th
 
 ### 1.3 Imports
 
-If the data to be imported belongs to `another module/scope`, use an **absolute path**.
+If the data to be imported belongs to **another module/scope**, use an **absolute path**.
 
 If the data to be imported belongs to the **same module/scope**, use **relative path**.
 
