@@ -166,8 +166,8 @@ HeaderPopup.js importing an enum from 'src/enum/errors.js'
 use this:
 `import { UploadError } from '~/enums'`
 
-**Note**
-Is also a good practice create an **index** file to import and export datas belong the same folder as we can see example above.
+**Note: **
+Is also a good practice to create an **index** file for exporting data belonging to the same folder, as we can see example above.
 
 index.js
 ```
