@@ -107,24 +107,75 @@ Once the current code is tested and can be refactored. We must make sure that th
 
 ### 1.3 Imports
 
-If the data to be imported belongs to **another module/scope**, use an **absolute path**.
-
 If the data to be imported belongs to the **same module/scope**, use **relative path**.
 
-For example:
+**Relative Path Example:**
+
+HeaderButton.js importing style from 'header/styles.css'
 
 ```sh
 ┣ 📂 src/components \
-┣ ┣ 📂 component \
+┣ ┣ 📂 header \
+┣ ┃ ┣ 📂 components
+┣ ┃ ┣ ┣ 📂 Buttons
+┣ ┃ ┣ ┣ ┣ 📜 HeaderButton.js
+┣ ┃ ┣ ┣ ┣ 📜 RedirectButton.js
+┣ ┃ ┣ ┣ ┣ 📜 EspecifictButton.js
+┣ ┃ ┣ ┣ 📂 Card 
+┣ ┃ ┣ ┣ 📂 Modal 
 ┣ ┃ ┣ 📂 __tests__
-┣ ┃ ┣ ┣ 📜 index.spec.js
-┣ ┃ ┣ 📜 index.js
-┣ ┃ ┣ 📜 styles.js
-┣ ┃ ┣ 📜 index.stories.mdx
+┣ ┃ 📜 index.js
+┣ ┃ 📜 styles.css
+┣ ┃ 📜 index.stories.mdx
+┣ ┃ 📜 index.spec.js
 
 ```
 
+use this:
+`import { HeaderButtonClass } from '../../../styles'`
 
+If the data to be imported belongs to **another module/scope**, use an **absolute path**.
+
+**Absolute Path Example:**
+
+HeaderPopup.js importing an enum from 'src/enum/errors.js'
+
+```sh
+┣ 📂 src \
+┣ ┣ 📂 components \
+┣ ┃ ┣ 📂 header \
+┣ ┃ ┃ ┣ 📂 components
+┣ ┃ ┃ ┃ ┣ 📂 Card 
+┣ ┃ ┃ ┃ ┣ 📂 Popup
+┣ ┃ ┃ ┃ ┃ ┣ 📜 HeaderPopup.js
+┣ ┃ ┃ ┃ ┃ ┣ 📜 RedirectPopup.js
+┣ ┃ ┃ ┃ ┃ ┣ 📜 EspecifictPopup.js
+┣ ┃ ┃ ┣ 📂 __tests__
+┣ ┃ ┣ 📜 index.js
+┣ ┃ ┣ 📜 styles.scss
+┣ ┃ ┣ 📜 index.stories.mdx
+┣ ┃ ┣ 📜 index.spec.js
+┣ ┃ 📂 enums \
+┣ ┃ ┣ 📜 errors.js
+┣ ┃ ┣ 📜 pages.js
+┣ ┃ ┣ 📜 routes.js
+┣ ┃ ┣ 📜 environments.js
+┣ ┃ ┣ 📜 index.js
+
+```
+use this:
+`import { UploadError } from '~/enums'`
+
+**Note**
+Is also a good practice create an **index** file to import and export datas belong the same folder as we can see example above.
+
+index.js
+```
+export * from './errors'
+export * from './pages'
+export * from './routes'
+export * from './environments'
+```
 
 ## 2. Architecture
 
