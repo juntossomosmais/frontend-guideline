@@ -120,7 +120,7 @@ HeaderButton.js importing style from 'header/styles.css'
 ┣ ┃ ┣ ┣ 📂 Buttons
 ┣ ┃ ┣ ┣ ┣ 📜 HeaderButton.js
 ┣ ┃ ┣ ┣ ┣ 📜 RedirectButton.js
-┣ ┃ ┣ ┣ ┣ 📜 EspecifictButton.js
+┣ ┃ ┣ ┣ ┣ 📜 EspecificButton.js
 ┣ ┃ ┣ ┣ 📂 Card 
 ┣ ┃ ┣ ┣ 📂 Modal 
 ┣ ┃ ┣ 📂 __tests__
@@ -149,7 +149,7 @@ HeaderPopup.js importing an enum from 'src/enum/errors.js'
 ┣ ┃ ┃ ┃ ┣ 📂 Popup
 ┣ ┃ ┃ ┃ ┃ ┣ 📜 HeaderPopup.js
 ┣ ┃ ┃ ┃ ┃ ┣ 📜 RedirectPopup.js
-┣ ┃ ┃ ┃ ┃ ┣ 📜 EspecifictPopup.js
+┣ ┃ ┃ ┃ ┃ ┣ 📜 EspecificPopup.js
 ┣ ┃ ┃ ┣ 📂 __tests__
 ┣ ┃ ┣ 📜 index.js
 ┣ ┃ ┣ 📜 styles.scss
