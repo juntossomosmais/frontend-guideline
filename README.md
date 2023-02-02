@@ -326,7 +326,7 @@ Use lowercase and avoid specifying units is zero-values.
 
 ```scss
 .selector-1 {
-  color: #aaaaaa;
+  color: #aaa;
   margin: 0;
 }
 ```
