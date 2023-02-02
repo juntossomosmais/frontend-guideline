@@ -109,9 +109,9 @@ Once the current code is tested and can be refactored. We must make sure that th
 
 If the data to be imported belongs to the **same module/scope**, use **relative path**.
 
-**Relative Path Example:**
+#### Relative Path Example
 
-HeaderButton.js importing style from 'header/styles.css'
+`HeaderButton.js importing style from `header/styles.css`
 
 ```sh
 ┣ 📂 src/components \
@@ -132,13 +132,16 @@ HeaderButton.js importing style from 'header/styles.css'
 ```
 
 use this:
-`import { HeaderButtonClass } from '../../../styles'`
+
+```js
+import { HeaderButtonClass } from '../../../styles'
+```
 
 If the data to be imported belongs to **another module/scope**, use an **absolute path**.
 
-**Absolute Path Example:**
+#### Absolute Path Example
 
-HeaderPopup.js importing an enum from 'src/enum/errors.js'
+`HeaderPopup.js` importing an enum from `src/enum/errors.js`
 
 ```sh
 ┣ 📂 src \
@@ -163,14 +166,18 @@ HeaderPopup.js importing an enum from 'src/enum/errors.js'
 ┣ ┃ ┣ 📜 index.js
 
 ```
+
 use this:
-`import { UploadError } from '~/enums'`
 
-**Note: **
-Is also a good practice to create an **index** file for exporting data belonging to the same folder, as we can see example above.
-
-index.js
+```js
+import { UploadError } from '~/enums'
 ```
+
+**Note:**
+
+Is also a good practice to create an `index.js` file for exporting data belonging to the same folder, as we can see example above.
+
+```js
 export * from './errors'
 export * from './pages'
 export * from './routes'
