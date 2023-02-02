@@ -53,9 +53,9 @@ Use soft tabs with two spaces. You need to configure your editor for this.
 
 ```js
 const obj = {
-  prop: "value",
-  prop2: "value2",
-  prop3: "value3",
+  prop: 'value',
+  prop2: 'value2',
+  prop3: 'value3',
 }
 ```
 
@@ -75,9 +75,9 @@ const obj = {
 
 ```js
 const obj = {
-    prop: "value",
-    prop2: "value2",
-    prop3: "value3",
+    prop: 'value',
+    prop2: 'value2',
+    prop3: 'value3',
 }
 ```
 
@@ -399,7 +399,7 @@ Use lowercase and avoid specifying units is zero-values.
 
 ```scss
 .selector-1 {
-  color: #aaaaaa;
+  color: #aaa;
   margin: 0;
 }
 ```
