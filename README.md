@@ -1050,7 +1050,7 @@ export type SelectProps = TextFieldProps & {
   options: SelectOption[];
 };
 
-const Select: React.FC<SelectProps> = ({ options, ...props }) => {
+const Select = ({ options, ...props }: SelectProps) => {
   return (
     <TextField {...props}>
       {options.map((option) => (
@@ -1078,13 +1078,13 @@ export type SelectProps = {
   onBlur: () => void;
 };
 
-const Select: React.FC<SelectProps> = ({
+const Select = ({
   options,
   disabled,
   onChange,
   value,
   onBlur,
-}) => {
+} : SelectProps) => {
   return (
     <TextField
       disabled={disabled}
