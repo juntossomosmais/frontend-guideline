@@ -43,6 +43,7 @@ This is our [Front-end Challenge](https://github.com/juntossomosmais/frontend-ch
 
 - 1.1 [Code Syntax](#11-code-syntax)
 - 1.2 [Refactoring](#12-refactoring)
+- 1.3 [Imports](#13-imports)
 
 ### 1.1 Code Syntax
 
@@ -52,9 +53,9 @@ Use soft tabs with two spaces. You need to configure your editor for this.
 
 ```js
 const obj = {
-  prop: 'value',
-  prop2: 'value2',
-  prop3: 'value3',
+  prop: "value",
+  prop2: "value2",
+  prop3: "value3",
 }
 ```
 
@@ -74,9 +75,9 @@ const obj = {
 
 ```js
 const obj = {
-    prop: 'value',
-    prop2: 'value2',
-    prop3: 'value3',
+    prop: "value",
+    prop2: "value2",
+    prop3: "value3",
 }
 ```
 
@@ -103,6 +104,78 @@ if(!isWholeCodeCoveraged) return
 
 - Keep the current tests and make them pass! 
 Once the current code is tested and can be refactored. We must make sure that the new changes will not break the current tests. 
+
+### 1.3 Imports
+
+If the data to be imported belongs to the **same module/scope**, use **relative path**.
+
+**Relative Path Example:**
+
+HeaderButton.js importing style from 'header/styles.css'
+
+```sh
+┣ 📂 src/components \
+┣ ┣ 📂 header \
+┣ ┃ ┣ 📂 components
+┣ ┃ ┣ ┣ 📂 Buttons
+┣ ┃ ┣ ┣ ┣ 📜 HeaderButton.js
+┣ ┃ ┣ ┣ ┣ 📜 RedirectButton.js
+┣ ┃ ┣ ┣ ┣ 📜 EspecificButton.js
+┣ ┃ ┣ ┣ 📂 Card 
+┣ ┃ ┣ ┣ 📂 Modal 
+┣ ┃ ┣ 📂 __tests__
+┣ ┃ 📜 index.js
+┣ ┃ 📜 styles.css
+┣ ┃ 📜 index.stories.mdx
+┣ ┃ 📜 index.spec.js
+
+```
+
+use this:
+`import { HeaderButtonClass } from '../../../styles'`
+
+If the data to be imported belongs to **another module/scope**, use an **absolute path**.
+
+**Absolute Path Example:**
+
+HeaderPopup.js importing an enum from 'src/enum/errors.js'
+
+```sh
+┣ 📂 src \
+┣ ┣ 📂 components \
+┣ ┃ ┣ 📂 header \
+┣ ┃ ┃ ┣ 📂 components
+┣ ┃ ┃ ┃ ┣ 📂 Card 
+┣ ┃ ┃ ┃ ┣ 📂 Popup
+┣ ┃ ┃ ┃ ┃ ┣ 📜 HeaderPopup.js
+┣ ┃ ┃ ┃ ┃ ┣ 📜 RedirectPopup.js
+┣ ┃ ┃ ┃ ┃ ┣ 📜 EspecificPopup.js
+┣ ┃ ┃ ┣ 📂 __tests__
+┣ ┃ ┣ 📜 index.js
+┣ ┃ ┣ 📜 styles.scss
+┣ ┃ ┣ 📜 index.stories.mdx
+┣ ┃ ┣ 📜 index.spec.js
+┣ ┃ 📂 enums \
+┣ ┃ ┣ 📜 errors.js
+┣ ┃ ┣ 📜 pages.js
+┣ ┃ ┣ 📜 routes.js
+┣ ┃ ┣ 📜 environments.js
+┣ ┃ ┣ 📜 index.js
+
+```
+use this:
+`import { UploadError } from '~/enums'`
+
+**Note: **
+Is also a good practice to create an **index** file for exporting data belonging to the same folder, as we can see example above.
+
+index.js
+```
+export * from './errors'
+export * from './pages'
+export * from './routes'
+export * from './environments'
+```
 
 ## 2. Architecture
 
@@ -326,7 +399,7 @@ Use lowercase and avoid specifying units is zero-values.
 
 ```scss
 .selector-1 {
-  color: #aaa;
+  color: #aaaaaa;
   margin: 0;
 }
 ```
