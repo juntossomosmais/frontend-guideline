@@ -1036,7 +1036,7 @@ const MyComponent = (type) => {
 
 ### 7.8 Using spread operator
 
-When creating a component wrapper we can spread the types from our original component. That way the wrapper extends all the props from the original component automatically. Creating a custom type and passing on `React.FC` typescript can give us all the correct props. This is useful to avoid creating a custom interface for our wrapper with missing props from the original component.
+When creating a component wrapper we can spread the types from our original component. That way the wrapper extends all the props from the original component automatically. This is useful to avoid creating a custom interface for our wrapper with missing props from the original component.
 
 **✅ Good:**
 
