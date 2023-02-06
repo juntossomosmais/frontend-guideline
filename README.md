@@ -1114,6 +1114,75 @@ const MyComponent = (type) => {
 }
 ```
 
+### 7.8 Using spread operator
+
+When creating a component wrapper we can spread the types from our original component. That way the wrapper extends all the props from the original component automatically. This is useful to avoid creating a custom interface for our wrapper with missing props from the original component.
+
+**✅ Good:**
+
+```tsx
+import { MenuItem, TextField } from '@mui/material';
+import { TextFieldProps } from '@mui/material';
+
+export type SelectOption = { value: string; label: string };
+
+export type SelectProps = TextFieldProps & {
+  options: SelectOption[];
+};
+
+const Select = ({ options, ...props }: SelectProps) => {
+  return (
+    <TextField {...props}>
+      {options.map((option) => (
+        <MenuItem key={uuidv4()} value={option.value}>
+          {option.label}
+        </MenuItem>
+      ))}
+    </TextField>
+  );
+};
+```
+
+**❌ Bad:**
+
+```tsx
+import { MenuItem, TextField } from '@mui/material';
+
+export type SelectOption = { value: string; label: string };
+
+export type SelectProps = {
+  options: SelectOption[];
+  disabled: boolean;
+  onChange: () => void;
+  value: string;
+  onBlur: () => void;
+};
+
+const Select = ({
+  options,
+  disabled,
+  onChange,
+  value,
+  onBlur,
+} : SelectProps) => {
+  return (
+    <TextField
+      disabled={disabled}
+      onChange={handleOnChange}
+      value={value}
+      onBlur={handleOnBlur}
+    >
+      {options.map((option) => (
+        <MenuItem key={uuidv4()} value={option.value}>
+          {option.label}
+        </MenuItem>
+      ))}
+    </TextField>
+  );
+};
+```
+
+
 **[⬆ back to summary](#-summary)**
 
 ---
