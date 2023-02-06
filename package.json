@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:clean-dev": "vuepress dev src --clean-cache",
+    "docs:build": "vuepress build docs"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.2.1",
+    "vuepress": "2.0.0-beta.60",
+    "vuepress-theme-hope": "2.0.0-beta.172"
+  }
+}
