@@ -659,6 +659,7 @@ keep the media queries as close to their relevant rule sets whenever possible.
 - 6.4 [Avoid multiple if's](#64-avoid-multiple-ifs)
 - 6.5 [Code Comments](#65-code-comments)
 - 6.6 [Avoid errors while destructuring](#66-avoid-errors-while-destructuring)
+- 6.7 [Prefer early return](#67-prefer-early-return)
 
 <a name="javascript-syntax"></a>
 
@@ -857,6 +858,39 @@ Its a common mistake destructuring while the object is null or undefined, the de
 ```js
   const { age } = null // will throw an typeError
   const { age } = undefined // will throw an typeError
+```
+
+<a name="early-return"></a>
+### 6.7 Prefer early return
+
+Prefer early return over conditional wrapping to enhance code readability and reduce nesting.
+
+**✅ Good:**
+
+```js
+function foo() {
+  if (!someValidation) return // or throw error
+
+  // do something here
+
+  if (!anotherValidation) return
+
+  return 'bar'
+}
+```
+
+**❌ Bad:**
+
+```js
+function foo() {
+  if (someValidation) {
+    // do something here
+
+    if (anotherValidation) {
+      return 'bar'
+    }
+  }
+}
 ```
 
 **[⬆ back to summary](#-summary)**
