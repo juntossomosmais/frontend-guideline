@@ -1234,10 +1234,7 @@ import Welcome from '../components/Welcome'
 
 const HomePage = () => {
   const [showWelcome, setShowWelcome] = useState(true)
-
-  return (
-    {showWelcome && <Welcome />}
-  );
+  return showWelcome && <Welcome />
 };
 ```
 
@@ -1249,10 +1246,7 @@ import Welcome from '../components/Welcome'
 
 const HomePage = () => {
   const [showWelcome, setShowWelcome] = useState(true)
-
-  return (
-    {showWelcome ? <Welcome /> : <></>}
-  );
+  return showWelcome ? <Welcome /> : <></>
 };
 ```
 
@@ -1269,28 +1263,25 @@ import Dashboard from '../components/Dashboard'
 
 const HomePage = () => {
   const [showWelcome, setShowWelcome] = useState(false)
-
-  return (
-    {showWelcome ? <Welcome /> : <Dashboard />}
-  );
+  return showWelcome ? <Welcome /> : <Dashboard />
 };
 ```
 
 **❌ Bad:**
 
 ```tsx
-import { useState } from "react";
-import Welcome from "../components/Welcome";
-import Dashboard from "../components/Dashboard";
+import { useState } from "react"
+import Welcome from "../components/Welcome"
+import Dashboard from "../components/Dashboard"
 
 const HomePage = () => {
-  const [showWelcome, setShowWelcome] = useState(false);
+  const [showWelcome, setShowWelcome] = useState(false)
 
   if (!showWelcome) {
-    return <Dashboard />;
+    return <Dashboard />
   }
 
-  return <Welcome />;
+  return <Welcome />
 };
 ```
 
