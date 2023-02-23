@@ -907,9 +907,9 @@ function foo() {
 - 7.6 [Using Styled Component in React Components](#76-using-styled-component-in-react-components)
 - 7.7 [Enums](#77-avoid-compare-directly-strings)
 - 7.8 [Using spread operator](#78-using-spread-operator)
-- 7.9 [Conditional Rendering](#79-short-circuit)
-  - 7.9.1 [Using short circuit](#791-short-circuit)
-  - 7.9.2 [Using ternary operator](#792-ternary-operator)
+- 7.9 [Conditional Rendering](#79-conditional-rendering)
+  - 7.9.1 [Using short circuit](#791-using-short-circuit)
+  - 7.9.2 [Using ternary operator](#792-using-ternary-operator)
 
 ### 7.1 Keys in lists
 
