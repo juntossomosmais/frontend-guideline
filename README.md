@@ -906,6 +906,10 @@ function foo() {
 - 7.5 [Styled Component Naming Convention](#75-styled-component-naming-convention)
 - 7.6 [Using Styled Component in React Components](#76-using-styled-component-in-react-components)
 - 7.7 [Enums](#77-avoid-compare-directly-strings)
+- 7.8 [Using spread operator](#78-using-spread-operator)
+- 7.9 [Conditional Rendering](#79-conditional-rendering)
+  - 7.9.1 [Using short circuit](#791-using-short-circuit)
+  - 7.9.2 [Using ternary operator](#792-using-ternary-operator)
 
 ### 7.1 Keys in lists
 
@@ -1216,6 +1220,70 @@ const Select = ({
 };
 ```
 
+### 7.9 Conditional Rendering
+
+#### 7.9.1 Using short circuit
+
+when we only need to validate a logical case and return a component, we can directly use the short circuit
+
+**✅ Good:**
+
+```tsx
+import { useState } from 'react'
+import Welcome from '../components/Welcome'
+
+const HomePage = () => {
+  const [showWelcome, setShowWelcome] = useState(true)
+  return showWelcome && <Welcome />
+};
+```
+
+**❌ Bad:**
+
+```tsx
+import { useState } from 'react'
+import Welcome from '../components/Welcome'
+
+const HomePage = () => {
+  const [showWelcome, setShowWelcome] = useState(true)
+  return showWelcome ? <Welcome /> : <></>
+};
+```
+
+#### 7.9.2 Using ternary operator
+
+when we need to validate two logical cases and return a component in both cases, we can use the ternary instead of the if...else
+
+**✅ Good:**
+
+```tsx
+import { useState } from 'react'
+import Welcome from '../components/Welcome'
+import Dashboard from '../components/Dashboard'
+
+const HomePage = () => {
+  const [showWelcome, setShowWelcome] = useState(false)
+  return showWelcome ? <Welcome /> : <Dashboard />
+};
+```
+
+**❌ Bad:**
+
+```tsx
+import { useState } from "react"
+import Welcome from "../components/Welcome"
+import Dashboard from "../components/Dashboard"
+
+const HomePage = () => {
+  const [showWelcome, setShowWelcome] = useState(false)
+
+  if (!showWelcome) {
+    return <Dashboard />
+  }
+
+  return <Welcome />
+};
+```
 
 **[⬆ back to summary](#-summary)**
 
