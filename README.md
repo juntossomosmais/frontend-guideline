@@ -1568,6 +1568,26 @@ type myBeautifulType = {
 }
 ```
 
+The same to Enum keys.
+
+**✅ Good:**
+
+```ts
+enum UserResponse {
+  NotSuccess = 0,
+  Success = 1,
+}
+```
+
+**❌ Bad:**
+
+```ts
+enum UserResponse {
+  NOT_SUCCESS = 0,
+  success = 1,
+}
+```
+
 ### 11.3 Exporting types
 
 Do not export types/functions unless you need to use it across multiple components.
