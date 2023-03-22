@@ -676,11 +676,10 @@ Icons, width and height that are relative to our Design System or that have size
 **❌ Bad:**
 
 ```scss
-
 .logout__icon {
-    height: 25px;
-    width: 25px;
-  }
+  height: 25px;
+  width: 25px;
+}
 
 .icon__button {
     min-width: 34px;
