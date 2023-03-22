@@ -664,9 +664,9 @@ Icons, width and height that are relative to our Design System or that have size
 
 ```scss
 .logout__icon {
-    height: var(--spacing-xxlarge);
-    width: var(--spacing-xxlarge);
-  }
+  height: var(--spacing-xxlarge);
+  width: var(--spacing-xxlarge);
+}
 
 .icon__button {
     min-width: var(--spacing-giant);
