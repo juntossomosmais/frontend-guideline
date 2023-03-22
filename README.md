@@ -682,8 +682,7 @@ Icons, width and height that are relative to our Design System or that have size
 }
 
 .icon__button {
-    min-width: 34px;
-  }
+  min-width: 34px;
 }
 ```
 
