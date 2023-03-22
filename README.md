@@ -669,9 +669,8 @@ Icons, width and height that are relative to our Design System or that have size
 }
 
 .icon__button {
-    min-width: var(--spacing-giant);
-  }
-}
+  min-width: var(--spacing-giant);
+} 
 ```
 
 **❌ Bad:**
