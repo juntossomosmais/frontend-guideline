@@ -712,9 +712,8 @@ If you are using a image, or a component that has a design size and it sizes at 
 
 ```scss
 .shopfrom__banner {
-    height: calc(4 * var(--spaceing-xxxlarge);
-    width: calc(2 * var(--spacing-giant);
-  }
+  height: calc(4 * var(--spaceing-xxxlarge);
+  width: calc(2 * var(--spacing-giant);
 }
 ```
 
