@@ -694,13 +694,11 @@ If you are using a image, or a component that has a design size and it sizes at 
 
 ```scss
 .shopfrom__banner {
-    height: 900px;
-    width: 480px;
-  }
-
-  @media (min-width: 991px) {
-     height: 740px;
-     width: 240px;
+  height: 900px;
+  width: 480px;
+@media (min-width: 991px) {
+  height: 740px;
+  width: 240px;
   }
 }
 ```
@@ -714,19 +712,19 @@ If you are using a image, or a component that has a design size and it sizes at 
 }
 .shopfrom__banner {
   height: 480px;
-   width: 170px;
+  width: 170px;
 // or
   @media (max-width: 746px) {
-   height: 740px;
-   width: 240px;
+    height: 740px;
+    width: 240px;
   }
   @media (max-width: 991px) {
-   height: 900px;
-   width: 320px;
+    height: 900px;
+    width: 320px;
   }
   @media (max-width: 1024px) {
-   height: 980px;
-   width: 300px;
+    height: 980px;
+    width: 300px;
   }
 }
 ```
