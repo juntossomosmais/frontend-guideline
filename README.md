@@ -36,6 +36,7 @@ This is our [Front-end Challenge](https://github.com/juntossomosmais/frontend-ch
 9. [Storybook](#9-storybook)
 10. [Testing](#10-testing)
 11. [Typescript](#11-typescript)
+12. [GTM](#12-Google-Tag-Manager-GTM)
 
 ---
 
@@ -53,10 +54,10 @@ Use soft tabs with two spaces. You need to configure your editor for this.
 
 ```js
 const obj = {
-  prop: 'value',
-  prop2: 'value2',
-  prop3: 'value3',
-}
+  prop: "value",
+  prop2: "value2",
+  prop3: "value3",
+};
 ```
 
 ```css
@@ -75,21 +76,21 @@ const obj = {
 
 ```js
 const obj = {
-    prop: 'value',
-    prop2: 'value2',
-    prop3: 'value3',
-}
+  prop: "value",
+  prop2: "value2",
+  prop3: "value3",
+};
 ```
 
 ```css
 .foo {
-    color: red;
+  color: red;
 }
 ```
 
 ```html
 <div>
-    <p>Hello World</p>
+  <p>Hello World</p>
 </div>
 ```
 
@@ -98,12 +99,13 @@ const obj = {
 Refactoring makes part of JSMLover's way of being, doing it every day and task by task. We have good practices and conditions to do that, though.
 
 ```js
-if(!isWholeCodeCoveraged) return
+if (!isWholeCodeCoveraged) return;
 ```
-- We can only refactor codes that have tests (and that tests!), which means 100% coverage! This way, we can improve or code safely. 
 
-- Keep the current tests and make them pass! 
-Once the current code is tested and can be refactored. We must make sure that the new changes will not break the current tests. 
+- We can only refactor codes that have tests (and that tests!), which means 100% coverage! This way, we can improve or code safely.
+
+- Keep the current tests and make them pass!
+  Once the current code is tested and can be refactored. We must make sure that the new changes will not break the current tests.
 
 ### 1.3 Imports
 
@@ -121,8 +123,8 @@ If the data to be imported belongs to the **same module/scope**, use **relative 
 ┣ ┃ ┣ ┣ ┣ 📜 HeaderButton.js
 ┣ ┃ ┣ ┣ ┣ 📜 RedirectButton.js
 ┣ ┃ ┣ ┣ ┣ 📜 EspecificButton.js
-┣ ┃ ┣ ┣ 📂 Card 
-┣ ┃ ┣ ┣ 📂 Modal 
+┣ ┃ ┣ ┣ 📂 Card
+┣ ┃ ┣ ┣ 📂 Modal
 ┣ ┃ ┣ 📂 __tests__
 ┣ ┃ 📜 index.js
 ┣ ┃ 📜 styles.css
@@ -134,7 +136,7 @@ If the data to be imported belongs to the **same module/scope**, use **relative 
 use this:
 
 ```js
-import { HeaderButtonClass } from '../../../styles'
+import { HeaderButtonClass } from "../../../styles";
 ```
 
 If the data to be imported belongs to **another module/scope**, use an **absolute path**.
@@ -148,7 +150,7 @@ If the data to be imported belongs to **another module/scope**, use an **absolut
 ┣ ┣ 📂 components \
 ┣ ┃ ┣ 📂 header \
 ┣ ┃ ┃ ┣ 📂 components
-┣ ┃ ┃ ┃ ┣ 📂 Card 
+┣ ┃ ┃ ┃ ┣ 📂 Card
 ┣ ┃ ┃ ┃ ┣ 📂 Popup
 ┣ ┃ ┃ ┃ ┃ ┣ 📜 HeaderPopup.js
 ┣ ┃ ┃ ┃ ┃ ┣ 📜 RedirectPopup.js
@@ -170,7 +172,7 @@ If the data to be imported belongs to **another module/scope**, use an **absolut
 use this:
 
 ```js
-import { UploadError } from '~/enums'
+import { UploadError } from "~/enums";
 ```
 
 **Note:**
@@ -178,10 +180,10 @@ import { UploadError } from '~/enums'
 Is also a good practice to create an `index.js` file for exporting data belonging to the same folder, as we can see example above.
 
 ```js
-export * from './errors'
-export * from './pages'
-export * from './routes'
-export * from './environments'
+export * from "./errors";
+export * from "./pages";
+export * from "./routes";
+export * from "./environments";
 ```
 
 ## 2. Architecture
@@ -252,7 +254,7 @@ For example:
 ┣ ┣ ┃ ┃ ┣ 📜 UserProfile.stories.mdx \
 ```
 
-#### Scoped Files 
+#### Scoped Files
 
 We need to add inside `pages/**/{utils, helpers, context, hooks, etc...}` and use `camelCase` as **Naming Convention**.
 
@@ -670,16 +672,16 @@ Never use semicolons.
 **✅ Good:**
 
 ```js
-const foo = 'bar'
-const baz = 'qux'
-const func = () => {}
+const foo = "bar";
+const baz = "qux";
+const func = () => {};
 ```
 
 **❌ Bad:**
 
 ```js
-const foo = 'bar';
-const baz = 'qux';
+const foo = "bar";
+const baz = "qux";
 const func = () => {};
 ```
 
@@ -688,15 +690,15 @@ Always use single quotes or template literals
 **✅ Good:**
 
 ```js
-const string = 'foo'
-const template = `foo`
+const string = "foo";
+const template = `foo`;
 ```
 
 **❌ Bad:**
 
 ```js
-const string = "foo"
-const template = "foo"
+const string = "foo";
+const template = "foo";
 ```
 
 <a name="variables"></a>
@@ -706,16 +708,16 @@ For strict equality checks `===` should be used in favor of `==`.
 **✅ Good:**
 
 ```js
-if (foo === 'foo') {
-  statement
+if (foo === "foo") {
+  statement;
 }
 ```
 
 **❌ Bad:**
 
 ```js
-if (foo == 'foo') {
-  statement
+if (foo == "foo") {
+  statement;
 }
 ```
 
@@ -726,13 +728,13 @@ Use meaningful, pronounceable, and in **English** variable names.
 **✅ Good:**
 
 ```js
-const currentDate = new Date().toLocaleDateString('pt-BR')
+const currentDate = new Date().toLocaleDateString("pt-BR");
 ```
 
 **❌ Bad:**
 
 ```js
-const xpto = new Date().toLocaleDateString('pt-BR')
+const xpto = new Date().toLocaleDateString("pt-BR");
 ```
 
 <a name="descriptive-validations"></a>
@@ -744,7 +746,7 @@ Creating const to describe validations.
 **✅ Good:**
 
 ```js
-const hasFullUserName = user.firstName && user.lastname
+const hasFullUserName = user.firstName && user.lastname;
 
 if (hasFullUserName) {
   //do awesome something
@@ -774,13 +776,13 @@ const messagingChannels = {
   },
   email: (message) => {
     // send message to email
-  }
-}
+  },
+};
 
 const sendMessage = (message, channel) => {
   const send = messagingChannels[channel];
   return send && send(message);
-}
+};
 ```
 
 **❌ Bad:**
@@ -788,19 +790,19 @@ const sendMessage = (message, channel) => {
 ```js
 const sendWhatsapp = (message) => {
   // send message to whatsapp
-}
+};
 
 const sendEmail = (message) => {
   // send message to email
-}
+};
 
 const sendMessage = (message, channel) => {
-  if (channel === 'whatsapp') {
-    sendWhatsapp(message)
-  } else if (channel === 'email') {
-    sendEmail(message)
+  if (channel === "whatsapp") {
+    sendWhatsapp(message);
+  } else if (channel === "email") {
+    sendEmail(message);
   }
-}
+};
 ```
 
 ### 6.5 Code Comments
@@ -810,26 +812,27 @@ Avoid writing comments to explain the code. Use comments to answer “Why?” in
 **✅ Good:**
 
 ```js
-  const TIME_IN_SECONDS = 60 * 40 // 40 minutes
+const TIME_IN_SECONDS = 60 * 40; // 40 minutes
 
-  // xxxx@xxxx.xxx
-  const regex = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i
+// xxxx@xxxx.xxx
+const regex = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i;
 
-  const calculateProductsPrice = () => {
-    // do something
-  }
+const calculateProductsPrice = () => {
+  // do something
+};
 ```
 
 **❌ Bad:**
 
 ```js
-  // This coolFunction calculates the prices of the products
-  const coolFunction = () => {
-    // do something
-  }
+// This coolFunction calculates the prices of the products
+const coolFunction = () => {
+  // do something
+};
 ```
 
 <a name="errors-destructuring"></a>
+
 ### 6.6 Avoid errors while destructuring
 
 Its a common mistake destructuring while the object is null or undefined, the destructuring will throw an error.
@@ -837,30 +840,30 @@ Its a common mistake destructuring while the object is null or undefined, the de
 **✅ Good:**
 
 ```js
-  const { age } = { ...null } // undefined
-  const { age } = null || {} // undefined
+const { age } = { ...null }; // undefined
+const { age } = null || {}; // undefined
 
-  // other values won't throw an error
-  const { emptyString } = '';
-  const { nan } = NaN;
-  const { emptyObject } = {};
+// other values won't throw an error
+const { emptyString } = "";
+const { nan } = NaN;
+const { emptyObject } = {};
 
-  function foo(bar = {}) {
-    const { age } = bar;
-  }
-  
-  foo() // undefined
-  
+function foo(bar = {}) {
+  const { age } = bar;
+}
+
+foo(); // undefined
 ```
 
 **❌ Bad:**
 
 ```js
-  const { age } = null // will throw an typeError
-  const { age } = undefined // will throw an typeError
+const { age } = null; // will throw an typeError
+const { age } = undefined; // will throw an typeError
 ```
 
 <a name="early-return"></a>
+
 ### 6.7 Prefer early return
 
 Prefer early return over conditional wrapping to enhance code readability and reduce nesting.
@@ -869,13 +872,13 @@ Prefer early return over conditional wrapping to enhance code readability and re
 
 ```js
 function foo() {
-  if (!someValidation) return // or throw error
+  if (!someValidation) return; // or throw error
 
   // do something here
 
-  if (!anotherValidation) return
+  if (!anotherValidation) return;
 
-  return 'bar'
+  return "bar";
 }
 ```
 
@@ -887,7 +890,7 @@ function foo() {
     // do something here
 
     if (anotherValidation) {
-      return 'bar'
+      return "bar";
     }
   }
 }
@@ -936,7 +939,7 @@ If the new state is calculated using the previous state, you can pass a function
 **✅ Good:**
 
 ```js
-const [number, setNumber] = useState(1)
+const [number, setNumber] = useState(1);
 
 return (
   <div>
@@ -948,7 +951,7 @@ return (
       Decrease
     </button>
   </div>
-)
+);
 ```
 
 **❌ Bad:**
@@ -972,12 +975,12 @@ Use the useEffect dependency array to trigger side effects, and make your code c
 **✅ Good:**
 
 ```js
-const [page, setPage] = useState(1)
+const [page, setPage] = useState(1);
 
 useEffect(() => {
-  requestListUser()
+  requestListUser();
   // calls useEffect when page state changes
-}, [page])
+}, [page]);
 
 return (
   <div>
@@ -985,29 +988,29 @@ return (
       Next Page
     </button>
   </div>
-)
+);
 ```
 
 **❌ Bad:**
 
 ```js
-const [page, setPage] = useState(1)
+const [page, setPage] = useState(1);
 
 useEffect(() => {
-  requestListUser()
-}, [])
+  requestListUser();
+}, []);
 
 const requestListUser = () => {
-  setPage((prevState) => prevState + 1)
+  setPage((prevState) => prevState + 1);
   // ...
   // any code to return user list
-}
+};
 
 return (
   <div>
     <button onClick={() => requestListUser()}>Next Page</button>
   </div>
-)
+);
 ```
 
 ### 7.4 Readable components
@@ -1033,7 +1036,7 @@ const Screen = () => (
       </List>
     </Main>
   </Container>
-)
+);
 ```
 
 **❌ Bad:**
@@ -1055,7 +1058,7 @@ const Screen = () => (
       </Box>
     </Box>
   </Box>
-)
+);
 ```
 
 ### 7.5 Styled Component Naming Convention
@@ -1066,16 +1069,16 @@ Use PascalCase as a convention in styled-components
 
 ```js
 export const CustomText = styled.p`
-  color: 'red'
-`
+  color: "red";
+`;
 ```
 
 **❌ Bad:**
 
 ```js
 export const customText = styled.p`
-  color: 'red'
-`
+  color: "red";
+`;
 ```
 
 ### 7.6 Using Styled Component in React Components
@@ -1085,34 +1088,21 @@ Import Styled Component as `S`
 **✅ Good:**
 
 ```tsx
-import * as S from './styles'
+import * as S from "./styles";
 
-const MyComponent = () => (
-  <S.CustomText>
-    text example
-  </S.CustomText>
-)
+const MyComponent = () => <S.CustomText>text example</S.CustomText>;
 ```
 
 **❌ Bad:**
 
 ```tsx
-import * as Style from './styles'
+import * as Style from "./styles";
 
-const MyComponent = () => (
-  <Style.CustomText>
-    text example
-  </Style.CustomText>
-)
+const MyComponent = () => <Style.CustomText>text example</Style.CustomText>;
 
+import { CustomText } from "./styles";
 
-import { CustomText } from './styles'
-
-const MyComponent = () => (
-  <CustomText>
-    text example
-  </CustomText>
-)
+const MyComponent = () => <CustomText>text example</CustomText>;
 ```
 
 ### 7.7 Avoid compare directly strings
@@ -1123,33 +1113,25 @@ When know all possible values we can use enum to achieve better readability and 
 
 ```tsx
 const FEEDBACK = {
-  CORRECT: 'correct',
-  INCORRECT: 'incorrect',
-}
+  CORRECT: "correct",
+  INCORRECT: "incorrect",
+};
 
 const MyComponent = (type) => {
-  const text = type === FEEDBACK.CORRECT ? '😎' : '😢'
-  
-  return (
-    <Emoji>
-      {text}
-    </Emoji>
-  )
-}
+  const text = type === FEEDBACK.CORRECT ? "😎" : "😢";
+
+  return <Emoji>{text}</Emoji>;
+};
 ```
 
 **❌ Bad:**
 
 ```tsx
 const MyComponent = (type) => {
-  const text = type === 'correct' ? '😎' : '😢'
+  const text = type === "correct" ? "😎" : "😢";
 
-  return (
-    <Emoji>
-      {text}
-    </Emoji>
-  )
-}
+  return <Emoji>{text}</Emoji>;
+};
 ```
 
 ### 7.8 Using spread operator
@@ -1159,8 +1141,8 @@ When creating a component wrapper we can spread the types from our original comp
 **✅ Good:**
 
 ```tsx
-import { MenuItem, TextField } from '@mui/material';
-import { TextFieldProps } from '@mui/material';
+import { MenuItem, TextField } from "@mui/material";
+import { TextFieldProps } from "@mui/material";
 
 export type SelectOption = { value: string; label: string };
 
@@ -1184,7 +1166,7 @@ const Select = ({ options, ...props }: SelectProps) => {
 **❌ Bad:**
 
 ```tsx
-import { MenuItem, TextField } from '@mui/material';
+import { MenuItem, TextField } from "@mui/material";
 
 export type SelectOption = { value: string; label: string };
 
@@ -1202,7 +1184,7 @@ const Select = ({
   onChange,
   value,
   onBlur,
-} : SelectProps) => {
+}: SelectProps) => {
   return (
     <TextField
       disabled={disabled}
@@ -1229,24 +1211,24 @@ when we only need to validate a logical case and return a component, we can dire
 **✅ Good:**
 
 ```tsx
-import { useState } from 'react'
-import Welcome from '../components/Welcome'
+import { useState } from "react";
+import Welcome from "../components/Welcome";
 
 const HomePage = () => {
-  const [showWelcome, setShowWelcome] = useState(true)
-  return showWelcome && <Welcome />
+  const [showWelcome, setShowWelcome] = useState(true);
+  return showWelcome && <Welcome />;
 };
 ```
 
 **❌ Bad:**
 
 ```tsx
-import { useState } from 'react'
-import Welcome from '../components/Welcome'
+import { useState } from "react";
+import Welcome from "../components/Welcome";
 
 const HomePage = () => {
-  const [showWelcome, setShowWelcome] = useState(true)
-  return showWelcome ? <Welcome /> : <></>
+  const [showWelcome, setShowWelcome] = useState(true);
+  return showWelcome ? <Welcome /> : <></>;
 };
 ```
 
@@ -1257,31 +1239,31 @@ when we need to validate two logical cases and return a component in both cases,
 **✅ Good:**
 
 ```tsx
-import { useState } from 'react'
-import Welcome from '../components/Welcome'
-import Dashboard from '../components/Dashboard'
+import { useState } from "react";
+import Welcome from "../components/Welcome";
+import Dashboard from "../components/Dashboard";
 
 const HomePage = () => {
-  const [showWelcome, setShowWelcome] = useState(false)
-  return showWelcome ? <Welcome /> : <Dashboard />
+  const [showWelcome, setShowWelcome] = useState(false);
+  return showWelcome ? <Welcome /> : <Dashboard />;
 };
 ```
 
 **❌ Bad:**
 
 ```tsx
-import { useState } from "react"
-import Welcome from "../components/Welcome"
-import Dashboard from "../components/Dashboard"
+import { useState } from "react";
+import Welcome from "../components/Welcome";
+import Dashboard from "../components/Dashboard";
 
 const HomePage = () => {
-  const [showWelcome, setShowWelcome] = useState(false)
+  const [showWelcome, setShowWelcome] = useState(false);
 
   if (!showWelcome) {
-    return <Dashboard />
+    return <Dashboard />;
   }
 
-  return <Welcome />
+  return <Welcome />;
 };
 ```
 
@@ -1353,18 +1335,18 @@ This prevents conflicts with existing and future HTML elements, since all HTML e
 
 ```js
 export default {
-  name: 'TodoItem',
+  name: "TodoItem",
   // ...
-}
+};
 ```
 
 **❌ Bad:**
 
 ```js
 export default {
-  name: 'Todo',
+  name: "Todo",
   // ...
-}
+};
 ```
 
 ### 8.4 Prop definitions
@@ -1377,19 +1359,19 @@ In committed code, prop definitions should always be as detailed as possible, sp
 export default {
   status: {
     type: String,
-    required: true
-  }
+    required: true,
+  },
   // ...
-}
+};
 ```
 
 **❌ Bad:**
 
 ```js
 export default {
-  props: ['status']
+  props: ["status"],
   // ...
-}
+};
 ```
 
 ### 8.5 Vue property decorator
@@ -1460,16 +1442,16 @@ Write tests with the alias "it" instead "test" method.
 **✅ Good:**
 
 ```js
-describe('yourModule', () => {
-  it('should do this thing', () => {});
+describe("yourModule", () => {
+  it("should do this thing", () => {});
 });
 ```
 
 **❌ Bad:**
 
 ```js
-describe('yourModule', () => {
-  test('if it does this thing', () => {});
+describe("yourModule", () => {
+  test("if it does this thing", () => {});
 });
 ```
 
@@ -1480,14 +1462,14 @@ To define the `test-id` to a component use the follow structure: `[page-name||co
 
 **✅ Good:**
 
-- forgot-password__input--email
-- header__select--cnpjList
-- login__button--forgot-password
+- forgot-password\_\_input--email
+- header\_\_select--cnpjList
+- login\_\_button--forgot-password
 
 **❌ Bad:**
 
 - forgot-email-input
-- header__cnpjList
+- header\_\_cnpjList
 - button--forgot-password
 
 ### 10.3 Selecting component
@@ -1497,9 +1479,11 @@ To select a component in order to test a behavior of to trigger any event we mus
 **✅ Good:**
 
 ```js
-describe('yourModule', () => {
-  it('should do trigger click event', () => {
-    const button = wrapper.find('[data-testid="login__button--forgot-password"]')
+describe("yourModule", () => {
+  it("should do trigger click event", () => {
+    const button = wrapper.find(
+      '[data-testid="login__button--forgot-password"]'
+    );
   });
 });
 ```
@@ -1507,9 +1491,9 @@ describe('yourModule', () => {
 **❌ Bad:**
 
 ```js
-describe('yourModule', () => {
-  it('should do trigger click event', () => {
-    const button = wrapper.find('button.btn-primary')
+describe("yourModule", () => {
+  it("should do trigger click event", () => {
+    const button = wrapper.find("button.btn-primary");
   });
 });
 ```
@@ -1554,18 +1538,18 @@ For convention, use PascalCase for type names.
 
 ```ts
 type MyBeautifulType = {
-  name: string
-  age: number
-}
+  name: string;
+  age: number;
+};
 ```
 
 **❌ Bad:**
 
 ```ts
 type myBeautifulType = {
-  name: string
-  age: number
-}
+  name: string;
+  age: number;
+};
 ```
 
 The same to Enum keys.
@@ -1602,9 +1586,9 @@ Within a file, type definitions should come first.
 // imports...
 
 type MyBeautifulType = {
-  name: string
-  age: number
-}
+  name: string;
+  age: number;
+};
 
 // rest of the file...
 ```
@@ -1617,9 +1601,9 @@ type MyBeautifulType = {
 // part of the file...
 
 type MyBeautifulType = {
-  name: string
-  age: number
-}
+  name: string;
+  age: number;
+};
 
 // rest of the file...
 ```
@@ -1632,9 +1616,9 @@ Create a type for increase legible
 
 ```ts
 type PersonType = {
-  name: string
-  age: number
-  birthDate: string
+  name: string;
+  age: number;
+  birthDate: string;
 };
 
 const Person = ({ name, age, birthDate }: PersonType) => {
@@ -1650,10 +1634,130 @@ const Person = ({
   age,
   birthDate,
 }: {
-  name: string,
-  age: number,
-  birthDate: string,
+  name: string;
+  age: number;
+  birthDate: string;
 }) => {
   // ...
 };
 ```
+
+## 12. Google Tag Manager - GTM
+
+- 12.1 [What is Google Tag Manager](#12.1-what-is-google-tag-manager)
+- 12.2 [Installations](#12.2-installations)
+- 12.3 [Tags GTM](#12.3-tags-gtm)
+- 12.4 [What are triggers and what types of GTM triggers](#12.4-What-are-triggers-and-what-types-of-gtm-triggers)
+- 12.5 [What are variables inside GTM](#12.5-what-are-variables-inside-gtm)
+- 12.6 [linked tools](#12.6-linked-tools)
+- 12.7 [Test tag](#12.7-Test-tag)
+- 12.8 [Using data-gtm](#12.7-using-data-gtm)
+- 12.9 [Adding data-gtm attribute in component](#12.8-adding-data-gtm-attribute-in-component)
+
+### 12.1 What is Google Tag Manager
+
+It is a free installation tool, which simplifies tag integration and concentrates all tags on a single board. Essential for tracking site-wide metrics.
+
+### 12.2 Installations
+
+1. Go to the Google Tag Manager page at https://tagmanager.google.com/.
+2. Create a Google Tag Manager account. If you already have a Google account, just sign in.
+3. Create our first container.
+4. Copy the GTM code and add the container code to your website
+
+Paste this code as high as possible in the `<head>` tag of the page
+
+```ts
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PGRSV4S');</script>
+<!-- End Google Tag Manager -->
+```
+
+Also, paste this code after the opening `<body>` tag
+
+```ts
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGRSV4S"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+```
+
+5. Publish the changes.
+
+### 12.3 Tags GTM
+
+Tags are small snippets of code created to monitor actions.
+Example: analytics tags, conversion Tags, event monitoring tags, Third-party tags...
+
+### 12.4 What are triggers and what types of GTM triggers
+
+They serve as the basis for the tag that we will trigger in GTM. This means that every tag installed on our site will have a trigger configured to fulfill the established function.
+Some of them are: click, time, form, browser history, page views...
+
+### 12.5 What are variables inside GTM
+
+They are used for harvesting, storing and transmit data between different GTM Components.
+Variables can be created from: Environment, Data, System, customized.
+And, just like triggers, they must be configured correctly so that this monitoring is carried out as assertively as possible.
+
+### 12.6 linked tools
+
+link Google Analytics and Google Tag Manager:
+
+In the lower left corner of the screen, click on the "Administrator" button.
+This administration page is divided into two halves: on the left we have Account Settings; on the right, Property Settings.
+and in the second column we will click on Data flow.
+On this next page, the website linked to this Analytics account will be shown in the center of the screen:
+
+`Site JS+ (https://loja.juntossomosmais.com.br/)`
+
+What we want from all this information is the "Metric ID".
+It is essential to link this account to GTM.
+
+Example `METRIC ID: G-QEE13F3VJW`
+
+After finishing all the settings in the GTM container, we click on "Send" in the upper right corner of the page and then on "Publish".
+
+We can go back to the Analytics tab, under the "Workspace" section and check the tag code termination. We see, in the upper right corner of the screen:
+
+`GTM-PGRSV4S`
+
+This code matches one of the container codes listed by the extension. This means that the tag has been correctly installed on our website and within that tag Google Analytics is already installed.
+
+
+### 12.7 Test tag
+
+There are different ways to test this tag: we can use the Google Analytics platform itself or go to our website and see if the tag has been installed using an extension called Google Tag Assistant.
+
+To install the extension, go to: https://get.google.com/tagassistant/.
+### 12.8 Using data-gtm
+
+we use the structure `page__component__action-name`
+
+**✅ Good:**
+
+- password-confirmation\_\_create-new-user-password
+- home-banner\_\_want-to-register
+- catalog__multi__see-more-filters
+
+**❌ Bad:**
+
+- create-new-user-password
+- want-to--register
+- multi--see-more-filters
+
+### 12.9 Adding data-gtm attribute in component
+
+By adding the `data-gtm` attribute to all relevant website elements, the Digital team can identify and track user actions that occur on different pages of the website.
+
+```ts
+<Button class="btn" data-gtm="password-confirmation__create-new-user-password">
+  Criar usuário
+</Button>
+```
+
+**[⬆ back to summary](#-summary)**
