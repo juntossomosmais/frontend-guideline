@@ -36,7 +36,7 @@ This is our [Front-end Challenge](https://github.com/juntossomosmais/frontend-ch
 9. [Storybook](#9-storybook)
 10. [Testing](#10-testing)
 11. [Typescript](#11-typescript)
-12. [GTM](#12-Google-Tag-Manager-GTM)
+12. [Google Tag Manager](#12-google-tag-manager)
 
 ---
 
@@ -1642,7 +1642,7 @@ const Person = ({
 };
 ```
 
-## 12. Google Tag Manager - GTM
+## 12. Google Tag Manager
 
 - 12.1 [What is Google Tag Manager](#12.1-what-is-google-tag-manager)
 - 12.2 [Installations](#12.2-installations)
@@ -1728,12 +1728,12 @@ We can go back to the Analytics tab, under the "Workspace" section and check the
 
 This code matches one of the container codes listed by the extension. This means that the tag has been correctly installed on our website and within that tag Google Analytics is already installed.
 
-
 ### 12.7 Test tag
 
 There are different ways to test this tag: we can use the Google Analytics platform itself or go to our website and see if the tag has been installed using an extension called Google Tag Assistant.
 
 To install the extension, go to: https://get.google.com/tagassistant/.
+
 ### 12.8 Using data-gtm
 
 we use the structure `page__component__action-name`
@@ -1742,7 +1742,7 @@ we use the structure `page__component__action-name`
 
 - password-confirmation\_\_create-new-user-password
 - home-banner\_\_want-to-register
-- catalog__multi__see-more-filters
+- catalog**multi**see-more-filters
 
 **❌ Bad:**
 
