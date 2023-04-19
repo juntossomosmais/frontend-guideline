@@ -1740,9 +1740,9 @@ we use the structure `page__component__action-name`
 
 **✅ Good:**
 
-- password-confirmation\_\_create-new-user-password
-- home-banner\_\_want-to-register
-- catalog**multi**see-more-filters
+- password-confirmation__create-new-user-password
+- home-banner__want-to-register
+- catalog__multi__see-more-filters
 
 **❌ Bad:**
 
