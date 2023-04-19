@@ -1660,11 +1660,11 @@ const Person = ({
 ```
 ## 12. Google Tag Manager
 - 12.1 [What is Google Tag Manager](#12.1-what-is-google-tag-manager)
-- 12.2 [Tags GTM](#12.3-tags-gtm)
-- 12.3 [What are triggers and what types of GTM triggers](#12.4-What-are-triggers-and-what-types-of-gtm-triggers)
-- 12.4 [What are variables inside GTM](#12.5-what-are-variables-inside-gtm)
-- 12.5 [linked tools](#12.6-linked-tools)
-- 12.6 [Test tag](#12.7-Test-tag)
+- 12.2 [Tags GTM](#12.2-tags-gtm)
+- 12.3 [What are triggers and what types of GTM triggers](#12.3-What-are-triggers-and-what-types-of-gtm-triggers)
+- 12.4 [What are variables inside GTM](#12.4-what-are-variables-inside-gtm)
+- 12.5 [linked tools](#12.5-linked-tools)
+- 12.6 [Test tag](#12.6-Test-tag)
 - 12.7 [Using data-gtm](#12.7-using-data-gtm)
 - 12.8 [Adding data-gtm attribute in component](#12.8-adding-data-gtm-attribute-in-component)
 ### 12.1 What is Google Tag Manager
