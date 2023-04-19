@@ -1692,7 +1692,7 @@ It is essential to link this account to GTM.
 Example `METRIC ID: G-QEE13F3VJW`
 After finishing all the settings in the GTM container, we click on "Send" in the upper right corner of the page and then on "Publish".
 We can go back to the Analytics tab, under the "Workspace" section and check the tag code termination. We see, in the upper right corner of the screen:
-`GTM-PGRSV4S`
+`GTM-XXXXXXX`
 This code matches one of the container codes listed by the extension. This means that the tag has been correctly installed on our website and within that tag Google Analytics is already installed.
 ### 12.6 Test tag
 There are different ways to test this tag: we can use the Google Analytics platform itself or go to our website and see if the tag has been installed using an extension called Google Tag Assistant.
