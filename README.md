@@ -1660,50 +1660,27 @@ const Person = ({
 ```
 ## 12. Google Tag Manager
 - 12.1 [What is Google Tag Manager](#12.1-what-is-google-tag-manager)
-- 12.2 [Installations](#12.2-installations)
-- 12.3 [Tags GTM](#12.3-tags-gtm)
-- 12.4 [What are triggers and what types of GTM triggers](#12.4-What-are-triggers-and-what-types-of-gtm-triggers)
-- 12.5 [What are variables inside GTM](#12.5-what-are-variables-inside-gtm)
-- 12.6 [linked tools](#12.6-linked-tools)
-- 12.7 [Test tag](#12.7-Test-tag)
-- 12.8 [Using data-gtm](#12.7-using-data-gtm)
-- 12.9 [Adding data-gtm attribute in component](#12.8-adding-data-gtm-attribute-in-component)
+- 12.2 [Tags GTM](#12.3-tags-gtm)
+- 12.3 [What are triggers and what types of GTM triggers](#12.4-What-are-triggers-and-what-types-of-gtm-triggers)
+- 12.4 [What are variables inside GTM](#12.5-what-are-variables-inside-gtm)
+- 12.5 [linked tools](#12.6-linked-tools)
+- 12.6 [Test tag](#12.7-Test-tag)
+- 12.7 [Using data-gtm](#12.7-using-data-gtm)
+- 12.8 [Adding data-gtm attribute in component](#12.8-adding-data-gtm-attribute-in-component)
 ### 12.1 What is Google Tag Manager
 It is a free installation tool, which simplifies tag integration and concentrates all tags on a single board. Essential for tracking site-wide metrics.
-### 12.2 Installations
-1. Go to the Google Tag Manager page at https://tagmanager.google.com/.
-2. Create a Google Tag Manager account. If you already have a Google account, just sign in.
-3. Create our first container.
-4. Copy the GTM code and add the container code to your website
-Paste this code as high as possible in the `<head>` tag of the page
-```ts
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PGRSV4S');</script>
-<!-- End Google Tag Manager -->
-```
-Also, paste this code after the opening `<body>` tag
-```ts
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGRSV4S"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-```
-5. Publish the changes.
-### 12.3 Tags GTM
+
+### 12.2 Tags GTM
 Tags are small snippets of code created to monitor actions.
 Example: analytics tags, conversion Tags, event monitoring tags, Third-party tags...
-### 12.4 What are triggers and what types of GTM triggers
+### 12.3 What are triggers and what types of GTM triggers
 They serve as the basis for the tag that we will trigger in GTM. This means that every tag installed on our site will have a trigger configured to fulfill the established function.
 Some of them are: click, time, form, browser history, page views...
-### 12.5 What are variables inside GTM
+### 12.4 What are variables inside GTM
 They are used for harvesting, storing and transmit data between different GTM Components.
 Variables can be created from: Environment, Data, System, customized.
 And, just like triggers, they must be configured correctly so that this monitoring is carried out as assertively as possible.
-### 12.6 linked tools
+### 12.5 linked tools
 link Google Analytics and Google Tag Manager:
 In the lower left corner of the screen, click on the "Administrator" button.
 This administration page is divided into two halves: on the left we have Account Settings; on the right, Property Settings.
@@ -1717,10 +1694,10 @@ After finishing all the settings in the GTM container, we click on "Send" in the
 We can go back to the Analytics tab, under the "Workspace" section and check the tag code termination. We see, in the upper right corner of the screen:
 `GTM-PGRSV4S`
 This code matches one of the container codes listed by the extension. This means that the tag has been correctly installed on our website and within that tag Google Analytics is already installed.
-### 12.7 Test tag
+### 12.6 Test tag
 There are different ways to test this tag: we can use the Google Analytics platform itself or go to our website and see if the tag has been installed using an extension called Google Tag Assistant.
 To install the extension, go to: https://get.google.com/tagassistant/.
-### 12.8 Using data-gtm
+### 12.7 Using data-gtm
 we use the structure `page__component__action-name`
 **✅ Good:**
 - password-confirmation__create-new-user-password
@@ -1730,7 +1707,7 @@ we use the structure `page__component__action-name`
 - create-new-user-password
 - want-to--register
 - multi--see-more-filters
-### 12.9 Adding data-gtm attribute in component
+### 12.8 Adding data-gtm attribute in component
 By adding the `data-gtm` attribute to all relevant website elements, the Digital team can identify and track user actions that occur on different pages of the website.
 ```ts
 <Button class="btn" data-gtm="password-confirmation__create-new-user-password">
