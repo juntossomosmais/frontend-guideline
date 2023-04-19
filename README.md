@@ -1699,14 +1699,21 @@ There are different ways to test this tag: we can use the Google Analytics platf
 To install the extension, go to: https://get.google.com/tagassistant/.
 ### 12.7 Using data-gtm
 we use the structure `page__component__action-name`
+
 **✅ Good:**
+```ts
 - password-confirmation__create-new-user-password
 - home-banner__want-to-register
 - catalog__multi__see-more-filters
+```
+
 **❌ Bad:**
+```ts
 - create-new-user-password
 - want-to--register
 - multi--see-more-filters
+```
+
 ### 12.8 Adding data-gtm attribute in component
 By adding the `data-gtm` attribute to all relevant website elements, the Digital team can identify and track user actions that occur on different pages of the website.
 ```ts
