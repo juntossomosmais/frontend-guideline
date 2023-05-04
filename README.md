@@ -650,6 +650,90 @@ keep the media queries as close to their relevant rule sets whenever possible.
 }
 ```
 
+### 5.6 Spacing and size of image and components
+
+Is a commom problem to use width and height or all dynamic or all hardcoded, but each one has it own purpose. We should avoid using magic numbers at all times.
+
+> _"Magic numbers are those numbers that appear in code without explanation, but that 'magically' make things work."_  Are numbers that dont have a why, but works.
+
+
+### 5.6.1 Dynamic values
+If you are using padding, margin, gap should use our [Venices's spacing variables](https://juntossomosmais.github.io/venice/vue/?path=/docs/getting-started-styles-spacings--page). Any space that override it values must be validated once our Design System is well defined around these values and our UX Teams guide must follow it.
+Icons, width and height that are relative to our Design System or that have sizes based on calc upon our spacing variable must also use [Venices's spacing variables](https://juntossomosmais.github.io/venice/vue/?path=/docs/getting-started-styles-spacings--page) instead of magic numbers.
+
+**✅ Good:**
+
+```scss
+.logout__icon {
+  height: var(--spacing-xxlarge);
+  width: var(--spacing-xxlarge);
+}
+
+.icon__button {
+  min-width: var(--spacing-giant);
+} 
+```
+
+**❌ Bad:**
+
+```scss
+.logout__icon {
+  height: 25px;
+  width: 25px;
+}
+
+.icon__button {
+  min-width: 34px;
+}
+```
+
+
+### 5.6.2 Images and well defined components
+If you are using a image, or a component that has a design size and it sizes at maximum vary from desktop/mobile, use the value of it:
+
+**✅ Good:**
+
+```scss
+.shopfrom__banner {
+  height: 900px;
+  width: 480px;
+  
+  @media (min-width: 991px) {
+    height: 740px;
+    width: 240px;
+  }
+}
+```
+
+**❌ Bad:**
+
+```scss
+.shopfrom__banner {
+  height: calc(4 * var(--spaceing-xxxlarge);
+  width: calc(2 * var(--spacing-giant);
+}
+// or
+.shopfrom__banner {
+  height: 480px;
+  width: 170px;
+  
+  @media (max-width: 746px) {
+    height: 740px;
+    width: 240px;
+  }
+  
+  @media (max-width: 991px) {
+    height: 900px;
+    width: 320px;
+  }
+  
+  @media (max-width: 1024px) {
+    height: 980px;
+    width: 300px;
+  }
+}
+```
+
 **[⬆ back to summary](#-summary)**
 
 ## 6. JavaScript
