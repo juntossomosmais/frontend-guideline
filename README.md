@@ -1163,7 +1163,7 @@ When creating a component wrapper we can spread the types from our original comp
 import { MenuItem, TextField } from '@mui/material';
 import { TextFieldProps } from '@mui/material';
 
-export type SelectOption = { value: string; label: string };
+export type SelectOption = { value: string; label: string, id: string, };
 
 export type SelectProps = TextFieldProps & {
   options: SelectOption[];
@@ -1173,7 +1173,7 @@ const Select = ({ options, ...props }: SelectProps) => {
   return (
     <TextField {...props}>
       {options.map((option) => (
-        <MenuItem key={uuidv4()} value={option.value}>
+        <MenuItem key={option.id} value={option.value}>
           {option.label}
         </MenuItem>
       ))}
@@ -1187,7 +1187,7 @@ const Select = ({ options, ...props }: SelectProps) => {
 ```tsx
 import { MenuItem, TextField } from '@mui/material';
 
-export type SelectOption = { value: string; label: string };
+export type SelectOption = { value: string; label: string, id: string, };
 
 export type SelectProps = {
   options: SelectOption[];
@@ -1212,7 +1212,7 @@ const Select = ({
       onBlur={handleOnBlur}
     >
       {options.map((option) => (
-        <MenuItem key={uuidv4()} value={option.value}>
+        <MenuItem key={option.id} value={option.value}>
           {option.label}
         </MenuItem>
       ))}
