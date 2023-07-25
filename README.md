@@ -712,7 +712,7 @@ If you are using a image, or a component that has a design size and it sizes at 
   height: calc(4 * var(--spaceing-xxxlarge);
   width: calc(2 * var(--spacing-giant);
 }
-// or
+
 .shopfrom__banner {
   height: 480px;
   width: 170px;
