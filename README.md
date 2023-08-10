@@ -1610,6 +1610,7 @@ describe('yourModule', () => {
 - 11.3 [Exporting types](#113-exporting-types)
 - 11.4 [Types within a file](#114-types-within-a-file)
 - 11.5 [Increase legible](#115-increase-legible)
+- 11.6 [Type or Interface](#116-type-or-interface)
 
 ### 11.1 Do not use any type
 
@@ -1742,6 +1743,50 @@ const Person = ({
   // ...
 };
 ```
+
+
+### 11.6 Type or Interface
+We use `type` when its usage is inside the same file and `interface` when it is exported.
+
+
+
+**✅ Good:**
+
+```ts
+type ProductType = {
+  name: string
+  code: number
+  value: string
+};
+
+export interface OrderList {
+ orderNumber: number
+ seller: string
+ products: ProductType[]
+}
+```
+
+**❌ Bad:**
+
+```ts
+interface ProductType {
+  name: string
+  code: number
+  value: string
+};
+
+export type OrderList = {
+ orderNumber: number
+ seller: string
+ products: ProductType[]
+}
+```
+
+We follow the principle the official [TypeScript doc](https://www.typescriptlang.org/play#example/types-vs-interfaces):
+> _For publicly exposed types, it's a better call to make them an interface._
+
+
+
 ## 12. Google Tag Manager
 - 12.1 [What is Google Tag Manager](#12.1-what-is-google-tag-manager)
 - 12.2 [Tags GTM](#12.2-tags-gtm)
