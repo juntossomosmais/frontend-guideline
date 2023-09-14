@@ -658,8 +658,8 @@ Is a commom problem to use width and height or all dynamic or all hardcoded, but
 
 
 ### 5.6.1 Dynamic values
-If you are using padding, margin, gap should use our [Venices's spacing variables](https://juntossomosmais.github.io/venice/vue/?path=/docs/getting-started-styles-spacings--page). Any space that override it values must be validated once our Design System is well defined around these values and our UX Teams guide must follow it.
-Icons, width and height that are relative to our Design System or that have sizes based on calc upon our spacing variable must also use [Venices's spacing variables](https://juntossomosmais.github.io/venice/vue/?path=/docs/getting-started-styles-spacings--page) instead of magic numbers.
+If you are using padding, margin, gap should use our [Atomium tokens](https://juntossomosmais.github.io/atomium/?path=/docs/getting-started-tokens--docs). Any space that override it values must be validated once our Design System is well defined around these values and our UX Teams guide must follow it.
+Icons, width and height that are relative to our Design System or that have sizes based on calc upon our spacing variable must also use [Atomium tokens](https://juntossomosmais.github.io/atomium/?path=/docs/getting-started-tokens--docs) instead of magic numbers.
 
 **✅ Good:**
 
