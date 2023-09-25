@@ -298,6 +298,8 @@ In order to facilitate the contribution of anyone in a project, all commit messa
 
 We also use [conventional commit messages](https://www.conventionalcommits.org/en/v1.0.0/), that is, the commit message must be in the form of a sentence, with the first word being an action, and the rest of the sentence a describing text.
 
+We must always commit in lower-case. We are using a [shared rule to validade this](https://github.com/juntossomosmais/time-out-market/blob/main/packages/linters/src/commitlint.config.js).   
+
 **✅ Good:**
 
 ```powershell
