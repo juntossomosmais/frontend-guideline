@@ -42,9 +42,14 @@ This is our [Front-end Challenge](https://github.com/juntossomosmais/frontend-ch
 
 ## 1. General Code Patterns
 
+- 1.1 [Prettier](#10-prettier)
 - 1.1 [Code Syntax](#11-code-syntax)
 - 1.2 [Refactoring](#12-refactoring)
 - 1.3 [Imports](#13-imports)
+
+### 1.0 Prettier
+
+We use [Prettier](https://prettier.io/) to format our code, and we have a [shared rule to validade this](https://github.com/juntossomosmais/time-out-market/tree/main/packages/linters#prettier)
 
 ### 1.1 Code Syntax
 
@@ -290,7 +295,12 @@ If we need use these files again in another context or page it need to be moved 
 
 ## 3. Git
 
+- 3.0 [Commitlint](#30-git-commitlint)
 - 3.1 [Commit Messages](#31-commit-messages)
+
+### 3.0 Git Commitlint
+
+We use [Commitlint](https://commitlint.js.org/#/) to validate our commit messages, and we have a [shared rule to validade this](https://github.com/juntossomosmais/time-out-market/tree/main/packages/linters#commitlint)
 
 ### 3.1 Commit Messages
 
@@ -350,11 +360,16 @@ We don't guest the scope of HTML components inside page, so when we start a new 
 
 The tips above could be used in any CSS framework or preprocessor, like SCSS, Styled Components and etc
 
+- 5.0 [CSS Stylelint](#50-css-stylelint)
 - 5.1 [CSS Code Syntax](#51-css-syntax)
 - 5.2 [CSS Declaration Order](#52-css-declaration-order)
 - 5.3 [CSS Class Names](#53-css-class-names)
 - 5.4 [CSS Good Practices](#54-css-good-practices)
 - 5.5 [CSS Media Queries](#55-css-media-queries)
+
+### 5.0 CSS Stylelint
+
+We use [Stylelint](https://stylelint.io/) to validate our code, and we have a [shared rule to validade this](https://github.com/juntossomosmais/time-out-market/tree/main/packages/linters#stylelint)
 
 ### 5.1 CSS Syntax
 
@@ -740,6 +755,7 @@ If you are using a image, or a component that has a design size and it sizes at 
 
 ## 6. JavaScript
 
+- 6.0 [JavaScript Eslint](#60-javascript-eslint)
 - 6.1 [Javascript Code Syntax](#61-javascript-code-syntax)
 - 6.2 [Variables](#62-variables)
 - 6.3 [Descriptive validations (if)](#63-descriptive-validations-if)
@@ -748,7 +764,9 @@ If you are using a image, or a component that has a design size and it sizes at 
 - 6.6 [Avoid errors while destructuring](#66-avoid-errors-while-destructuring)
 - 6.7 [Prefer early return](#67-prefer-early-return)
 
-<a name="javascript-syntax"></a>
+### 6.0 JavaScript Eslint
+
+We use [ESLint](https://eslint.org/) to validate our code, and we have a [shared rule to validade this](https://github.com/juntossomosmais/time-out-market/tree/main/packages/linters#eslint)
 
 ### 6.1 JavaScript Code Syntax
 
