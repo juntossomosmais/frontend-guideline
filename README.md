@@ -823,6 +823,101 @@ if (foo == 'foo') {
 }
 ```
 
+Add empty lines between blocks of code.
+
+**✅ Good:**
+
+```js
+const foo = () => {
+  // do something
+}
+
+const bar = () => {
+  // do something
+}
+```
+
+Add empty lines between blocks of `if` statements.
+
+**✅ Good:**
+
+```js
+if (foo) {
+  // do something
+}
+
+if (bar) {
+  // do something
+}
+```
+
+**❌ Bad:**
+
+```js
+if (foo) {
+  // do something
+}
+if (bar) {
+  // do something
+}
+```
+
+Add empty lines between before return statements.
+
+**✅ Good:**
+
+```js
+const foo = () => {
+  const bar = 'bar'
+
+  return bar
+}
+```
+
+**❌ Bad:**
+
+```js
+const foo = () => {
+  const bar = 'bar'
+  return bar
+}
+```
+
+**❌ Bad:**
+
+```js
+const foo = () => {
+  // do something
+}
+const bar = () => {
+  // do something
+}
+```
+
+Remove empty lines between groups of `const`, `let` and `var` declarations, but use empty lines between the groups.
+
+**✅ Good:**
+
+```js
+const foo = 'foo'
+const bar = 'bar'
+
+let qux = 'qux'
+let quux = 'quux'
+```
+
+**❌ Bad:**
+
+```js
+const foo = 'foo'
+
+const bar = 'bar'
+
+let qux = 'qux'
+
+let quux = 'quux'
+```
+
 ### 6.2 Variables
 
 Use meaningful, pronounceable, and in **English** variable names.
