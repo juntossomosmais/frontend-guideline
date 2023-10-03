@@ -41,7 +41,7 @@ This is our [Front-end Challenge](https://github.com/juntossomosmais/frontend-ch
 
 ## 1. General Code Patterns
 
-- 1.1 [Prettier](#10-prettier)
+- 1.0 [Prettier](#10-prettier)
 - 1.1 [Code Syntax](#11-code-syntax)
 - 1.2 [Refactoring](#12-refactoring)
 - 1.3 [Imports](#13-imports)
