@@ -1109,6 +1109,7 @@ function foo() {
 - 7.9 [Conditional Rendering](#79-conditional-rendering)
   - 7.9.1 [Using short circuit](#791-using-short-circuit)
   - 7.9.2 [Using ternary operator](#792-using-ternary-operator)
+- 7.10 [Enforce Boolean Attribute Notation in JSX](#710-enforce-boolean-attribute-notation-in-jsx)
 
 ### 7.1 Keys in lists
 
@@ -1482,6 +1483,22 @@ const HomePage = () => {
 
   return <Welcome />
 };
+```
+
+### 7.10 Enforce Boolean Attribute Notation in JSX
+
+Consistently pass the value for boolean attributes in JSX to ensure clarity and readability.
+
+**✅ Good:**
+
+```tsx
+<Input type="text" disabled={true} />
+```
+
+**❌ Bad:**
+
+```tsx
+<Input type="text" disabled />
 ```
 
 **[⬆ back to summary](#-summary)**
