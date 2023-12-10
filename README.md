@@ -1913,6 +1913,143 @@ export type OrderList = {
 }
 ```
 
+### 11.7 TypeScript Utility Types
+
+`Partial<T>` makes all properties of a type T optional. This is highly useful in front-end scenarios like handling incomplete data from API responses or partially filled forms.
+
+**✅ Good:**
+
+```ts
+type User = {
+  name: string;
+  age: number;
+};
+
+function updateUser(user: Partial<User>) {}
+```
+
+**❌ Bad:**
+
+```ts
+type User = {
+  name?: string;
+  age?: number;
+};
+
+function updateUser(user: User) {}
+```
+
+---
+
+`Readonly<Type>` makes all properties of a type Type read-only, which is useful for creating immutable objects.
+
+**✅ Good:**
+
+```ts
+type User = {
+  name: string;
+  age: number;
+};
+
+const user: Readonly<User> = { name: "Alice", age: 30 };
+```
+
+**❌ Bad:**
+
+```ts
+type User = {
+  name: string;
+  age: number;
+};
+
+const user: User = { name: "Alice", age: 30 };
+user.name = "Bob";
+```
+
+---
+
+`Record<Keys, Type>` creates a type with a set of properties Keys of type Type, ideal for mapping keys to values in an object.
+
+**✅ Good:**
+
+```ts
+type User = { id: number; name: string };
+const userDirectory: Record<number, User> = {
+  1: { id: 1, name: "Alice" },
+};
+```
+
+**❌ Bad:**
+
+```ts
+type User = { id: number; name: string };
+const userDirectory = { 1: { id: 1, name: "Alice" } };
+```
+
+---
+
+`Pick<Type, Keys>` creates a type by picking a set of properties Keys from Type, useful for creating subsets of a type.
+
+**✅ Good:**
+
+```ts
+type User = {
+  id: number;
+  name: string;
+  email: string;
+};
+
+const userSummary: Pick<User, "name" | "email"> = {
+  name: "Alice",
+  email: "alice@example.com",
+};
+```
+
+**❌ Bad:**
+
+```ts
+type User = {
+  id: number;
+  name: string;
+  email: string;
+};
+
+const userSummary = { name: "Alice", email: "alice@example.com" };
+```
+
+---
+
+`Omit<Type, Keys>` creates a type by omitting a set of properties Keys from Type, useful for excluding certain properties from a type.
+
+**✅ Good:**
+
+```ts
+type User = {
+  id: number;
+  name: string;
+  password: string;
+};
+
+const publicUserInfo: Omit<User, "password"> = {
+  id: 1,
+  name: "Alice",
+};
+```
+
+**❌ Bad:**
+
+```ts
+type User = {
+  id: number;
+  name: string;
+  password: string;
+};
+
+const publicUserInfo: User = { id: 1, name: "Alice", password: "secret" };
+```
+
+---
+
 We follow the principle the official [TypeScript doc](https://www.typescriptlang.org/play#example/types-vs-interfaces):
 > _For publicly exposed types, it's a better call to make them an interface._
 
