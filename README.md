@@ -116,7 +116,7 @@ If the data to be imported belongs to the **same module/scope**, use **relative 
 
 #### Relative Path Example
 
-`HeaderButton.js importing style from `header/styles.css`
+`HeaderButton.js importing style from header/styles.css`
 
 ```sh
 ┣ 📂 src/components \
@@ -133,7 +133,6 @@ If the data to be imported belongs to the **same module/scope**, use **relative 
 ┣ ┃ 📜 styles.css
 ┣ ┃ 📜 index.stories.mdx
 ┣ ┃ 📜 index.spec.js
-
 ```
 
 use this:
@@ -169,7 +168,6 @@ If the data to be imported belongs to **another module/scope**, use an **absolut
 ┣ ┃ ┣ 📜 routes.js
 ┣ ┃ ┣ 📜 environments.js
 ┣ ┃ ┣ 📜 index.js
-
 ```
 
 use this:
@@ -233,7 +231,6 @@ For example:
 ┣ ┃ ┣ 📜 styles.js
 ┣ ┃ ┣ 📜 index.spec.js
 ┣ ┃ ┣ 📜 index.stories.mdx
-
 ```
 
 #### Scoped Components
