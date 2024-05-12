@@ -116,7 +116,7 @@ If the data to be imported belongs to the **same module/scope**, use **relative 
 
 #### Relative Path Example
 
-`HeaderButton.js importing style from `header/styles.css`
+`HeaderButton.js importing style from header/styles.css`
 
 ```sh
 ┣ 📂 src/components \
@@ -133,7 +133,6 @@ If the data to be imported belongs to the **same module/scope**, use **relative 
 ┣ ┃ 📜 styles.css
 ┣ ┃ 📜 index.stories.mdx
 ┣ ┃ 📜 index.spec.js
-
 ```
 
 use this:
@@ -169,7 +168,6 @@ If the data to be imported belongs to **another module/scope**, use an **absolut
 ┣ ┃ ┣ 📜 routes.js
 ┣ ┃ ┣ 📜 environments.js
 ┣ ┃ ┣ 📜 index.js
-
 ```
 
 use this:
@@ -233,7 +231,6 @@ For example:
 ┣ ┃ ┣ 📜 styles.js
 ┣ ┃ ┣ 📜 index.spec.js
 ┣ ┃ ┣ 📜 index.stories.mdx
-
 ```
 
 #### Scoped Components
@@ -702,7 +699,6 @@ Icons, width and height that are relative to our Design System or that have size
   min-width: 34px;
 }
 ```
-
 
 ### 5.6.2 Images and well defined components
 If you are using a image, or a component that has a design size and it sizes at maximum vary from desktop/mobile, use the value of it:
@@ -1878,8 +1874,6 @@ const Person = ({
 
 ### 11.6 Type or Interface
 We use `type` when its usage is inside the same file and `interface` when it is exported.
-
-
 
 **✅ Good:**
 
