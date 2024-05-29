@@ -362,6 +362,11 @@ The tips above could be used in any CSS framework or preprocessor, like SCSS, St
 - 5.3 [CSS Class Names](#53-css-class-names)
 - 5.4 [CSS Good Practices](#54-css-good-practices)
 - 5.5 [CSS Media Queries](#55-css-media-queries)
+- 5.6 [Spacing and size of image and components](#56-spacing-and-size-of-image-and-components)
+  - 5.6.1 [Dynamic values](#561-dynamic-values)
+  - 5.6.2 [Images and well defined components](#562-images-and-well-defined-components)
+- 5.7 [Avoid using shorthand properties](#57-avoid-using-shorthand-properties)
+
 
 ### 5.0 CSS Stylelint
 
@@ -745,6 +750,30 @@ If you are using a image, or a component that has a design size and it sizes at 
   }
 }
 ```
+
+## 5.7 Avoid using shorthand properties
+
+Shorthand properties are great for reducing CSS, but they can also make the code harder to read and override. It's better to use longhand properties to make the code more readable and maintainable.
+
+**✅ Good:**
+
+```scss
+.element {
+  margin-left: auto;
+  margin-right: auto;
+}
+```
+
+**❌ Bad:**
+
+```scss
+.element {
+  margin: 0 auto;
+}
+```
+
+Shorthands can be used when you want to apply the same value to multiple properties.
+
 
 **[⬆ back to summary](#-summary)**
 
