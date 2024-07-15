@@ -173,18 +173,7 @@ If the data to be imported belongs to **another module/scope**, use an **absolut
 use this:
 
 ```js
-import { UploadError } from '~/enums'
-```
-
-**Note:**
-
-Is also a good practice to create an `index.js` file for exporting data belonging to the same folder, as we can see example above.
-
-```js
-export * from './errors'
-export * from './pages'
-export * from './routes'
-export * from './environments'
+import { UploadError } from '~/enums/errors.js'
 ```
 
 ## 2. Architecture
