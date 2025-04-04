@@ -1752,6 +1752,8 @@ describe('yourModule', () => {
 
 - 11.1 [Do not use any type](#111-do-not-use-any-type)
 - 11.2 [Naming convention](#112-naming-convention)
+  - 11.2.1 [PascalCase](#1121-pascalcase)
+  - 11.2.2 [Prefix for Type, Interface, and Enum](#1122-prefix-for-type-interface-and-enum)
 - 11.3 [Exporting types](#113-exporting-types)
 - 11.4 [Types within a file](#114-types-within-a-file)
 - 11.5 [Increase legible](#115-increase-legible)
@@ -1779,12 +1781,14 @@ function foo(): any {}
 
 ### 11.2 Naming convention
 
+#### 11.2.1 PascalCase
+
 For convention, use PascalCase for type names.
 
 **✅ Good:**
 
 ```ts
-type MyBeautifulType = {
+type TMyBeautifulType = {
   name: string
   age: number
 }
@@ -1799,12 +1803,12 @@ type myBeautifulType = {
 }
 ```
 
-The same to Enum keys.
+The same applies to Enum keys.
 
 **✅ Good:**
 
 ```ts
-enum UserResponse {
+enum EUserResponse {
   NotSuccess = 0,
   Success = 1,
 }
@@ -1816,6 +1820,51 @@ enum UserResponse {
 enum UserResponse {
   NOT_SUCCESS = 0,
   success = 1,
+}
+```
+
+#### 11.2.2 Prefix for Type, Interface, and Enum
+
+All Type, Interface, and Enum names must include a prefix to improve readability and consistency:
+- **Type**: Prefix with `T`
+- **Interface**: Prefix with `I`
+- **Enum**: Prefix with `E`
+
+**✅ Good:**
+
+```ts
+type TMyBeautifulType = {
+  name: string
+  age: number
+}
+
+interface IOrderList {
+  orderNumber: number
+  seller: string
+}
+
+enum EUserResponse {
+  NotSuccess = 0,
+  Success = 1,
+}
+```
+
+**❌ Bad:**
+
+```ts
+type MyBeautifulType = {
+  name: string
+  age: number
+}
+
+interface OrderList {
+  orderNumber: number
+  seller: string
+}
+
+enum UserResponse {
+  NotSuccess = 0,
+  Success = 1,
 }
 ```
 
@@ -1832,7 +1881,7 @@ Within a file, type definitions should come first.
 ```ts
 // imports...
 
-type MyBeautifulType = {
+type TMyBeautifulType = {
   name: string
   age: number
 }
@@ -1862,13 +1911,13 @@ Create a type for increase legible
 **✅ Good:**
 
 ```ts
-type PersonType = {
+type TPersonType = {
   name: string
   age: number
   birthDate: string
 };
 
-const Person = ({ name, age, birthDate }: PersonType) => {
+const Person = ({ name, age, birthDate }: TPersonType) => {
   // ...
 };
 ```
@@ -1896,16 +1945,16 @@ We use `type` when its usage is inside the same file and `interface` when it is 
 **✅ Good:**
 
 ```ts
-type ProductType = {
+type TProductType = {
   name: string
   code: number
   value: string
 };
 
-export interface OrderList {
+export interface IOrderList {
  orderNumber: number
  seller: string
- products: ProductType[]
+ products: TProductType[]
 }
 ```
 
