@@ -9,17 +9,17 @@
 
 > "Every line of code should appear to be written by a single person, no matter the number of contributors." - Chinese Proverb.
 
-The following document describes generic rules of writing in development languages that we use on our Front-end projects, that HTML, CSS, JavaScript, React, and Vue
+The following document describes generic rules for writing in the development languages that we use in our Front-end projects: HTML, CSS, JavaScript, React, and Vue.
 
-The idea of this repository is not to be a complete guideline, the target is just to help developers who participate in our projects to be able to inform the coding standards used.
+The idea of this repository is not to be a complete guideline, but rather to help developers who participate in our projects understand the coding standards used.
 
-As this is a live document, some rules may not have been applied in old projects and changes can occur at any time.
+As this is a living document, some rules may not have been applied in older projects and changes can occur at any time.
 
 ## We are hiring! 🔥
 
-If you are looking opportunities as Front-end Developer we are hiring!
+If you are looking for opportunities as a Front-end Developer, we are hiring!
 
-You can [check all our job opportunities](https://www.linkedin.com/company/juntos-somos-mais/jobs/) and apply if you like it 😁
+You can [check all our job opportunities](https://www.linkedin.com/company/juntos-somos-mais/jobs/) and apply if you like them 😁
 
 This is our [Front-end Challenge](https://github.com/juntossomosmais/frontend-challenge)
 
@@ -48,7 +48,7 @@ This is our [Front-end Challenge](https://github.com/juntossomosmais/frontend-ch
 
 ### 1.0 Prettier
 
-We use [Prettier](https://prettier.io/) to format our code, and we have a [shared rule to validade this](https://github.com/juntossomosmais/time-out-market/tree/main/packages/linters#prettier)
+We use [Prettier](https://prettier.io/) to format our code, and we have a [shared rule to validate this](https://github.com/juntossomosmais/time-out-market/tree/main/packages/linters#prettier)
 
 ### 1.1 Code Syntax
 
@@ -100,15 +100,15 @@ const obj = {
 
 ### 1.2 Refactoring
 
-Refactoring makes part of JSMLover's way of being, doing it every day and task by task. We have good practices and conditions to do that, though.
+Refactoring is part of JSM's way of working, doing it every day and task by task. We have good practices and conditions to do that, though.
 
 ```js
-if(!isWholeCodeCoveraged) return
+if(!isWholeCodeCovered) return
 ```
-- We can only refactor codes that have tests (and that tests!), which means 100% coverage! This way, we can improve or code safely. 
+- We can only refactor code that has tests (and those tests pass!), which means 100% coverage! This way, we can improve our code safely. 
 
 - Keep the current tests and make them pass! 
-Once the current code is tested and can be refactored. We must make sure that the new changes will not break the current tests. 
+Once the current code is tested and can be refactored, we must make sure that the new changes will not break the current tests. 
 
 ### 1.3 Imports
 
@@ -176,6 +176,35 @@ use this:
 import { UploadError } from '~/enums/errors.js'
 ```
 
+#### Avoid Barrel Files
+
+**Avoid using barrel files** (`index.ts` exports) for better tree-shaking and clearer dependencies. Use direct imports instead.
+
+**✅ Good (Direct imports):**
+
+```js
+import { ButtonComponent } from '~/components/Button/Button'
+import { HeaderService } from '~/services/Header/HeaderService'
+import { EUserStatus } from '~/enums/userStatus'
+```
+
+**❌ Bad (Barrel files):**
+
+```js
+// services/index.ts
+export { HeaderService } from './Header/HeaderService'
+export { FooterService } from './Footer/FooterService'
+
+// component file
+import { HeaderService } from '~/services' // unclear which service
+```
+
+**Benefits of direct imports:**
+- Better tree-shaking for smaller bundle sizes
+- Clearer dependencies and relationships
+- Easier to track where code is being used
+- Improved TypeScript performance
+
 ## 2. Architecture
 
 The proper architecture for projects, and how to create and name files and folders.
@@ -185,23 +214,33 @@ The proper architecture for projects, and how to create and name files and folde
 
 ### 2.1 File Name
 
+Use explicit component names instead of generic `index` files for better clarity and maintainability.
+
 **✅ Good:**
 
 - `UserProfile/UserProfile.vue`
-- `UserProfile/index.js`
-- `UserProfile/index.ts`
-- `UserProfile/styles.js`
+- `UserProfile/UserProfile.tsx`
 - `UserProfile/UserProfile.scss`
+- `UserProfile/UserProfile.module.scss`
 - `UserProfile/UserProfile.stories.mdx`
+- `UserProfile/UserProfile.spec.ts`
 
 **❌ Bad:**
 
+- `UserProfile/index.vue` (use explicit component name)
+- `UserProfile/index.tsx` (use explicit component name)
 - `UserProfile/component.vue`
 - `src/UserProfile.js`
 - `UserProfile/component.ts`
 - `UserProfile/style.scss`
 - `UserProfileStyles.js`
 - `UserProfile/UserProfile.mdx`
+
+**Benefits of explicit naming:**
+- Easier to locate files in search results
+- Clearer when multiple files are open in tabs
+- Better IDE navigation and autocomplete
+- Consistent with component-based architecture
 
 <a name="architecture-folder"></a>
 
@@ -224,9 +263,9 @@ For example:
 
 #### Scoped Components
 
-We need to add inside `pages/**/components`, for example, all components that is need used just a context or scope, like a components that be used just a some place or specific page.
+We need to add components inside `pages/**/components` - for example, all components that need to be used in just one context or scope, like components that are used in only one specific place or page.
 
-If we need to used the component again in another context or page it need to be moved to `src/components`.
+If we need to use the component again in another context or page, it needs to be moved to `src/components`.
 
 For example:
 
@@ -245,7 +284,7 @@ For example:
 
 #### Scoped Files 
 
-We need to add inside `pages/**/{utils, helpers, context, hooks, etc...}` and use `camelCase` as **Naming Convention**.
+We need to add files inside `pages/**/{utils, helpers, context, hooks, etc...}` and use `camelCase` as **Naming Convention**.
 
 For example:
 
@@ -260,7 +299,7 @@ For example:
 ┣ ┣ ┣ ┣ 📜 useSomeHook.js
 ```
 
-If we need use these files again in another context or page it need to be moved to `src/{utils, helpers, context, hooks}`.
+If we need to use these files again in another context or page, they need to be moved to `src/{utils, helpers, context, hooks}`.
 
 ```sh
 ┣ 📂 src
@@ -285,7 +324,7 @@ If we need use these files again in another context or page it need to be moved 
 
 ### 3.0 Git Commitlint
 
-We use [Commitlint](https://commitlint.js.org/#/) to validate our commit messages, and we have a [shared rule to validade this](https://github.com/juntossomosmais/time-out-market/tree/main/packages/linters#commitlint)
+We use [Commitlint](https://commitlint.js.org/#/) to validate our commit messages, and we have a [shared rule to validate this](https://github.com/juntossomosmais/time-out-market/tree/main/packages/linters#commitlint)
 
 ### 3.1 Commit Messages
 
@@ -293,7 +332,7 @@ In order to facilitate the contribution of anyone in a project, all commit messa
 
 We also use [conventional commit messages](https://www.conventionalcommits.org/en/v1.0.0/), that is, the commit message must be in the form of a sentence, with the first word being an action, and the rest of the sentence a describing text.
 
-We must always commit in lower-case. We are using a [shared rule to validade this](https://github.com/juntossomosmais/time-out-market/blob/main/packages/linters/src/commitlint.config.js).   
+We must always commit in lowercase. We are using a [shared rule to validate this](https://github.com/juntossomosmais/time-out-market/blob/main/packages/linters/src/commitlint.config.js).   
 
 **✅ Good:**
 
@@ -315,13 +354,13 @@ git commit -m "Add placeholder on input"
 
 ## 4. HTML
 
-We main reference for HTML good patterns is [W3C](https://www.w3.org/TR/html/) and [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element), behind these docs we could learn a lot with semantic and another good practices.
+Our main reference for HTML good patterns is [W3C](https://www.w3.org/TR/html/) and [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element). These docs teach us a lot about semantic HTML and other good practices.
 
 - 4.1 [HTML Component Scope](#41-html-component-scope)
 
 ### 4.1 HTML Component Scope
 
-We don't guest the scope of HTML components inside page, so when we start a new component, we should use a semantic tag, like `section` or `article` for example, to be able to starting to use the heading tags by context.
+We don't know the scope of HTML components inside a page, so when we start a new component, we should use a semantic tag like `section` or `article` to establish proper heading hierarchy by context.
 
 **✅ Good:**
 
@@ -351,15 +390,31 @@ The tips above could be used in any CSS framework or preprocessor, like SCSS, St
 - 5.3 [CSS Class Names](#53-css-class-names)
 - 5.4 [CSS Good Practices](#54-css-good-practices)
 - 5.5 [CSS Media Queries](#55-css-media-queries)
-- 5.6 [Spacing and size of image and components](#56-spacing-and-size-of-image-and-components)
+- 5.6 [Spacing and size of images and components](#56-spacing-and-size-of-images-and-components)
   - 5.6.1 [Dynamic values](#561-dynamic-values)
-  - 5.6.2 [Images and well defined components](#562-images-and-well-defined-components)
-- 5.7 [Avoid using shorthand properties](#57-avoid-using-shorthand-properties)
+  - 5.6.2 [Images and well-defined components](#562-images-and-well-defined-components)
+- 5.7 [Shorthand Properties Guidelines](#57-shorthand-properties-guidelines)
+- 5.8 [CSS Modules](#58-css-modules)
+  - 5.8.1 [File Naming Convention](#581-file-naming-convention)
+  - 5.8.2 [Import Convention](#582-import-convention)
+  - 5.8.3 [Class Naming in CSS Modules](#583-class-naming-in-css-modules)
+- 5.9 [Design Tokens](#59-design-tokens)
+  - 5.9.1 [Use Design Tokens Instead of Hardcoded Values](#591-use-design-tokens-instead-of-hardcoded-values)
+  - 5.9.2 [Available Design Token Categories](#592-available-design-token-categories)
+  - 5.9.3 [Acceptable Exceptions](#593-acceptable-exceptions)
+- 5.10 [Modern CSS Properties](#510-modern-css-properties)
+  - 5.10.1 [Logical Properties](#5101-logical-properties)
+  - 5.10.2 [Layout Properties](#5102-layout-properties)
+  - 5.10.3 [Typography Properties](#5103-typography-properties)
+  - 5.10.4 [Modern Selectors](#5104-modern-selectors)
+  - 5.10.5 [CSS Layers](#5105-css-layers)
+  - 5.10.6 [Container Queries](#5106-container-queries)
+  - 5.10.7 [Modern Units](#5107-modern-units)
 
 
 ### 5.0 CSS Stylelint
 
-We use [Stylelint](https://stylelint.io/) to validate our code, and we have a [shared rule to validade this](https://github.com/juntossomosmais/time-out-market/tree/main/packages/linters#stylelint)
+We use [Stylelint](https://stylelint.io/) to validate our code, and we have a [shared rule to validate this](https://github.com/juntossomosmais/time-out-market/tree/main/packages/linters#stylelint)
 
 ### 5.1 CSS Syntax
 
@@ -408,7 +463,7 @@ Separate each ruleset by a blank line.
 }
 ```
 
-Use lowercase and avoid specifying units is zero-values.
+Use lowercase and avoid specifying units for zero-values.
 
 **✅ Good:**
 
@@ -479,9 +534,9 @@ Keep class lowercase and use dashes to separate the classname.
 .page_header { ... }
 ```
 
-Is a good idea follows a [BEM naming convention](http://getbem.com/introduction/) to avoid conflicts with other components. If you are using CSS-in-JS like a Styled-Component, you can use BEM if you need to nesting elements inside parent.
+It's a good idea to follow a [BEM naming convention](http://getbem.com/introduction/) to avoid conflicts with other components. If you are using CSS-in-JS like Styled-Components, you can use BEM if you need to nest elements inside a parent.
 
-The main pattern is use single dash to element name, double underline to element block and double dash to style modification.
+The main pattern is to use a single dash for element name, double underscores for element block, and double dashes for style modification.
 
 **✅ Good:**
 
@@ -503,7 +558,7 @@ The main pattern is use single dash to element name, double underline to element
 .primary { ... }
 ```
 
-Dashes and underline serve as natural breaks in related class. Prefix class based on the closest parent or base class.
+Dashes and underscores serve as natural breaks in related classes. Prefix classes based on the closest parent or base class.
 
 **✅ Good:**
 
@@ -542,7 +597,7 @@ Avoid giving too short names for class and always choose meaningful names that p
 
 ### 5.4 CSS Good Practices
 
-Avoid use values like colors, spacing and etc directly in the elements, use variables instead, and it can be CSS variables or some preprocessor variables, always check the context.
+Avoid using values like colors, spacing, etc. directly in the elements. Use variables instead, whether CSS variables or preprocessor variables - always check the context.
 
 **✅ Good:**
 
@@ -578,7 +633,7 @@ Never use IDs to style elements, always use classes instead.
 #section { ... }
 ```
 
-Do not style directly the elements, it will create a lot of conflicts, always use classes instead.
+Do not style elements directly, as it will create many conflicts. Always use classes instead.
 
 **✅ Good:**
 
@@ -596,7 +651,7 @@ header
 section
 ```
 
-Avoid nesting elements, because it decrease performance and increase the specificity of the CSS, always use classes instead.
+Avoid nesting elements, as it decreases performance and increases the specificity of the CSS. Always use classes instead.
 
 **✅ Good:**
 
@@ -617,8 +672,7 @@ Avoid nesting elements, because it decrease performance and increase the specifi
 
 ### 5.5 CSS Media Queries
 
-Start the development with generic rules and add media queries inside scope using mobile first. Also is important
-keep the media queries as close to their relevant rule sets whenever possible.
+Start the development with generic rules and add media queries within scope using mobile-first. It's also important to keep the media queries as close to their relevant rule sets as possible.
 
 **✅ Good:**
 
@@ -657,16 +711,17 @@ keep the media queries as close to their relevant rule sets whenever possible.
 }
 ```
 
-### 5.6 Spacing and size of image and components
+### 5.6 Spacing and size of images and components
 
-Is a commom problem to use width and height or all dynamic or all hardcoded, but each one has it own purpose. We should avoid using magic numbers at all times.
+It's a common problem to use width and height either all dynamic or all hardcoded, but each one has its own purpose. We should avoid using magic numbers at all times.
 
-> _"Magic numbers are those numbers that appear in code without explanation, but that 'magically' make things work."_  Are numbers that dont have a why, but works.
+> _"Magic numbers are those numbers that appear in code without explanation, but that 'magically' make things work."_ These are numbers that don't have a clear reason but work.
 
 
 ### 5.6.1 Dynamic values
-If you are using padding, margin, gap should use our [Atomium tokens](https://juntossomosmais.github.io/atomium/?path=/docs/getting-started-tokens--docs). Any space that override it values must be validated once our Design System is well defined around these values and our UX Teams guide must follow it.
-Icons, width and height that are relative to our Design System or that have sizes based on calc upon our spacing variable must also use [Atomium tokens](https://juntossomosmais.github.io/atomium/?path=/docs/getting-started-tokens--docs) instead of magic numbers.
+If you are using padding, margin, or gap, you should use our [Atomium tokens](https://juntossomosmais.github.io/atomium/?path=/docs/getting-started-tokens--docs). Any spacing that overrides these values must be validated since our Design System is well-defined around these values and our UX team's guidelines must follow them.
+
+Icons, width, and height that are relative to our Design System or that have sizes based on calculations using our spacing variables must also use [Atomium tokens](https://juntossomosmais.github.io/atomium/?path=/docs/getting-started-tokens--docs) instead of magic numbers.
 
 **✅ Good:**
 
@@ -694,8 +749,8 @@ Icons, width and height that are relative to our Design System or that have size
 }
 ```
 
-### 5.6.2 Images and well defined components
-If you are using a image, or a component that has a design size and it sizes at maximum vary from desktop/mobile, use the value of it:
+### 5.6.2 Images and well-defined components
+If you are using an image or a component that has a specific design size and its dimensions vary at most between desktop/mobile, use the exact value for it:
 
 **✅ Good:**
 
@@ -715,8 +770,9 @@ If you are using a image, or a component that has a design size and it sizes at 
 
 ```scss
 .shopfrom__banner {
-  height: calc(4 * var(--spaceing-xxxlarge);
-  width: calc(2 * var(--spacing-giant);
+  height: calc(4 * var(--spacing-xxxlarge));
+  width: calc(2 * var(--spacing-giant));
+}
 }
 
 .shopfrom__banner {
@@ -740,11 +796,20 @@ If you are using a image, or a component that has a design size and it sizes at 
 }
 ```
 
-## 5.7 Avoid using shorthand properties
+## 5.7 Shorthand Properties Guidelines
 
-Shorthand properties are great for reducing CSS, but they can also make the code harder to read and override. It's better to use longhand properties to make the code more readable and maintainable.
+**Avoid partial shorthands** that set different values for different sides. Use **complete shorthands** when all sides get the same value.
 
-**✅ Good:**
+**✅ Good (Complete shorthand - all sides same value):**
+
+```scss
+.element {
+  margin: var(--spacing-base);
+  padding: var(--spacing-large);
+}
+```
+
+**✅ Good (Individual properties when needed):**
 
 ```scss
 .element {
@@ -753,15 +818,594 @@ Shorthand properties are great for reducing CSS, but they can also make the code
 }
 ```
 
-**❌ Bad:**
+**❌ Bad (Partial shorthand - different values):**
 
 ```scss
 .element {
   margin: 0 auto;
+  padding: var(--spacing-base) 0;
 }
 ```
 
-Shorthands can be used when you want to apply the same value to multiple properties.
+## 5.8 CSS Modules
+
+CSS Modules provide locally scoped CSS by automatically generating unique class names. This prevents style conflicts and improves maintainability.
+
+### 5.8.1 File Naming Convention
+
+Use `.module.scss` extension for CSS Module files:
+
+**✅ Good:**
+
+```
+ComponentName/
+├── ComponentName.tsx
+└── ComponentName.module.scss
+```
+
+**❌ Bad:**
+
+```
+ComponentName/
+├── ComponentName.tsx
+└── ComponentName.scss
+```
+
+### 5.8.2 Import Convention
+
+Import SCSS modules using the alias `S` for consistency:
+
+**✅ Good:**
+
+```tsx
+import S from './HomePage.module.scss'
+
+const HomePage = () => (
+  <div className={S.Container}>
+    <h1 className={S.Title}>Welcome</h1>
+  </div>
+)
+```
+
+**❌ Bad:**
+
+```tsx
+import styles from './HomePage.module.scss'
+import * as css from './HomePage.module.scss'
+```
+
+### 5.8.3 Class Naming in CSS Modules
+
+Use PascalCase for CSS Module class names to match React component conventions:
+
+**✅ Good:**
+
+```scss
+.PageHeader {
+  display: flex;
+}
+
+.Title {
+  font-weight: bold;
+}
+
+.Active {
+  background-color: var(--color-primary-500);
+}
+```
+
+**❌ Bad:**
+
+```scss
+.page-header {
+  display: flex;
+}
+
+.pageHeader {
+  font-weight: bold;
+}
+
+.page_header {
+  display: flex;
+}
+
+.PageHeader__Title {
+  font-weight: bold;
+}
+
+.PageHeader--active {
+  background-color: var(--color-primary-500);
+}
+```
+
+## 5.9 Design Tokens
+
+Design tokens are centralized design variables that ensure consistency across your application. Always use design tokens instead of hardcoded values.
+
+### 5.9.1 Use Design Tokens Instead of Hardcoded Values
+
+**ALWAYS use design tokens instead of hardcoded CSS units** (`rem`, `em`, `px`) for spacing, colors, typography, and other design properties.
+
+**✅ Good:**
+
+```scss
+.Container {
+  padding: var(--spacing-xxlarge);
+  margin-bottom: var(--spacing-base);
+  font-size: var(--font-size-body-medium);
+  border-radius: var(--border-radius-small);
+  background-color: var(--color-neutral-white);
+}
+
+.Button {
+  padding: var(--spacing-xsmall) var(--spacing-large);
+  gap: var(--spacing-base);
+  box-shadow: 0 0 0 var(--spacing-xxsmall) var(--color-primary-200);
+  z-index: var(--zindex-100);
+}
+```
+
+**❌ Bad:**
+
+```scss
+.Container {
+  padding: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+}
+
+.Button {
+  padding: 0.75rem 1.5rem;
+  gap: 1rem;
+  box-shadow: 0 0 0 2px #e3f2fd;
+  z-index: 100;
+}
+```
+
+### 5.9.2 Available Design Token Categories
+
+**Spacing**: `--spacing-xxsmall`, `--spacing-xsmall`, `--spacing-small`, `--spacing-base`, `--spacing-medium`, `--spacing-large`, `--spacing-xlarge`, `--spacing-xxlarge`, `--spacing-xxxlarge`, `--spacing-giant`, `--spacing-xgiant`
+
+**Colors**: `--color-neutral-*`, `--color-brand-primary-*`, `--color-brand-secondary-*`, `--color-contextual-*`
+
+**Typography**: `--font-size-*`, `--font-weight-*`, `--font-family-*`
+
+**Border Radius**: `--border-radius`, `--border-radius-small`, `--border-radius-medium`, `--border-radius-large`, `--border-radius-full`
+
+**Shadows**: `--shadow-*`
+
+**Z-index**: `--zindex-1`, `--zindex-5`, `--zindex-10`, `--zindex-100`, `--zindex-1000`, `--zindex-overlay`
+
+### 5.9.3 Acceptable Exceptions
+
+The following hardcoded values are acceptable:
+
+- Content width constraints (e.g., `max-width: 400px`)
+- Standard breakpoint values (e.g., `768px` in media queries)
+- Minimal border widths (e.g., `1px` borders)
+- Z-index calculations using design tokens (e.g., `calc(var(--zindex-100) + 1)`)
+
+## 5.10 Modern CSS Properties
+
+Embrace modern CSS features that improve maintainability, performance, and user experience. These properties provide better internationalization support, cleaner code, and enhanced responsive design capabilities.
+
+### 5.10.1 Logical Properties
+
+Use logical properties instead of physical properties for better internationalization and writing-mode support.
+
+**✅ Good (Logical Properties):**
+
+```scss
+.element {
+  margin-inline: var(--spacing-base);
+  margin-block: var(--spacing-large);
+  padding-inline-start: var(--spacing-small);
+  padding-inline-end: var(--spacing-medium);
+  border-inline-start: 1px solid var(--color-neutral-300);
+  inset-inline-start: 0;
+}
+
+.container {
+  width: min(100%, 75ch);
+  margin-inline: auto;
+}
+```
+
+**❌ Bad (Physical Properties):**
+
+```scss
+.element {
+  margin-left: var(--spacing-base);
+  margin-right: var(--spacing-base);
+  margin-top: var(--spacing-large);
+  margin-bottom: var(--spacing-large);
+  padding-left: var(--spacing-small);
+  padding-right: var(--spacing-medium);
+  border-left: 1px solid var(--color-neutral-300);
+  left: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 75ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+```
+
+**Available Logical Properties:**
+- `margin-inline`, `margin-block`, `margin-inline-start`, `margin-inline-end`
+- `padding-inline`, `padding-block`, `padding-inline-start`, `padding-inline-end`
+- `border-inline`, `border-block`, `border-inline-start`, `border-inline-end`
+- `inset-inline`, `inset-block`, `inset-inline-start`, `inset-inline-end`
+
+### 5.10.2 Layout Properties
+
+Use modern layout properties for better responsive design and cleaner code.
+
+**✅ Good:**
+
+```scss
+.card {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-large);
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-base);
+}
+
+.centered {
+  display: grid;
+  place-items: center;
+}
+```
+
+**❌ Bad:**
+
+```scss
+.card {
+  width: 100%;
+  height: 56.25%; /* 16:9 ratio calculation */
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc(var(--spacing-large) * -0.5);
+}
+
+.grid-item {
+  flex: 1 1 250px;
+  margin: calc(var(--spacing-large) * 0.5);
+}
+
+.centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+```
+
+### 5.10.3 Typography Properties
+
+Use modern typography properties for better readability and performance.
+
+**✅ Good:**
+
+```scss
+.heading {
+  text-wrap: balance;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+}
+
+.body-text {
+  text-wrap: pretty;
+  line-height: 1.6;
+}
+
+.code {
+  font-family: var(--font-family-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.price {
+  font-variant-numeric: oldstyle-nums;
+}
+```
+
+**❌ Bad:**
+
+```scss
+.heading {
+  /* No text balancing */
+  font-size: 3rem;
+  
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+  }
+}
+
+.body-text {
+  /* No text wrapping control */
+  line-height: 1.6;
+}
+```
+
+### 5.10.4 Modern Selectors
+
+Use modern CSS selectors for cleaner and more maintainable code.
+
+**✅ Good:**
+
+```scss
+/* :is() for grouping selectors */
+:is(h1, h2, h3, h4, h5, h6) {
+  font-weight: var(--font-weight-bold);
+  text-wrap: balance;
+}
+
+/* :where() for zero-specificity grouping */
+:where(ul, ol) :where(ul, ol) {
+  margin-block: 0;
+}
+
+/* :has() for parent selection */
+.card:has(.card__image) {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.form:has(:invalid) .submit-button {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* :not() with complex selectors */
+.button:not(:is(.button--disabled, .button--loading)):hover {
+  background-color: var(--color-primary-600);
+}
+```
+
+**❌ Bad:**
+
+```scss
+/* Repetitive selectors */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-weight-bold);
+}
+
+ul ul, ul ol, ol ul, ol ol {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* No parent-based styling without JavaScript */
+.card.has-image {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+```
+
+### 5.10.5 CSS Layers
+
+Use CSS `@layer` for better style organization and cascade control.
+
+**✅ Good:**
+
+```scss
+@layer reset, base, components, utilities;
+
+@layer reset {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+}
+
+@layer base {
+  body {
+    font-family: var(--font-family-base);
+    line-height: 1.6;
+  }
+}
+
+@layer components {
+  .button {
+    padding: var(--spacing-small) var(--spacing-large);
+    border-radius: var(--border-radius-small);
+  }
+}
+
+@layer utilities {
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+```
+
+**❌ Bad:**
+
+```scss
+/* No layer organization - specificity battles */
+.button {
+  padding: var(--spacing-small) var(--spacing-large);
+}
+
+.form .button {
+  padding: var(--spacing-xsmall) var(--spacing-medium); /* Override with specificity */
+}
+
+.button.button--small {
+  padding: var(--spacing-xsmall) var(--spacing-medium) !important; /* Using !important */
+}
+```
+
+### 5.10.6 Container Queries
+
+Use container queries for component-based responsive design.
+
+**✅ Good:**
+
+```scss
+.card-container {
+  container-type: inline-size;
+  container-name: card;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-base);
+}
+
+@container card (min-width: 300px) {
+  .card {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+@container card (min-width: 500px) {
+  .card {
+    gap: var(--spacing-large);
+  }
+  
+  .card__content {
+    font-size: var(--font-size-body-large);
+  }
+}
+```
+
+**❌ Bad:**
+
+```scss
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Using viewport-based media queries for component behavior */
+@media (min-width: 768px) {
+  .card {
+    flex-direction: row;
+  }
+}
+```
+
+### 5.10.7 Modern Units
+
+Use modern CSS units for better responsive design and accessibility.
+
+**✅ Good:**
+
+```scss
+.container {
+  width: min(100%, 75ch); /* Content-based width */
+  margin-inline: auto;
+}
+
+.responsive-text {
+  font-size: clamp(1rem, 2.5vw, 1.5rem); /* Fluid typography */
+}
+
+.dynamic-spacing {
+  gap: clamp(var(--spacing-small), 3vw, var(--spacing-large));
+}
+
+.sidebar {
+  width: max(250px, 25%); /* Minimum width with percentage */
+}
+
+.responsive-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+}
+
+.icon-size {
+  width: 1cap; /* Based on capital letter height */
+  height: 1cap;
+}
+```
+
+**❌ Bad:**
+
+```scss
+.container {
+  max-width: 1200px; /* Fixed pixel values */
+  margin: 0 auto;
+}
+
+.responsive-text {
+  font-size: 16px;
+  
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
+  
+  @media (min-width: 1024px) {
+    font-size: 24px;
+  }
+}
+
+.dynamic-spacing {
+  gap: 16px;
+  
+  @media (min-width: 768px) {
+    gap: 24px;
+  }
+}
+```
+
+**Modern Units Reference:**
+- **`ch`**: Character width (width of "0" in current font)
+- **`cap`**: Capital letter height  
+- **`ic`**: Ideographic character width
+- **`lh`**: Line height
+- **`vi/vb`**: Viewport inline/block dimensions
+- **`dvh/svh/lvh`**: Dynamic/Small/Large viewport height
+- **`clamp()`**: Fluid values with min/max constraints
+- **`min()`**: Minimum of multiple values
+- **`max()`**: Maximum of multiple values
+
+### 5.10.8 Best Practices for Modern CSS
+
+**Do:**
+- Use logical properties for better internationalization
+- Prefer `aspect-ratio` over padding-based aspect ratios
+- Use `text-wrap: balance` for headings and `text-wrap: pretty` for body text
+- Implement container queries for truly responsive components
+- Use `:is()` and `:where()` to reduce selector repetition
+- Organize styles with `@layer` for predictable cascade
+- Use modern units like `ch`, `cap`, and viewport units
+- Leverage `clamp()` for fluid typography and spacing
+
+**Don't:**
+- Mix physical and logical properties in the same codebase
+- Rely on viewport media queries when container queries are more appropriate
+- Use `!important` when proper layering could solve specificity issues
+- Ignore browser support for critical features (use progressive enhancement)
+- Overuse `:has()` as it can impact performance if misused
 
 
 **[⬆ back to summary](#-summary)**
@@ -779,7 +1423,7 @@ Shorthands can be used when you want to apply the same value to multiple propert
 
 ### 6.0 JavaScript Eslint
 
-We use [ESLint](https://eslint.org/) to validate our code, and we have a [shared rule to validade this](https://github.com/juntossomosmais/time-out-market/tree/main/packages/linters#eslint)
+We use [ESLint](https://eslint.org/) to validate our code, and we have a [shared rule to validate this](https://github.com/juntossomosmais/time-out-market/tree/main/packages/linters#eslint)
 
 ### 6.1 JavaScript Code Syntax
 
@@ -801,7 +1445,7 @@ const baz = 'qux';
 const func = () => {};
 ```
 
-Always use single quotes or template literals
+Always use single quotes or template literals.
 
 **✅ Good:**
 
@@ -876,7 +1520,7 @@ if (bar) {
 }
 ```
 
-Add empty lines between before return statements.
+Add empty lines before return statements.
 
 **✅ Good:**
 
@@ -952,7 +1596,7 @@ const xpto = new Date().toLocaleDateString('pt-BR')
 
 ### 6.3 Descriptive validations (if)
 
-Creating const to describe validations.
+Create constants to describe validations.
 
 **✅ Good:**
 
@@ -976,7 +1620,7 @@ if (user.firstName && user.lastname) {
 
 ### 6.4 Avoid multiple if's
 
-Use an execution map instead a multiple if validations.
+Use an execution map instead of multiple if validations.
 
 **✅ Good:**
 
@@ -1045,7 +1689,7 @@ Avoid writing comments to explain the code. Use comments to answer “Why?” in
 <a name="errors-destructuring"></a>
 ### 6.6 Avoid errors while destructuring
 
-Its a common mistake destructuring while the object is null or undefined, the destructuring will throw an error.
+It's a common mistake to destructure while the object is null or undefined, as the destructuring will throw an error.
 
 **✅ Good:**
 
@@ -1227,7 +1871,7 @@ return (
 ### 7.4 Readable components
 
 Avoid creating very large components.
-If possible divided into sub-components, improving the understanding and reading of the code.
+If possible, divide them into sub-components to improve understanding and code readability.
 
 **✅ Good:**
 
@@ -1274,7 +1918,7 @@ const Screen = () => (
 
 ### 7.5 Styled Component Naming Convention
 
-Use PascalCase as a convention in styled-components
+Use PascalCase as a convention for styled-components.
 
 **✅ Good:**
 
@@ -1294,7 +1938,7 @@ export const customText = styled.p`
 
 ### 7.6 Using Styled Component in React Components
 
-Import Styled Component as `S`
+Import Styled Components as `S`.
 
 **✅ Good:**
 
@@ -1331,7 +1975,7 @@ const MyComponent = () => (
 
 ### 7.7 Avoid compare directly strings
 
-When know all possible values we can use enum to achieve better readability and control.
+When we know all possible values, we can use enums to achieve better readability and control.
 
 **✅ Good:**
 
@@ -1438,7 +2082,7 @@ const Select = ({
 
 #### 7.9.1 Using short circuit
 
-when we only need to validate a logical case and return a component, we can directly use the short circuit
+When we only need to validate a logical case and return a component, we can directly use the short circuit.
 
 **✅ Good:**
 
@@ -1466,7 +2110,7 @@ const HomePage = () => {
 
 #### 7.9.2 Using ternary operator
 
-when we need to validate two logical cases and return a component in both cases, we can use the ternary instead of the if...else
+When we need to validate two logical cases and return a component in both cases, we can use the ternary operator instead of if...else.
 
 **✅ Good:**
 
@@ -1549,9 +2193,9 @@ It is not recommended to use indexes for keys if the order of items can change. 
 </template>
 ```
 
-### 8.2 Use Computed for real time updates
+### 8.2 Use Computed for real-time updates
 
-If you need listen changes at data use computeds instead of methods
+If you need to listen to data changes, use computed properties instead of methods.
 
 **✅ Good:**
 
@@ -1685,7 +2329,7 @@ Create a file with the same name of your component, or index, and with the suffi
 
 ### 10.1 Write tests with "it"
 
-Write tests with the alias "it" instead "test" method.
+Write tests with the alias "it" instead of the "test" method.
 
 **✅ Good:**
 
@@ -1705,8 +2349,8 @@ describe('yourModule', () => {
 
 ### 10.2 Using test-id
 
-To get components during tests we use `test-id` custom html attributes with unique id and our own convention deeply inpired by the css's BEM.
-To define the `test-id` to a component use the follow structure: `[page-name||component-name]__[element-type]--[type]`
+To get components during tests, we use `test-id` custom HTML attributes with unique IDs and our own convention deeply inspired by CSS's BEM.
+To define the `test-id` for a component, use the following structure: `[page-name||component-name]__[element-type]--[type]`
 
 **✅ Good:**
 
@@ -1722,7 +2366,7 @@ To define the `test-id` to a component use the follow structure: `[page-name||co
 
 ### 10.3 Selecting component
 
-To select a component in order to test a behavior of to trigger any event we must use ou `test-id` attribute to select it.
+To select a component in order to test a behavior or trigger any event, we must use our `test-id` attribute to select it.
 
 **✅ Good:**
 
@@ -1904,9 +2548,9 @@ type MyBeautifulType = {
 // rest of the file...
 ```
 
-### 11.5 Increase legible
+### 11.5 Increase legibility
 
-Create a type for increase legible
+Create a type to increase legibility.
 
 **✅ Good:**
 
