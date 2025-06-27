@@ -10,7 +10,6 @@ When generating code, GitHub Copilot must:
 - Never add semicolons in JavaScript/TypeScript
 - Use single quotes for strings, template literals for interpolation
 - Use strict equality (`===`) instead of loose equality (`==`)
-- Write all code and comments in English
 - Suggest conventional commit messages in lowercase format
 - Always prioritize readability and maintainability
 
