@@ -37,6 +37,15 @@ This is our [Front-end Challenge](https://github.com/juntossomosmais/frontend-ch
 10. [Testing](#10-testing)
 11. [Typescript](#11-typescript)
 
+
+
+## BEFORE YOU GO AHEAD
+
+After adding a new section or updating an existing one, please make sure to:
+
+- update the [copilot instructions file](.github/copilot-instructions.md) with the new section and/or updates
+
+
 ---
 
 ## 1. General Code Patterns
