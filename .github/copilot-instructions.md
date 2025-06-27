@@ -83,7 +83,7 @@ When writing CSS, GitHub Copilot must:
 
 ### Shorthand Rules
 
-- Use complete shorthands only when all sides have same value
+- Use complete shorthands only when all sides have the same value
 - Use individual properties when values differ
 - Never use partial shorthands like `margin: 0 auto`
 
