@@ -25,7 +25,7 @@ When generating code, GitHub Copilot must:
 ### Imports
 
 - Same module/scope: Use relative paths (`../../../styles`)
-- Different modules: Use absolute paths (`~/components/Button/Button`)
+- Different modules: Use absolute paths (`~/components/Button/Button` or `@/components/Button/Button`)
 - Avoid barrel files - use direct imports for better tree-shaking
 - Import CSS modules as `S`: `import S from './Component.module.scss'`
 - Import styled-components as `S`: `import * as S from './styles'`
