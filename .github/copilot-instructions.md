@@ -1,6 +1,6 @@
 # Frontend Development Guidelines for GitHub Copilot
 
-> Instructions for GitHub Copilot to follow JSM frontend coding standards across all repositories.
+> Instructions for GitHub Copilot on following JSM frontend coding standards across all repositories.
 
 ## Code Generation Rules
 
