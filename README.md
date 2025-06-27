@@ -9,7 +9,7 @@
 
 > "Every line of code should appear to be written by a single person, no matter the number of contributors." - Chinese Proverb.
 
-The following document describes generic rules for writing in the development languages that we use in our Front-end projects: HTML, CSS, JavaScript, Typescript, React, and Vue.
+The following document describes generic rules for writing in the development languages that we use in our Front-end projects: HTML, CSS, JavaScript, TypeScript, React, and Vue.
 
 The idea of this repository is not to be a complete guideline, but rather to help developers who participate in our projects understand the coding standards used.
 
